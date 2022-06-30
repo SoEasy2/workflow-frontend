@@ -29,6 +29,9 @@ module.exports = {
     "@typescript-eslint/no-unused-vars": "error"
   },
   "settings": {
+    "react": {
+      version: 'detect',
+    },
     "import/resolver": {
       "typescript": {}
     }
