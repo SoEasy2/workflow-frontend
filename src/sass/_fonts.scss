@@ -1,0 +1,45 @@
+@import './_abstract/_variables.scss';
+
+@font-face {
+  font-family: $global-font-inter;
+  src: url('../assets/fonts/inter/Inter-ExtraBold.woff2') format('woff2');
+  format('woff2');
+  font-style: normal;
+  font-weight: 800;
+}
+@font-face {
+  font-family: $global-font-inter;
+  src: url('../assets/fonts/inter/Inter-Bold.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 700;
+}
+@font-face {
+  font-family: $global-font-inter;
+  src: url('../assets/fonts/inter/Inter-SemiBold.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 600;
+}
+@font-face {
+  font-family: $global-font-inter;
+  src: url('../assets/fonts/inter/Inter-Medium.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 500;
+}
+@font-face {
+  font-family: $global-font-inter;
+  src: url('../assets/fonts/inter/Inter-Regular.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: $global-font-inter;
+  src: url('../assets/fonts/inter/Inter-Light.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 300;
+}
+@font-face {
+  font-family: $global-font-inter;
+  src: url('../assets/fonts/inter/Inter-ExtraLight.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 200;
+}

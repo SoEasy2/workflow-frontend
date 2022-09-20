@@ -20,6 +20,7 @@ module.exports = {
     "sourceType": "module"
   },
   "plugins": ["react", "react-hooks", "@typescript-eslint", "prettier"],
+  "ignorePatterns": ["node_modules/", "build/", "dist/", "coverage/", "locales/"],
   "rules": {
     "react/react-in-jsx-scope": "off",
     "camelcase": "error",

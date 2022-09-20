@@ -1,0 +1,29 @@
+body {
+  position: relative;
+  line-height: 1.2;
+  cursor: default;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+* {
+  touch-action: manipulation;
+}
+
+img {
+  user-select: none;
+}
+
+#root{
+  height: 100% !important;
+}
+
+html{
+  height: 100% !important;
+}
+
+body{
+  height: 100% !important;
+}

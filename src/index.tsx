@@ -1,14 +1,17 @@
-import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { App } from './App'
-import reportWebVitals from './reportWebVitals'
+import { BrowserRouter } from 'react-router-dom';
 import './i18n'
+import './sass/_reset.scss';
+import * as serviceWorker from './serviceWorker';
+import './sass/_core.scss';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+    <BrowserRouter>
+        <App />
+    </BrowserRouter>
 )
 
-reportWebVitals()
+serviceWorker.unregister()
