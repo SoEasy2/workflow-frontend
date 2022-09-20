@@ -1,11 +1,11 @@
-import { LogoIcon } from '../helpers/icons';
+import { LogoIcon } from '../helpers/icons'
 
 const Test = () => {
-    return (
-        <div>
-            <LogoIcon />
-        </div>
-    );
-};
+  return (
+    <div>
+      <LogoIcon />
+    </div>
+  )
+}
 
-export { Test };
+export { Test }
