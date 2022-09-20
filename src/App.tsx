@@ -5,6 +5,7 @@ import { useId } from 'react'
 const App = () => {
   return (
     <div>
+        Init Application
       <Routes>
         {routes.map((route) => (
           <Route key={useId()} path={route.path} element={route.component} />
