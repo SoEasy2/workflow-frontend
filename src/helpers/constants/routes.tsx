@@ -1,10 +1,10 @@
 import { IRoute } from './types'
-import { Test, TestError } from '../../pages'
+import { Registration, TestError } from '../../pages'
 
 export const routes: IRoute[] = [
   {
     path: '/',
-    component: <Test />,
+    component: <Registration />,
   },
   {
     path: '/*',

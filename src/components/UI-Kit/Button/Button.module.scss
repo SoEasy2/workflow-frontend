@@ -1,0 +1,15 @@
+@import "../../../sass/_abstract/_functions.scss";
+@import "../../../sass/_abstract/_variables.scss";
+.button{
+  padding: px-to-rem(8) px-to-rem(16);
+  background-color: $color-white;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  border-radius: px-to-rem(8);
+  color: $color-text-primary;
+  font-family: $global-font-inter;
+  font-weight: 500;
+  font-size: px-to-rem(16);
+  line-height: px-to-rem(24);
+}

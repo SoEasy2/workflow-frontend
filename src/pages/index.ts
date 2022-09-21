@@ -1,2 +1,2 @@
-export * from './Test'
 export * from './TestError'
+export * from './Registration'

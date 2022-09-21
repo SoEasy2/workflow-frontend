@@ -1,8 +1,15 @@
+@import "./_functions.scss";
 //Shadows
-
+$shadow-auth:
+        drop-shadow(px-to-rem(0) px-to-rem(4) px-to-rem(4) rgba(0, 0, 0, 0.25))
+        drop-shadow(px-to-rem(0) px-to-rem(4) px-to-rem(4) rgba(0, 0, 0, 0.25));
 //Borders
 
 //Colors
-
+$color-white: #ffffff;
+$color-text-primary: #030235;
 //Fonts
 $global-font-inter: 'Inter UI', sans-serif;
+
+//Backgrounds
+$global-background-color: #FAFAFB;
