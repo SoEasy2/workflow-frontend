@@ -4,6 +4,7 @@ $shadow-auth:
         drop-shadow(px-to-rem(0) px-to-rem(4) px-to-rem(4) rgba(0, 0, 0, 0.25))
         drop-shadow(px-to-rem(0) px-to-rem(4) px-to-rem(4) rgba(0, 0, 0, 0.25));
 //Borders
+$global-border-color: #030235;
 
 //Colors
 $color-white: #ffffff;
@@ -13,3 +14,5 @@ $global-font-inter: 'Inter UI', sans-serif;
 
 //Backgrounds
 $global-background-color: #FAFAFB;
+$disable-background-color: #030235;
+$hover-background-color: #FAFAFB;

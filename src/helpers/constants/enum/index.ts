@@ -1,1 +1,1 @@
-export * from './buttonTypes';
+export * from './buttonTypes'

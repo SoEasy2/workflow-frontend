@@ -1,1 +1,1 @@
-export * from './UI-KIT';
+export * from './UI-KIT'

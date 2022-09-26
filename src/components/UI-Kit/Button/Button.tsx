@@ -1,14 +1,8 @@
 import React from 'react'
-import { ButtonTypes } from '../../../helpers/constants/enum/buttonTypes'
+import { ButtonTypes } from '../../../helpers/constants/enum'
 import cx from 'classnames'
 import styles from './Button.module.scss'
-
-interface IButtonProps {
-  type: ButtonTypes
-  onClick?: () => void
-  text?: string
-  className?: string
-}
+import { IButtonProps } from './interface';
 
 const Button: React.FC<IButtonProps> = ({ type, onClick, text, className }) => {
   return (
@@ -17,7 +11,6 @@ const Button: React.FC<IButtonProps> = ({ type, onClick, text, className }) => {
         styles.button,
         type === ButtonTypes.ACTIVE && styles.active,
         type === ButtonTypes.DISABLED && styles.disabled,
-        type === ButtonTypes.DEFAULT && styles.default,
         className,
       )}
       onClick={onClick}
