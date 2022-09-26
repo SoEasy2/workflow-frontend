@@ -1,7 +1,7 @@
 import styles from './UI-KIT.module.scss'
-import { Item } from '../../components/UI-Kit/Item';
-import { uiKitList } from '../../helpers/ui-kit';
-import { useId } from 'react';
+import { Item } from '../../components/UI-Kit/Item'
+import { uiKitList } from '../../helpers/ui-kit'
+import { useId } from 'react'
 
 const UiKit = () => {
   return (
@@ -11,7 +11,11 @@ const UiKit = () => {
       </div>
       <div className={styles.ui_kit_content}>
         <div className={styles.ui_kit_wrapper}>
-            { uiKitList.map(i => <Item name={i.name} component={i.component} key={useId()} />) }
+          {uiKitList.map((i) => {
+              console.log(i);
+              console.log(i.props);
+              return <Item name={i.name} component={i.component()} key={useId()} />
+          })}
         </div>
       </div>
     </div>
