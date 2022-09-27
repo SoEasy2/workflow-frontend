@@ -11,11 +11,11 @@ const UiKit = () => {
       </div>
       <div className={styles.ui_kit_content}>
         <div className={styles.ui_kit_wrapper}>
-          {uiKitList.map((i) => {
-              console.log(i);
-              console.log(i.props);
-              return <Item name={i.name} component={i.component()} key={useId()} />
-          })}
+          <div className={styles.ui_kit_items}>
+            {uiKitList.map((i) => (
+              <Item name={i.name} component={i.component()} key={useId()} props={i.props} />
+            ))}
+          </div>
         </div>
       </div>
     </div>

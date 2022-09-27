@@ -3,8 +3,22 @@
   padding: px-to-rem(20);
   border: px-to-rem(1) solid $global-border-color;
   display: flex;
-  height: 300px;
   border-radius: px-to-rem(5);
   text-align: center;
   font-weight: 600;
+  gap: px-to-rem(10);
+  flex-direction: column;
+  &__title{
+
+  }
+ &__component{
+
+ }
+ &__icon{
+   height: px-to-rem(35);
+   cursor: pointer;
+   display: flex;
+   justify-content: flex-end;
+   width: 100%;
+ }
 }

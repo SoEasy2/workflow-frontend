@@ -9,9 +9,8 @@ export const ButtonsVariants: IUIKit[] = [
       type: ButtonTypes.ACTIVE,
       text: 'Button',
     },
-    component: function (){
+    component: function () {
       return <Button {...this.props} />
-    }
-
+    },
   },
 ]
