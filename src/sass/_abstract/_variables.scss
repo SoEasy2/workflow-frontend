@@ -1,14 +1,14 @@
 @import "./_functions.scss";
-//Shadows
-$shadow-auth:
-        drop-shadow(px-to-rem(0) px-to-rem(4) px-to-rem(4) rgba(0, 0, 0, 0.25))
-        drop-shadow(px-to-rem(0) px-to-rem(4) px-to-rem(4) rgba(0, 0, 0, 0.25));
-//Borders
-$global-border-color: #030235;
-
 //Colors
 $color-white: #ffffff;
+$color-black: #000;
 $color-text-primary: #030235;
+$color-very-light-gray: #F8F8F8;
+$color-light-gray: #EBEBEB;
+$color-pale-gray: rgba(89, 100, 118, 0.16);
+$color-label: #6B6E85;
+$color-text-not-focused: #98A0AD;
+$color-error-input: #ECACA5;
 //Fonts
 $global-font-inter: 'Inter UI', sans-serif;
 
@@ -16,3 +16,15 @@ $global-font-inter: 'Inter UI', sans-serif;
 $global-background-color: #FAFAFB;
 $disable-background-color: #030235;
 $hover-background-color: #FAFAFB;
+$helper-background-light-gray-color: $color-light-gray;
+
+//Shadows
+$shadow-auth:
+        drop-shadow(px-to-rem(0) px-to-rem(4) px-to-rem(4) rgba($color-black, 0.25))
+        drop-shadow(px-to-rem(0) px-to-rem(4) px-to-rem(4) rgba($color-black, 0.25));
+//Borders color
+$global-border-color: #030235;
+//Borders
+$global-border-default-input: 2px solid $color-pale-gray;
+$global-border-focus-input: 2px solid $global-border-color;
+$global-border-error-input: 2px solid $color-error-input;

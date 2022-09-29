@@ -10,6 +10,8 @@ export const ButtonsVariants: IUIKit[] = [
       text: 'Button',
     },
     component: function () {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
       return <Button {...this.props} />
     },
   },
