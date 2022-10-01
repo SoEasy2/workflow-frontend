@@ -13,4 +13,5 @@ export interface IDefaultInput {
   modelValue?: any
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
   isShow?: boolean
+  disabled?: boolean
 }

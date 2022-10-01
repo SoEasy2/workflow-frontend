@@ -5,6 +5,9 @@
   text-align: left; //in props
   gap: px-to-rem(8);
   position: relative;
+  &_disabled{
+    opacity: 0.5;
+  }
 }
 .label{
   font-family: $global-font-inter;

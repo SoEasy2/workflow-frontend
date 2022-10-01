@@ -4,6 +4,20 @@ import { InputTypes } from '../../../../../helpers/constants/enum'
 
 export const InputsVariants: IUIKit[] = [
   {
+    name: 'Input(text) disabled',
+    props: {
+      type: InputTypes.TEXT,
+      key: 'inputText(disabled)',
+      name: 'inputText(disabled)',
+      disabled: true,
+    },
+    component: function () {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      return <DefaultInput {...this.props} />
+    },
+  },
+  {
     name: 'Input(password)',
     props: {
       type: InputTypes.PASSWORD,

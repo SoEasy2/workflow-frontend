@@ -14,6 +14,7 @@ const Component: React.FC<IDefaultInput> = ({
   classNameLabel,
   classNameWrapper,
   isShow,
+  disabled = false,
 }) => {
   const [value, setValue] = useState<string>(modelValue ? modelValue[name] : '')
   const [typeInput, setTypeInput] = useState<InputTypes>(type)
@@ -24,7 +25,7 @@ const Component: React.FC<IDefaultInput> = ({
     setValue('')
   }
   return (
-    <div className={cx(styles.input__wrapper, classNameWrapper)}>
+    <div className={cx(styles.input__wrapper, disabled && styles.input__wrapper_disable, classNameWrapper)}>
       <label htmlFor={key} className={cx(styles.label, classNameLabel)}>
         {name}
       </label>
@@ -35,14 +36,15 @@ const Component: React.FC<IDefaultInput> = ({
         value={value}
         onChange={handleChange}
         className={cx(styles.input, classNameInput)}
+        disabled={disabled}
       />
       <div className={styles.helper}>
-        {value.length > 0 && type === InputTypes.TEXT && (
+        {!disabled && value.length > 0 && type === InputTypes.TEXT && (
           <div className={styles.helper__remove} onClick={handleClickReset}>
             <HelperRemoveIcon />
           </div>
         )}
-        {isShow && (
+        {!disabled && isShow && (
           <div
             className={styles.helper__showIcon}
             onClick={() =>
