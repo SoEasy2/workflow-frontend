@@ -1,5 +1,4 @@
 export enum ButtonTypes {
-    DEFAULT = 1,
-    ACTIVE = 2,
-    DISABLED = 3,
+  ACTIVE = 1,
+  DISABLED = 2,
 }

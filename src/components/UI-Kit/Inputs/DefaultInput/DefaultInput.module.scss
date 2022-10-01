@@ -1,0 +1,64 @@
+@import "../../../../sass/_abstract/_variables";
+.input__wrapper{
+  display: flex;
+  flex-direction: column;
+  text-align: left; //in props
+  gap: px-to-rem(8);
+  position: relative;
+  &_disabled{
+    opacity: 0.5;
+  }
+}
+.label{
+  font-family: $global-font-inter;
+  color: $color-label;
+  font-weight: 500;
+  line-height: 24px;
+  font-size: px-to-rem(15);
+}
+.input {
+  border: $global-border-default-input;
+  outline: none;
+  transition: all .4s;
+  padding: px-to-rem(14) px-to-rem(40) px-to-rem(14) px-to-rem(20);
+  font-family: $global-font-inter;
+  color: $color-text-not-focused;
+  font-weight: 400;
+  font-size: px-to-rem(16);
+  line-height: 24px;
+  border-radius: px-to-rem(12);
+  background-color: $color-white;
+
+  &:hover {
+    background-color: $global-background-color;
+  }
+  &:focus {
+    border: $global-border-focus-input;
+    color: $color-text-primary;
+  }
+};
+.helper{
+  position: absolute;
+  z-index: 1;
+  right: px-to-rem(12);
+  top: px-to-rem(48);
+  &__remove{
+    height: px-to-rem(24);
+    width: px-to-rem(24);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    background-color: $helper-background-light-gray-color;
+    border-radius: 100px
+  }
+  &__hideIcon{
+    &_top{
+      margin-top: px-to-rem(3);
+    }
+  }
+}
+.inputError{
+  border: $global-border-error-input;
+}
