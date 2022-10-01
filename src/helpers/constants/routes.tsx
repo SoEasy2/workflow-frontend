@@ -4,7 +4,7 @@ import { UiKit } from '../../pages/UI-KIT'
 
 export const routes: IRoute[] = [
   {
-    path: '/',
+    path: '/registration',
     component: <Registration />,
   },
   {
