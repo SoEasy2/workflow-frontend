@@ -25,7 +25,13 @@ const Component: React.FC<IDefaultInput> = ({
     setValue('')
   }
   return (
-    <div className={cx(styles.input__wrapper, disabled && styles.input__wrapper_disable, classNameWrapper)}>
+    <div
+      className={cx(
+        styles.input__wrapper,
+        disabled && styles.input__wrapper_disable,
+        classNameWrapper,
+      )}
+    >
       <label htmlFor={key} className={cx(styles.label, classNameLabel)}>
         {name}
       </label>

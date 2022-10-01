@@ -1,4 +1,4 @@
-import { IOffset } from '../../../../helpers/constants/types/offset';
+import { IOffset } from '../../../../helpers/constants/types/offset'
 
 export interface IUTooltip {
   text?: string
