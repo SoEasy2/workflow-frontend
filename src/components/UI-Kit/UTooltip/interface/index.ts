@@ -1,6 +1,9 @@
+import { IOffset } from '../../../../helpers/constants/types/offset';
+
 export interface IUTooltip {
   text?: string
   className?: string
-  state: boolean
   timeout?: number
+  style?: any
+  offset: IOffset
 }
