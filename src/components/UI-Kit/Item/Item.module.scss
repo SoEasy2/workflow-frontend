@@ -14,11 +14,15 @@
  &__component{
 
  }
- &__icon{
-   height: px-to-rem(35);
-   cursor: pointer;
-   display: flex;
-   justify-content: flex-end;
-   width: 100%;
- }
+}
+.icon{
+
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-end;
+
+  .icon__wrapper{
+    height: px-to-rem(35);
+    width: px-to-rem(35);
+  }
 }
