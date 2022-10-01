@@ -1,12 +1,8 @@
-import React from 'react';
+import React from 'react'
 import styles from './Registration.module.scss'
 const Component: React.FC = () => {
-    return (
-        <div className={styles.registration}>
-            
-        </div>
-    );
-};
+  return <div className={styles.registration}></div>
+}
 const Registration = React.memo(Component)
 
-export { Registration };
+export { Registration }
