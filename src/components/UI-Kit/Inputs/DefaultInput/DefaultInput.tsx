@@ -15,6 +15,7 @@ const Component: React.FC<IDefaultInput> = ({
   classNameWrapper,
   isShow,
   disabled = false,
+  label,
 }) => {
   const [value, setValue] = useState<string>(modelValue ? modelValue[name] : '')
   const [typeInput, setTypeInput] = useState<InputTypes>(type)
@@ -33,7 +34,7 @@ const Component: React.FC<IDefaultInput> = ({
       )}
     >
       <label htmlFor={key} className={cx(styles.label, classNameLabel)}>
-        {name}
+        {label}
       </label>
       <input
         type={typeInput}

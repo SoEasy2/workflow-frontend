@@ -3,7 +3,7 @@
 .step{
   display: flex;
   flex-direction: column;
-  gap: px-to-rem(50);
+  gap: px-to-rem(30);
   &__top{
     display: flex;
     flex-direction: column;
@@ -53,4 +53,16 @@
       background-color: transparent;
     }
   }
+  &__image{
+    max-height: px-to-rem(787);
+    max-width: px-to-rem(647);
+  }
+  &__login{
+
+  }
+}
+.image{
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
 }
