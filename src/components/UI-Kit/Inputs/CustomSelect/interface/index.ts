@@ -1,8 +1,8 @@
-import { IOption } from '../components/Option/interface';
+import { IOption } from '../components/Option/interface'
 
-export interface ISelect{
-    options: IOption[];
-    value?: ISelect;
-    handleChange?: (value: ISelect) => void;
-    placeholder?: string;
+export interface ISelect {
+  options: IOption[]
+  value?: ISelect
+  handleChange?: (value: ISelect) => void
+  placeholder?: string
 }

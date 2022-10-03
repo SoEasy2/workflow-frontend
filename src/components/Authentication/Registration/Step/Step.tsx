@@ -12,8 +12,8 @@ const Component: React.FC<IStepProps> = ({ stepNumber }) => {
   const [step, setStep] = useState<IStep>(steps[0])
   useEffect(() => {
     const findStep = steps.find((item) => item.step === stepNumber)
-      console.log(findStep)
-      findStep && setStep(findStep)
+    console.log(findStep)
+    findStep && setStep(findStep)
   }, [stepNumber])
   return (
     <div className={styles.step}>
