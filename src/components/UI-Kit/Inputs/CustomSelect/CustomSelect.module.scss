@@ -1,0 +1,28 @@
+@import '../../../../sass/_abstract/_functions.scss';
+@import '../../../../sass/_abstract/_variables.scss';
+.select{
+  position: relative;
+  z-index: 10;
+  &__button{
+    width: 100%;
+    padding: px-to-rem(16) px-to-rem(20);
+    outline: none;
+    text-align: left;
+    background-color: transparent;
+    border: $global-border-default-input;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: px-to-rem(12);
+    font-family: $global-font-inter;
+    font-size: px-to-rem(16);
+    line-height: px-to-rem(24);
+    color: $color-text-not-focused;
+    transition: .3s;
+    cursor: pointer;
+    &_active{
+      border: $global-border-focus-input;
+      color: $color-text-primary;
+    }
+  }
+}

@@ -8,6 +8,7 @@ import { ModalLayout } from '../../../components/Authentication/ModalLayout';
 import { useSearchParams } from 'react-router-dom';
 import { StepEnum } from '../../../helpers/constants/registration/enums/step'
 import { Verification } from '../../../components/Authentication/Registration/Forms/Verification'
+import { Details } from '../../../components/Authentication/Registration/Forms/Details';
 
 
 const Component: React.FC = () => {
@@ -33,6 +34,8 @@ const Component: React.FC = () => {
                             return <Info />
                         case StepEnum.VERIFICATION:
                             return <Verification />
+                        case StepEnum.DETAILS:
+                            return <Details />
                         default:
                             return <Info />
                     }
