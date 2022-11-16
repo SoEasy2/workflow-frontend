@@ -6,10 +6,10 @@ import { MainLayout } from './components/Layouts/MainLayout/MainLayout'
 const App = () => {
   const navigate = useNavigate()
   useEffect(() => {
-    // navigate({
-    //     pathname: '/registration',
-    //     search: '?step=2'
-    // })
+    navigate({
+        pathname: '/registration',
+        search: '?step=1'
+    })
     console.log(navigate)
     addEventListener('resize', () => {
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment

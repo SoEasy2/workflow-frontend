@@ -10,6 +10,7 @@ export const infoInputs: IDefaultInput[] = [
     name: 'email',
     isShow: false,
     disabled: false,
+    required: true,
   },
   {
     type: InputTypes.TEXT,
@@ -19,6 +20,7 @@ export const infoInputs: IDefaultInput[] = [
     name: 'phone',
     isShow: false,
     disabled: false,
+    required: true,
   },
 ]
 export const detailsInputs: IDefaultInput[] = [

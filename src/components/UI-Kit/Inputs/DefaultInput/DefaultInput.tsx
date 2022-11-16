@@ -16,11 +16,14 @@ const Component: React.FC<IDefaultInput> = ({
   isShow,
   disabled = false,
   label,
+  onChange,
+  onKeyPress,
 }) => {
   const [value, setValue] = useState<string>(modelValue ? modelValue[name] : '')
   const [typeInput, setTypeInput] = useState<InputTypes>(type)
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value)
+    onChange && onChange(name, e.target.value);
   }
   const handleClickReset = () => {
     setValue('')
@@ -44,6 +47,7 @@ const Component: React.FC<IDefaultInput> = ({
         onChange={handleChange}
         className={cx(styles.input, classNameInput)}
         disabled={disabled}
+        onKeyPress={onKeyPress}
       />
       <div className={styles.helper}>
         {!disabled && value.length > 0 && type === InputTypes.TEXT && (

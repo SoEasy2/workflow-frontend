@@ -11,7 +11,9 @@ export interface IDefaultInput {
   key: string
   name: string
   modelValue?: any
-  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
+  onChange?: (key: string, value: any) => void
+  onKeyPress?: (e: React.KeyboardEvent<HTMLInputElement>) => void
   isShow?: boolean
   disabled?: boolean
+  required?: boolean
 }
