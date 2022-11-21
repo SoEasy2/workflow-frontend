@@ -23,7 +23,7 @@ const Component: React.FC<IDefaultInput> = ({
   const [typeInput, setTypeInput] = useState<InputTypes>(type)
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value)
-    onChange && onChange(name, e.target.value);
+    onChange && onChange(name, e.target.value)
   }
   const handleClickReset = () => {
     setValue('')

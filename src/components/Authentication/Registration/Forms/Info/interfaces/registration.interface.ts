@@ -1,4 +1,4 @@
 export interface RegistrationInterface {
-    phone: string;
-    email: string;
+  phone: string
+  email: string
 }

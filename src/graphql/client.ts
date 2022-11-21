@@ -10,6 +10,7 @@ const cache = new InMemoryCache();
 
 const link: unknown = createHttpLink({
     uri: 'http://localhost:4000/graphql',
+    credentials: 'same-origin',
 });
 
 function createApolloClient() {
@@ -20,6 +21,7 @@ function createApolloClient() {
             watchQuery: {
                 fetchPolicy: 'cache-first',
             },
+
         },
     });
 }

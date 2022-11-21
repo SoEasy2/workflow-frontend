@@ -7,8 +7,8 @@ const App = () => {
   const navigate = useNavigate()
   useEffect(() => {
     navigate({
-        pathname: '/registration',
-        search: '?step=1'
+      pathname: '/registration',
+      search: '?step=1',
     })
     console.log(navigate)
     addEventListener('resize', () => {
