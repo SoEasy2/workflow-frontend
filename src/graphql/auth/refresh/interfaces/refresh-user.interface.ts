@@ -1,4 +1,4 @@
-export interface IRefreshUser{
-    refreshToken: string,
-    accessToken: string
+export interface IRefreshUser {
+  refreshToken: string
+  accessToken: string
 }

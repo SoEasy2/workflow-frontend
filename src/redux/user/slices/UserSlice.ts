@@ -1,10 +1,10 @@
-import { createSlice } from '@reduxjs/toolkit';
-import { initialState } from '../defaultes/initialState';
+import { createSlice } from '@reduxjs/toolkit'
+import { initialState } from '../defaultes/initialState'
 
 export const userSlice = createSlice({
-    name: 'user',
-    initialState,
-    reducers: {}
+  name: 'user',
+  initialState,
+  reducers: {},
 })
 
-export default userSlice.reducer;
+export default userSlice.reducer

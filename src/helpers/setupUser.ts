@@ -1,5 +1,5 @@
 import { ITokens } from '../redux/user/interfaces/tokens.interface'
-import { CookieSetOptions } from 'universal-cookie';
+import { CookieSetOptions } from 'universal-cookie'
 
 export const setupUser = (
   tokens: ITokens,
@@ -11,7 +11,9 @@ export const setupUser = (
     localStorage.setItem('accessToken', accessToken)
   }
   if (refreshToken) {
-    setCookie('refresh_token', refreshToken, { expires: new Date(Date.now() + 1000 * 60 * 60 * 24 * 30) })
+    setCookie('refresh_token', refreshToken, {
+      expires: new Date(Date.now() + 1000 * 60 * 60 * 24 * 30),
+    })
   }
-  return cookies;
+  return cookies
 }

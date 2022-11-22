@@ -5,14 +5,14 @@ import { DefaultInput } from '../../../../UI-Kit/Inputs/DefaultInput'
 import { useMutation } from '@apollo/client'
 import { REGISTER_USER } from '../../../../../graphql/auth/registration/mutations'
 import { RegistrationInterface } from './interfaces'
-import { useCookies } from 'react-cookie';
-import { setupUser } from '../../../../../helpers/setupUser';
+import { useCookies } from 'react-cookie'
+import { setupUser } from '../../../../../helpers/setupUser'
 
 const Component: React.FC = () => {
   const [cookies, setCookie] = useCookies()
   const [handleRegister, { loading, error, data }] = useMutation(REGISTER_USER, {
     onCompleted: (data) => {
-      const { registerUser } = data;
+      const { registerUser } = data
       setupUser(registerUser.tokens, setCookie, cookies)
     },
   })

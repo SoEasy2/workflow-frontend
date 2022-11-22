@@ -1,1 +1,1 @@
-export const refreshOperation = 'refresh';
+export const refreshOperation = 'refresh'
