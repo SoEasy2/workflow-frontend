@@ -7,6 +7,14 @@ export const REFRESH_USER = gql`
         refreshToken
         accessToken
       }
+      user {
+        id
+        email
+        phone
+        stepRegistration
+        sendCodeDate
+        codeEmail
+      }
     }
   }
 `

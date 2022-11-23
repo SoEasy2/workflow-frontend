@@ -7,13 +7,20 @@ import { REGISTER_USER } from '../../../../../graphql/auth/registration/mutation
 import { RegistrationInterface } from './interfaces'
 import { useCookies } from 'react-cookie'
 import { setupUser } from '../../../../../helpers/setupUser'
+import { useAppDispatch } from '../../../../../hooks/redux'
+import { userSlice } from '../../../../../redux/user/slices/UserSlice'
 
 const Component: React.FC = () => {
-  const [cookies, setCookie] = useCookies()
+  const [, setCookie] = useCookies()
+  const dispatch = useAppDispatch()
+
+  const { userSet } = userSlice.actions
+
   const [handleRegister, { loading, error, data }] = useMutation(REGISTER_USER, {
-    onCompleted: (data) => {
+    onCompleted: async (data) => {
       const { registerUser } = data
-      setupUser(registerUser.tokens, setCookie, cookies)
+      setupUser(registerUser.tokens, setCookie)
+      await dispatch(userSet(registerUser.user))
     },
   })
 

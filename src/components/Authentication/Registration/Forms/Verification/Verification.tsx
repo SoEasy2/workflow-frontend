@@ -2,15 +2,32 @@ import React, { useEffect, useState } from 'react'
 import styles from './Verification.module.scss'
 import { Input } from './components/Input'
 import { Button } from '../../../Button'
+import { useMutation } from '@apollo/client'
+import { VERIFICATION_CODE } from '../../../../../graphql/auth/registration/mutations'
+import { userSlice } from '../../../../../redux/user/slices/UserSlice'
+import { useAppDispatch } from '../../../../../hooks/redux'
 
 const Component: React.FC = () => {
   const [code, setCode] = useState<Array<string | null>>([])
   const [seconds, setSeconds] = React.useState(30)
   const [timerActive, setTimerActive] = React.useState(false)
+
+  const dispatch = useAppDispatch()
+
   const setTimer = React.useCallback(() => {
     setTimerActive(true)
     setSeconds(30)
   }, [])
+
+  const { userUpdate } = userSlice.actions
+
+  const [handleVerification] = useMutation(VERIFICATION_CODE, {
+    onCompleted: async (data) => {
+      const { verificationUser } = data
+      dispatch(userUpdate({ stepRegistration: +verificationUser.stepRegistration }))
+    },
+  })
+
   const onPaste = React.useCallback(
     (e: React.ClipboardEvent<HTMLInputElement>) => {
       e.preventDefault()
@@ -28,6 +45,7 @@ const Component: React.FC = () => {
     },
     [code],
   )
+
   useEffect(() => {
     if (seconds > 0 && timerActive) {
       setTimeout(setSeconds, 1000, seconds - 1)
@@ -35,8 +53,8 @@ const Component: React.FC = () => {
       setTimerActive(false)
     }
   }, [seconds, timerActive])
+
   const keyDown = React.useCallback((e: React.KeyboardEvent<HTMLInputElement>, index: number) => {
-    console.log(e.key)
     if (e.key === 'Backspace' && index !== 0) {
       const inputs = document.querySelectorAll('input')
       if (e.currentTarget.value === '') {
@@ -47,6 +65,7 @@ const Component: React.FC = () => {
       return
     }
   }, [])
+
   const onChange = React.useCallback(
     (e: React.ChangeEvent<HTMLInputElement>, index: number) => {
       const value = e.target.value.split('')[0]
@@ -61,6 +80,18 @@ const Component: React.FC = () => {
     },
     [code],
   )
+
+  const handleClick = async () => {
+    if (!code.length) {
+      return
+    }
+    await handleVerification({
+      variables: {
+        emailCode: code.join(''),
+      },
+    })
+  }
+
   return (
     <>
       <div className={styles.formVerification__wrapper__title}>
@@ -114,7 +145,7 @@ const Component: React.FC = () => {
         </div>
         <div className={styles.formVerification__wrapper__button}>
           <Button
-            onClick={() => console.log('click')}
+            onClick={handleClick}
             text={'Continue'}
             disabled={Boolean(!code.length) || !code.every((i) => i)}
           />
@@ -129,8 +160,7 @@ const Component: React.FC = () => {
           </div>
         )}
         <div className={styles.formVerification__receive__text}>
-          {/* eslint-disable-next-line react/no-unescaped-entities */}
-          <span>Didn't receive an email?</span>
+          <span>Didn`t receive an email?</span>
           <button onClick={() => setTimer()}>Resend</button>
         </div>
       </div>

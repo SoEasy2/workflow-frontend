@@ -7,11 +7,21 @@ export const REGISTER_USER = gql`
         id
         email
         phone
+        stepRegistration
+        sendCodeDate
+        codeEmail
       }
       tokens {
         accessToken
         refreshToken
       }
+    }
+  }
+`
+export const VERIFICATION_CODE = gql`
+  mutation verification($emailCode: String!) {
+    verificationUser(emailCode: $emailCode) {
+      stepRegistration
     }
   }
 `
