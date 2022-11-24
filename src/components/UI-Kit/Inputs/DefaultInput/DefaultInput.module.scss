@@ -29,6 +29,10 @@
   border-radius: px-to-rem(12);
   background-color: $color-white;
 
+  &__error{
+    border-color: $color-no-valid-border;
+  }
+
   &:hover {
     background-color: $global-background-color;
   }

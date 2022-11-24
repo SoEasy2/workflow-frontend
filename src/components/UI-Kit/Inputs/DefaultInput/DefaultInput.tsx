@@ -2,9 +2,16 @@ import React, { useState } from 'react'
 import { IDefaultInput } from './interface'
 import cx from 'classnames'
 import styles from './DefaultInput.module.scss'
-import { HelperHideIcon, HelperRemoveIcon, HelperShowIcon } from '../../../../helpers/icons/helper'
+import {
+  HelperHideIcon,
+  HelperNoValidIcon,
+  HelperRemoveIcon,
+  HelperShowIcon,
+  HelperValidIcon
+} from '../../../../helpers/icons/helper'
 import { InputTypes } from '../../../../helpers/constants/enum'
 import PhoneInput from 'react-phone-number-input/input'
+import { isValidPhoneNumber } from 'react-phone-number-input'
 
 const Component: React.FC<IDefaultInput> = ({
   key,
@@ -20,15 +27,28 @@ const Component: React.FC<IDefaultInput> = ({
   onChange,
   onKeyPress,
 }) => {
-  const [value, setValue] = useState<string>(modelValue ? modelValue[name] : '')
-  const [typeInput, setTypeInput] = useState<InputTypes>(type)
+  const [value, setValue] = useState<string>(modelValue ? modelValue[name] : '');
+  const [typeInput, setTypeInput] = useState<InputTypes>(type);
+  const [isValid, setValid] = useState<null | boolean>(null);
+  const [isFocus, setFocus] = useState<boolean>(false);
   const handleChange = (value: string) => {
     setValue(value)
     onChange && onChange(name, value)
   }
+
   const handleClickReset = () => {
     setValue('')
   }
+
+  const handleBlur = () => {
+    setFocus(false);
+    switch (typeInput){
+      case InputTypes.PHONE: {
+        setValid(isValidPhoneNumber(value))
+      }
+    }
+  }
+
   return (
     <div
       className={cx(
@@ -50,6 +70,8 @@ const Component: React.FC<IDefaultInput> = ({
           className={cx(styles.input, classNameInput)}
           disabled={disabled}
           onKeyPress={onKeyPress}
+          onBlur={handleBlur}
+          onFocus={() => setFocus(true)}
         />
       ) : (
         <input
@@ -58,15 +80,21 @@ const Component: React.FC<IDefaultInput> = ({
           name={name}
           value={value}
           onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleChange(e.target.value)}
-          className={cx(styles.input, classNameInput)}
+          className={cx(
+              styles.input, classNameInput, !isFocus && isValid !== null && isValid === false && styles.input__error
+          )}
           disabled={disabled}
           onKeyPress={onKeyPress}
+          onBlur={handleBlur}
+          onFocus={() => setFocus(true)}
         />
       )}
       <div className={styles.helper}>
-        {!disabled &&
+        {
+          !disabled &&
           value &&
           value.length > 0 &&
+          isFocus &&
           (type === InputTypes.TEXT || type === InputTypes.PHONE) && (
             <div className={styles.helper__remove} onClick={handleClickReset}>
               <HelperRemoveIcon />
@@ -90,9 +118,19 @@ const Component: React.FC<IDefaultInput> = ({
             )}
           </div>
         )}
-        {/* <div className={styles.helper__valid}>
+        {
+          isValid !== null && !isFocus
+            &&
+            <div className={styles.helper__valid} >
+              {
+                isValid
+                    ?
                     <HelperValidIcon />
-                </div>*/}
+                    :
+                    <HelperNoValidIcon />
+              }
+            </div>
+        }
       </div>
     </div>
   )

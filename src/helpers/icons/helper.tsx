@@ -7,15 +7,32 @@ export const HelperRemoveIcon = () => (
   </svg>
 )
 export const HelperValidIcon = () => (
-  <svg width='12' height='9' viewBox='0 0 12 9' fill='none' xmlns='http://www.w3.org/2000/svg'>
-    <path
-      d='M10.25 1.68164L4.0833 7.568L1 4.62482'
-      stroke='#21A453'
-      strokeWidth='2'
-      strokeLinecap='round'
-      strokeLinejoin='round'
-    />
-  </svg>
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g clipPath="url(#clip0_158_12098)">
+            <path d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23Z" stroke="#9EE2B8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            <path d="M17.25 9.68164L11.0833 15.568L8 12.6248" stroke="#21A453" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </g>
+        <defs>
+            <clipPath id="clip0_158_12098">
+                <rect width="24" height="24" fill="white"/>
+            </clipPath>
+        </defs>
+    </svg>
+
+)
+export const HelperNoValidIcon = () => (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g clipPath="url(#clip0_158_12083)">
+            <path d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23Z" stroke="#ECACA5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            <path d="M12 7V12.3565" stroke="#D44333" strokeWidth="2.19753" strokeLinecap="round" strokeLinejoin="round"/>
+            <path d="M11.9997 18.1249C12.91 18.1249 13.6479 17.387 13.6479 16.4768C13.6479 15.5665 12.91 14.8286 11.9997 14.8286C11.0895 14.8286 10.3516 15.5665 10.3516 16.4768C10.3516 17.387 11.0895 18.1249 11.9997 18.1249Z" fill="#D44333"/>
+        </g>
+        <defs>
+            <clipPath id="clip0_158_12083">
+                <rect width="24" height="24" fill="white"/>
+            </clipPath>
+        </defs>
+    </svg>
 )
 export const HelperHideIcon = () => (
   <svg width='21' height='11' viewBox='0 0 21 11' fill='none' xmlns='http://www.w3.org/2000/svg'>
