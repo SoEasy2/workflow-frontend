@@ -4,6 +4,7 @@ import cx from 'classnames'
 import styles from './DefaultInput.module.scss'
 import { HelperHideIcon, HelperRemoveIcon, HelperShowIcon } from '../../../../helpers/icons/helper'
 import { InputTypes } from '../../../../helpers/constants/enum'
+import PhoneInput from 'react-phone-number-input/input';
 
 const Component: React.FC<IDefaultInput> = ({
   key,
@@ -21,9 +22,9 @@ const Component: React.FC<IDefaultInput> = ({
 }) => {
   const [value, setValue] = useState<string>(modelValue ? modelValue[name] : '')
   const [typeInput, setTypeInput] = useState<InputTypes>(type)
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setValue(e.target.value)
-    onChange && onChange(name, e.target.value)
+  const handleChange = (value: string) => {
+    setValue(value)
+    onChange && onChange(name, value)
   }
   const handleClickReset = () => {
     setValue('')
@@ -39,18 +40,31 @@ const Component: React.FC<IDefaultInput> = ({
       <label htmlFor={key} className={cx(styles.label, classNameLabel)}>
         {label}
       </label>
-      <input
-        type={typeInput}
-        id={key}
-        name={name}
-        value={value}
-        onChange={handleChange}
-        className={cx(styles.input, classNameInput)}
-        disabled={disabled}
-        onKeyPress={onKeyPress}
-      />
+      {
+        typeInput === InputTypes.PHONE
+          ? <PhoneInput
+                type={typeInput}
+                id={key}
+                name={name}
+                value={value}
+                onChange={handleChange}
+                className={cx(styles.input, classNameInput)}
+                disabled={disabled}
+                onKeyPress={onKeyPress}
+            />
+          : <input
+                type={typeInput}
+                id={key}
+                name={name}
+                value={value}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleChange(e.target.value)}
+                className={cx(styles.input, classNameInput)}
+                disabled={disabled}
+                onKeyPress={onKeyPress}
+            />
+      }
       <div className={styles.helper}>
-        {!disabled && value.length > 0 && type === InputTypes.TEXT && (
+        {!disabled && value && value.length > 0 && (type === InputTypes.TEXT || type === InputTypes.PHONE) && (
           <div className={styles.helper__remove} onClick={handleClickReset}>
             <HelperRemoveIcon />
           </div>

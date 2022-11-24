@@ -13,7 +13,7 @@ export const infoInputs: IDefaultInput[] = [
     required: true,
   },
   {
-    type: InputTypes.TEXT,
+    type: InputTypes.PHONE,
     placeholder: 'Phone number*',
     label: 'Phone number*',
     key: 'phone',
