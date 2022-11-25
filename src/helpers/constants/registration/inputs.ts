@@ -3,7 +3,7 @@ import { InputTypes } from '../enum'
 
 export const infoInputs: IDefaultInput[] = [
   {
-    type: InputTypes.TEXT,
+    type: InputTypes.EMAIL,
     placeholder: 'email',
     label: 'E-mail*',
     key: 'email',
