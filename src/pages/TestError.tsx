@@ -1,5 +1,5 @@
 const TestError = () => {
-  return <div>TEST ERROR</div>
-}
+  return <div>TEST ERROR</div>;
+};
 
-export { TestError }
+export { TestError };

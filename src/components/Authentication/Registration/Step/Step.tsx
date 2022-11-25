@@ -1,20 +1,20 @@
-import React, { useEffect, useState } from 'react'
-import styles from './Step.module.scss'
-import image from '../../../../assets/images/authenticate/step.png'
-import { IStep } from '../../../../helpers/constants/registration/types/steps'
-import { steps } from '../../../../helpers/constants'
-import { StepEnum } from '../../../../helpers/constants/registration/enums/step'
+import React, { useEffect, useState } from 'react';
+import styles from './Step.module.scss';
+import image from '../../../../assets/images/authenticate/step.png';
+import { IStep } from '../../../../helpers/constants/registration/types/steps';
+import { steps } from '../../../../helpers/constants';
+import { StepEnum } from '../../../../helpers/constants/registration/enums/step';
 
 interface IStepProps {
-  stepNumber: StepEnum
+  stepNumber: StepEnum;
 }
 const Component: React.FC<IStepProps> = ({ stepNumber }) => {
-  const [step, setStep] = useState<IStep>(steps[0])
+  const [step, setStep] = useState<IStep>(steps[0]);
   useEffect(() => {
-    const findStep = steps.find((item) => item.step === stepNumber)
-    console.log(findStep)
-    findStep && setStep(findStep)
-  }, [stepNumber])
+    const findStep = steps.find((item) => item.step === stepNumber);
+    console.log(findStep);
+    findStep && setStep(findStep);
+  }, [stepNumber]);
   return (
     <div className={styles.step}>
       <div className={styles.step__top}>
@@ -33,8 +33,8 @@ const Component: React.FC<IStepProps> = ({ stepNumber }) => {
         <img src={image} alt='' className={styles.image} />
       </div>
     </div>
-  )
-}
-const Step = React.memo(Component)
+  );
+};
+const Step = React.memo(Component);
 
-export { Step }
+export { Step };

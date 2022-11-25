@@ -1,1 +1,1 @@
-export * from './refresh-user.interface'
+export * from './refresh-user.interface';

@@ -1,6 +1,6 @@
-import { IRoute } from './types'
-import { Registration, TestError } from '../../pages'
-import { UiKit } from '../../pages/UI-KIT'
+import { IRoute } from './types';
+import { Registration, TestError } from '../../pages';
+import { UiKit } from '../../pages/UI-KIT';
 
 export const routes: IRoute[] = [
   {
@@ -15,4 +15,4 @@ export const routes: IRoute[] = [
     path: '/tools/ui-kit',
     component: <UiKit />,
   },
-]
+];

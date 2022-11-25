@@ -1,8 +1,8 @@
-import React from 'react'
-import styles from './Header.module.scss'
-import { LogoIcon } from '../../../helpers/icons'
-import { Button } from '../../UI-Kit/Button'
-import { ButtonTypes } from '../../../helpers/constants/enum'
+import React from 'react';
+import styles from './Header.module.scss';
+import { LogoIcon } from '../../../helpers/icons';
+import { Button } from '../../UI-Kit/Button';
+import { ButtonTypes } from '../../../helpers/constants/enum';
 
 const Component: React.FC = () => {
   return (
@@ -12,8 +12,8 @@ const Component: React.FC = () => {
         <Button type={ButtonTypes.ACTIVE} text={'Sign in'} className={styles.button} />
       </div>
     </header>
-  )
-}
-const Header = React.memo(Component)
+  );
+};
+const Header = React.memo(Component);
 
-export { Header }
+export { Header };

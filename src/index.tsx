@@ -1,19 +1,19 @@
-import ReactDOM from 'react-dom/client'
-import { App } from './App'
-import { BrowserRouter } from 'react-router-dom'
-import { ApolloProvider } from '@apollo/client'
-import { useApollo } from './graphql/client'
+import ReactDOM from 'react-dom/client';
+import { App } from './App';
+import { BrowserRouter } from 'react-router-dom';
+import { ApolloProvider } from '@apollo/client';
+import { useApollo } from './graphql/client';
 
-import './i18n'
-import './sass/_reset.scss'
-import * as serviceWorker from './serviceWorker'
-import './sass/_core.scss'
-import { Provider } from 'react-redux'
-import { setupStore } from './redux/store'
+import './i18n';
+import './sass/_reset.scss';
+import * as serviceWorker from './serviceWorker';
+import './sass/_core.scss';
+import { Provider } from 'react-redux';
+import { setupStore } from './redux/store';
 
-const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
-const client = useApollo()
-const store = setupStore()
+const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
+const client = useApollo();
+const store = setupStore();
 root.render(
   <BrowserRouter>
     <ApolloProvider client={client}>
@@ -22,6 +22,6 @@ root.render(
       </Provider>
     </ApolloProvider>
   </BrowserRouter>,
-)
+);
 
-serviceWorker.unregister()
+serviceWorker.unregister();

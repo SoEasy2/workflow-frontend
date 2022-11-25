@@ -1,2 +1,2 @@
-export * from './TestError'
-export * from './Authentication'
+export * from './TestError';
+export * from './Authentication';

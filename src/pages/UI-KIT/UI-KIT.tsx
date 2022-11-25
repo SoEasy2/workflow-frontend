@@ -1,7 +1,7 @@
-import styles from './UI-KIT.module.scss'
-import { Item } from '../../components/UI-Kit/Item'
-import { uiKitList } from '../../helpers/ui-kit'
-import { useId } from 'react'
+import styles from './UI-KIT.module.scss';
+import { Item } from '../../components/UI-Kit/Item';
+import { uiKitList } from '../../helpers/ui-kit';
+import { useId } from 'react';
 
 const UiKit = () => {
   return (
@@ -19,7 +19,7 @@ const UiKit = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export { UiKit }
+export { UiKit };

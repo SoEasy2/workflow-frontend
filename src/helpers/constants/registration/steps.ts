@@ -1,5 +1,5 @@
-import { StepEnum } from './enums/step'
-import { IStep } from './types/steps'
+import { StepEnum } from './enums/step';
+import { IStep } from './types/steps';
 
 export const steps: IStep[] = [
   {
@@ -14,4 +14,4 @@ export const steps: IStep[] = [
     text: 'Company details',
     step: StepEnum.DETAILS,
   },
-]
+];

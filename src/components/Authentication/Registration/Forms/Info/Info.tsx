@@ -1,38 +1,38 @@
-import React, { useId, useState } from 'react'
-import styles from './Info.module.scss'
-import { infoInputs } from '../../../../../helpers/constants/registration/inputs'
-import { DefaultInput } from '../../../../UI-Kit/Inputs/DefaultInput'
-import { useMutation } from '@apollo/client'
-import { REGISTER_USER } from '../../../../../graphql/auth/registration/mutations'
-import { useCookies } from 'react-cookie'
-import { setupUser } from '../../../../../helpers/setupUser'
-import { useAppDispatch } from '../../../../../hooks/redux'
-import { userSlice } from '../../../../../redux/user/slices/UserSlice'
-import { defaultInputs } from './default'
-import { IModelValue, IModelValueInput } from '../../../../UI-Kit/Inputs/DefaultInput/interface'
-import { checkValidValueInput } from '../../../../../helpers/constants/validate/checkValidValueInput'
-import { InputTypes } from '../../../../../helpers/constants/enum'
-import { validateModelValue } from '../../../../../helpers/constants/validate/validateModelValue'
+import React, { useId, useState } from 'react';
+import styles from './Info.module.scss';
+import { infoInputs } from '../../../../../helpers/constants/registration/inputs';
+import { DefaultInput } from '../../../../UI-Kit/Inputs/DefaultInput';
+import { useMutation } from '@apollo/client';
+import { REGISTER_USER } from '../../../../../graphql/auth/registration/mutations';
+import { useCookies } from 'react-cookie';
+import { setupUser } from '../../../../../helpers/setupUser';
+import { useAppDispatch } from '../../../../../hooks/redux';
+import { userSlice } from '../../../../../redux/user/slices/UserSlice';
+import { defaultInputs } from './default';
+import { IModelValue, IModelValueInput } from '../../../../UI-Kit/Inputs/DefaultInput/interface';
+import { checkValidValueInput } from '../../../../../helpers/constants/validate/checkValidValueInput';
+import { InputTypes } from '../../../../../helpers/constants/enum';
+import { validateModelValue } from '../../../../../helpers/constants/validate/validateModelValue';
 
 const Component: React.FC = () => {
-  const [, setCookie] = useCookies()
-  const dispatch = useAppDispatch()
+  const [, setCookie] = useCookies();
+  const dispatch = useAppDispatch();
 
-  const { userSet } = userSlice.actions
+  const { userSet } = userSlice.actions;
 
   const [handleRegister] = useMutation(REGISTER_USER, {
     onCompleted: async (data) => {
-      const { registerUser } = data
-      setupUser(registerUser.tokens, setCookie)
-      await dispatch(userSet(registerUser.user))
+      const { registerUser } = data;
+      setupUser(registerUser.tokens, setCookie);
+      await dispatch(userSet(registerUser.user));
     },
-  })
+  });
 
-  const [modelValue, setModelValue] = useState<IModelValue>(defaultInputs)
+  const [modelValue, setModelValue] = useState<IModelValue>(defaultInputs);
 
   const handleChangeInput = (name: string, modelValue: IModelValueInput) => {
-    setModelValue((prev) => ({ ...prev, [name]: { ...prev[name], ...modelValue } }))
-  }
+    setModelValue((prev) => ({ ...prev, [name]: { ...prev[name], ...modelValue } }));
+  };
 
   const handleBlur = (
     typeInput: InputTypes,
@@ -40,19 +40,19 @@ const Component: React.FC = () => {
     name: string,
     callback?: (data: boolean) => void,
   ) => {
-    const isValidInput = checkValidValueInput(typeInput, value)
+    const isValidInput = checkValidValueInput(typeInput, value);
     if (!isValidInput) {
-      setModelValue((prev) => ({ ...prev, [name]: { ...prev[name], error: { status: false } } } ) )
-      callback && callback(false)
-      return
+      setModelValue((prev) => ({ ...prev, [name]: { ...prev[name], error: { status: false } } }));
+      callback && callback(false);
+      return;
     }
-    setModelValue((prev) => ({ ...prev, [name]: { ...prev[name], error: { status: true } } } ) )
-    callback && callback(true)
-  }
+    setModelValue((prev) => ({ ...prev, [name]: { ...prev[name], error: { status: true } } }));
+    callback && callback(true);
+  };
 
   const handleSubmit = async () => {
-    const countError = validateModelValue(modelValue)
-    if (countError) return
+    const countError = validateModelValue(modelValue);
+    if (countError) return;
     await handleRegister({
       variables: {
         user: {
@@ -60,15 +60,15 @@ const Component: React.FC = () => {
           phone: modelValue.phone.value,
         },
       },
-    })
-    setModelValue(defaultInputs)
-  }
+    });
+    setModelValue(defaultInputs);
+  };
 
   const handleKey = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
-      handleSubmit()
+      handleSubmit();
     }
-  }
+  };
 
   return (
     <>
@@ -102,8 +102,8 @@ const Component: React.FC = () => {
         <button>Join your team</button>
       </div>
     </>
-  )
-}
-const Info = React.memo(Component)
+  );
+};
+const Info = React.memo(Component);
 
-export { Info }
+export { Info };

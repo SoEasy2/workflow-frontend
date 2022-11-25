@@ -1,5 +1,5 @@
-import { IOption } from '../../../components/UI-Kit/Inputs/CustomSelect/components/Option/interface'
-import { OptionEnum } from './enums/option'
+import { IOption } from '../../../components/UI-Kit/Inputs/CustomSelect/components/Option/interface';
+import { OptionEnum } from './enums/option';
 
 export const detailsOptions: IOption[] = [
   {
@@ -18,4 +18,4 @@ export const detailsOptions: IOption[] = [
     label: '50+',
     value: OptionEnum.FIFTY,
   },
-]
+];

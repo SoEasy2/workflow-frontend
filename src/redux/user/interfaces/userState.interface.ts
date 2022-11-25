@@ -1,5 +1,5 @@
-import { IUser } from './user.interface'
+import { IUser } from './user.interface';
 
 export interface IUserState {
-  user: IUser | null
+  user: IUser | null;
 }

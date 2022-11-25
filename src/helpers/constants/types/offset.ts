@@ -1,5 +1,5 @@
 export interface IOffset {
-  top: number
-  left: number
-  right: number
+  top: number;
+  left: number;
+  right: number;
 }

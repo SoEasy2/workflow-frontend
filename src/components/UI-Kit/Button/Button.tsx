@@ -1,8 +1,8 @@
-import React from 'react'
-import { ButtonTypes } from '../../../helpers/constants/enum'
-import cx from 'classnames'
-import styles from './Button.module.scss'
-import { IButtonProps } from './interface'
+import React from 'react';
+import { ButtonTypes } from '../../../helpers/constants/enum';
+import cx from 'classnames';
+import styles from './Button.module.scss';
+import { IButtonProps } from './interface';
 
 const Button: React.FC<IButtonProps> = ({ type, onClick, text, className }) => {
   return (
@@ -17,7 +17,7 @@ const Button: React.FC<IButtonProps> = ({ type, onClick, text, className }) => {
     >
       {text}
     </button>
-  )
-}
+  );
+};
 
-export { Button }
+export { Button };

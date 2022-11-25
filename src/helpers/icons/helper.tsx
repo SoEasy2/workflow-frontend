@@ -5,7 +5,7 @@ export const HelperRemoveIcon = () => (
       fill='#98A0AD'
     />
   </svg>
-)
+);
 export const HelperValidIcon = () => (
   <svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
     <g clipPath='url(#clip0_158_12098)'>
@@ -30,7 +30,7 @@ export const HelperValidIcon = () => (
       </clipPath>
     </defs>
   </svg>
-)
+);
 export const HelperNoValidIcon = () => (
   <svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
     <g clipPath='url(#clip0_158_12083)'>
@@ -59,7 +59,7 @@ export const HelperNoValidIcon = () => (
       </clipPath>
     </defs>
   </svg>
-)
+);
 export const HelperHideIcon = () => (
   <svg width='21' height='11' viewBox='0 0 21 11' fill='none' xmlns='http://www.w3.org/2000/svg'>
     <path
@@ -69,7 +69,7 @@ export const HelperHideIcon = () => (
       fill='#030235'
     />
   </svg>
-)
+);
 export const HelperShowIcon = () => (
   <svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
     <g clipPath='url(#clip0_222_16575)'>
@@ -92,14 +92,14 @@ export const HelperShowIcon = () => (
       </clipPath>
     </defs>
   </svg>
-)
+);
 export const HelperOpenSelectIcon = () => (
   <svg width='10' height='5' viewBox='0 0 10 5' fill='none' xmlns='http://www.w3.org/2000/svg'>
     <path fillRule='evenodd' clipRule='evenodd' d='M0 5L5 0L10 5L0 5Z' fill='#030235' />
   </svg>
-)
+);
 export const HelperHideSelectIcon = () => (
   <svg width='10' height='5' viewBox='0 0 10 5' fill='none' xmlns='http://www.w3.org/2000/svg'>
     <path fillRule='evenodd' clipRule='evenodd' d='M0 0L5 5L10 0H0Z' fill='#030235' />
   </svg>
-)
+);

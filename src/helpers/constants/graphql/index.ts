@@ -1,1 +1,1 @@
-export * from './operationName'
+export * from './operationName';

@@ -1,4 +1,4 @@
-import { useTransition } from 'react-spring'
+import { useTransition } from 'react-spring';
 
 export const tooltipTransition = (state: boolean) =>
   useTransition(state, {
@@ -14,4 +14,4 @@ export const tooltipTransition = (state: boolean) =>
       opacity: 0,
       transform: 'scale(0)',
     },
-  })
+  });

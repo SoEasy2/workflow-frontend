@@ -1,4 +1,4 @@
-import { gql } from '@apollo/client'
+import { gql } from '@apollo/client';
 
 export const REGISTER_USER = gql`
   mutation registerUser($user: RegisterUserInput!) {
@@ -17,11 +17,11 @@ export const REGISTER_USER = gql`
       }
     }
   }
-`
+`;
 export const VERIFICATION_CODE = gql`
   mutation verification($emailCode: String!) {
     verificationUser(emailCode: $emailCode) {
       stepRegistration
     }
   }
-`
+`;

@@ -1,11 +1,11 @@
-import React from 'react'
-import cx from 'classnames'
-import styles from './Button.module.scss'
+import React from 'react';
+import cx from 'classnames';
+import styles from './Button.module.scss';
 
 interface IButton {
-  onClick: () => void
-  text: string
-  disabled?: boolean
+  onClick: () => void;
+  text: string;
+  disabled?: boolean;
 }
 const Component: React.FC<IButton> = ({ onClick, text, disabled = false }) => {
   return (
@@ -16,8 +16,8 @@ const Component: React.FC<IButton> = ({ onClick, text, disabled = false }) => {
     >
       {text}
     </button>
-  )
-}
-const Button = React.memo(Component)
+  );
+};
+const Button = React.memo(Component);
 
-export { Button }
+export { Button };

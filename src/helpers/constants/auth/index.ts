@@ -1,4 +1,4 @@
-import { IInput } from './types'
+import { IInput } from './types';
 
 export const registerInputs: IInput[] = [
   {
@@ -9,4 +9,4 @@ export const registerInputs: IInput[] = [
     placeholder: 'E-mail',
     type: 'email',
   },
-]
+];

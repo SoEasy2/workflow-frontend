@@ -1,16 +1,16 @@
-import React, { useState } from 'react'
-import { IDefaultInput } from './interface'
-import cx from 'classnames'
-import styles from './DefaultInput.module.scss'
+import React, { useState } from 'react';
+import { IDefaultInput } from './interface';
+import cx from 'classnames';
+import styles from './DefaultInput.module.scss';
 import {
   HelperHideIcon,
   HelperNoValidIcon,
   HelperRemoveIcon,
   HelperShowIcon,
   HelperValidIcon,
-} from '../../../../helpers/icons/helper'
-import { InputTypes } from '../../../../helpers/constants/enum'
-import PhoneInput from 'react-phone-number-input/input'
+} from '../../../../helpers/icons/helper';
+import { InputTypes } from '../../../../helpers/constants/enum';
+import PhoneInput from 'react-phone-number-input/input';
 
 const Component: React.FC<IDefaultInput> = ({
   key,
@@ -27,29 +27,29 @@ const Component: React.FC<IDefaultInput> = ({
   onKeyPress,
   onBlur,
 }) => {
-  const [value, setValue] = useState<string>(modelValue ? modelValue[name].value : '')
-  const [typeInput, setTypeInput] = useState<InputTypes>(type)
+  const [value, setValue] = useState<string>(modelValue ? modelValue[name].value : '');
+  const [typeInput, setTypeInput] = useState<InputTypes>(type);
 
   const [isValid, setValid] = useState<null | boolean>(
     modelValue ? modelValue[name].error.status : null,
-  )
+  );
 
-  const [isFocus, setFocus] = useState<boolean>(false)
+  const [isFocus, setFocus] = useState<boolean>(false);
   const handleChange = (value: string) => {
-    setValue(value)
+    setValue(value);
     if (modelValue) {
-      onChange && onChange(name, { ...modelValue[name], value })
+      onChange && onChange(name, { ...modelValue[name], value });
     }
-  }
+  };
 
   const handleClickReset = () => {
-    setValue('')
-  }
+    setValue('');
+  };
 
   const handleBlur = () => {
-    setFocus(false)
-    onBlur && onBlur(typeInput, value, name, setValid)
-  }
+    setFocus(false);
+    onBlur && onBlur(typeInput, value, name, setValid);
+  };
 
   return (
     <div
@@ -132,9 +132,9 @@ const Component: React.FC<IDefaultInput> = ({
         )}
       </div>
     </div>
-  )
-}
+  );
+};
 
-const DefaultInput = React.memo(Component)
+const DefaultInput = React.memo(Component);
 
-export { DefaultInput }
+export { DefaultInput };

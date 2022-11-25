@@ -1,6 +1,6 @@
-import { IUIKit } from '../../../../../helpers/ui-kit/types'
-import { CustomSelect } from '../CustomSelect'
-import { IOption } from '../components/Option/interface'
+import { IUIKit } from '../../../../../helpers/ui-kit/types';
+import { CustomSelect } from '../CustomSelect';
+import { IOption } from '../components/Option/interface';
 
 const options: IOption[] = [
   {
@@ -11,7 +11,7 @@ const options: IOption[] = [
     label: 'option2',
     value: 2,
   },
-]
+];
 
 export const select: IUIKit[] = [
   {
@@ -23,7 +23,7 @@ export const select: IUIKit[] = [
     component: function () {
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
-      return <CustomSelect {...this.props} />
+      return <CustomSelect {...this.props} />;
     },
   },
-]
+];

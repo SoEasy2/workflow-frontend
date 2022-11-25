@@ -1,9 +1,9 @@
-import React, { useId } from 'react'
-import styles from './Details.module.scss'
-import { detailsInputs } from '../../../../../helpers/constants/registration/inputs'
-import { CustomSelect } from '../../../../UI-Kit/Inputs/CustomSelect'
-import { detailsOptions } from '../../../../../helpers/constants/registration/options'
-import { DefaultInput } from '../../../../UI-Kit/Inputs/DefaultInput'
+import React, { useId } from 'react';
+import styles from './Details.module.scss';
+import { detailsInputs } from '../../../../../helpers/constants/registration/inputs';
+import { CustomSelect } from '../../../../UI-Kit/Inputs/CustomSelect';
+import { detailsOptions } from '../../../../../helpers/constants/registration/options';
+import { DefaultInput } from '../../../../UI-Kit/Inputs/DefaultInput';
 
 const Component: React.FC = () => {
   return (
@@ -26,7 +26,7 @@ const Component: React.FC = () => {
                   isShow={i.isShow}
                 />
               </>
-            )
+            );
           }
           return (
             <DefaultInput
@@ -37,7 +37,7 @@ const Component: React.FC = () => {
               disabled={i.disabled}
               isShow={i.isShow}
             />
-          )
+          );
         })}
         <div className={styles.formDetails__wrapper__button}>
           <button className={styles.formDetails__button}>Get started</button>
@@ -48,8 +48,8 @@ const Component: React.FC = () => {
         <button>Join your team</button>
       </div>
     </>
-  )
-}
-const Details = React.memo(Component)
+  );
+};
+const Details = React.memo(Component);
 
-export { Details }
+export { Details };

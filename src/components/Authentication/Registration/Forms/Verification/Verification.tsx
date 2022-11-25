@@ -1,96 +1,96 @@
-import React, { useEffect, useState } from 'react'
-import styles from './Verification.module.scss'
-import { Input } from './components/Input'
-import { Button } from '../../../Button'
-import { useMutation } from '@apollo/client'
-import { VERIFICATION_CODE } from '../../../../../graphql/auth/registration/mutations'
-import { userSlice } from '../../../../../redux/user/slices/UserSlice'
-import { useAppDispatch } from '../../../../../hooks/redux'
+import React, { useEffect, useState } from 'react';
+import styles from './Verification.module.scss';
+import { Input } from './components/Input';
+import { Button } from '../../../Button';
+import { useMutation } from '@apollo/client';
+import { VERIFICATION_CODE } from '../../../../../graphql/auth/registration/mutations';
+import { userSlice } from '../../../../../redux/user/slices/UserSlice';
+import { useAppDispatch } from '../../../../../hooks/redux';
 
 const Component: React.FC = () => {
-  const [code, setCode] = useState<Array<string | null>>([])
-  const [seconds, setSeconds] = React.useState(30)
-  const [timerActive, setTimerActive] = React.useState(false)
+  const [code, setCode] = useState<Array<string | null>>([]);
+  const [seconds, setSeconds] = React.useState(30);
+  const [timerActive, setTimerActive] = React.useState(false);
 
-  const dispatch = useAppDispatch()
+  const dispatch = useAppDispatch();
 
   const setTimer = React.useCallback(() => {
-    setTimerActive(true)
-    setSeconds(30)
-  }, [])
+    setTimerActive(true);
+    setSeconds(30);
+  }, []);
 
-  const { userUpdate } = userSlice.actions
+  const { userUpdate } = userSlice.actions;
 
   const [handleVerification] = useMutation(VERIFICATION_CODE, {
     onCompleted: async (data) => {
-      const { verificationUser } = data
-      dispatch(userUpdate({ stepRegistration: +verificationUser.stepRegistration }))
+      const { verificationUser } = data;
+      dispatch(userUpdate({ stepRegistration: +verificationUser.stepRegistration }));
     },
-  })
+  });
 
   const onPaste = React.useCallback(
     (e: React.ClipboardEvent<HTMLInputElement>) => {
-      e.preventDefault()
-      const paste = e.clipboardData?.getData('text').trim()
+      e.preventDefault();
+      const paste = e.clipboardData?.getData('text').trim();
       if (paste) {
-        const newCode = paste.split('').slice(0, 4)
-        setCode(newCode)
-        const inputs = document.querySelectorAll('input')
+        const newCode = paste.split('').slice(0, 4);
+        setCode(newCode);
+        const inputs = document.querySelectorAll('input');
         if (newCode.length === 4) {
-          inputs[3].focus()
+          inputs[3].focus();
         } else {
-          inputs[newCode.length].focus()
+          inputs[newCode.length].focus();
         }
       }
     },
     [code],
-  )
+  );
 
   useEffect(() => {
     if (seconds > 0 && timerActive) {
-      setTimeout(setSeconds, 1000, seconds - 1)
+      setTimeout(setSeconds, 1000, seconds - 1);
     } else {
-      setTimerActive(false)
+      setTimerActive(false);
     }
-  }, [seconds, timerActive])
+  }, [seconds, timerActive]);
 
   const keyDown = React.useCallback((e: React.KeyboardEvent<HTMLInputElement>, index: number) => {
     if (e.key === 'Backspace' && index !== 0) {
-      const inputs = document.querySelectorAll('input')
+      const inputs = document.querySelectorAll('input');
       if (e.currentTarget.value === '') {
-        inputs[e.currentTarget.tabIndex - 1].focus()
+        inputs[e.currentTarget.tabIndex - 1].focus();
       }
     } else if (e.key === ' ') {
-      e.preventDefault()
-      return
+      e.preventDefault();
+      return;
     }
-  }, [])
+  }, []);
 
   const onChange = React.useCallback(
     (e: React.ChangeEvent<HTMLInputElement>, index: number) => {
-      const value = e.target.value.split('')[0]
-      const newCode = [...code]
-      newCode[index] = value
-      const inputs = document.querySelectorAll('input')
-      setCode(newCode)
+      const value = e.target.value.split('')[0];
+      const newCode = [...code];
+      newCode[index] = value;
+      const inputs = document.querySelectorAll('input');
+      setCode(newCode);
       if (index + 1 === code.length || !value) {
-        return
+        return;
       }
-      inputs[index + 1].focus()
+      inputs[index + 1].focus();
     },
     [code],
-  )
+  );
 
   const handleClick = async () => {
     if (!code.length) {
-      return
+      return;
     }
     await handleVerification({
       variables: {
         emailCode: code.join(''),
       },
-    })
-  }
+    });
+  };
 
   return (
     <>
@@ -165,8 +165,8 @@ const Component: React.FC = () => {
         </div>
       </div>
     </>
-  )
-}
-const Verification = React.memo(Component)
+  );
+};
+const Verification = React.memo(Component);
 
-export { Verification }
+export { Verification };

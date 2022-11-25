@@ -1,6 +1,6 @@
-import { StepEnum } from '../enums/step'
+import { StepEnum } from '../enums/step';
 
 export interface IStep {
-  text: string
-  step: StepEnum
+  text: string;
+  step: StepEnum;
 }

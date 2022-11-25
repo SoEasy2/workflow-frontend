@@ -1,5 +1,5 @@
-import { IDefaultInput } from '../../../components/UI-Kit/Inputs/DefaultInput/interface'
-import { InputTypes } from '../enum'
+import { IDefaultInput } from '../../../components/UI-Kit/Inputs/DefaultInput/interface';
+import { InputTypes } from '../enum';
 
 export const infoInputs: IDefaultInput[] = [
   {
@@ -22,7 +22,7 @@ export const infoInputs: IDefaultInput[] = [
     disabled: false,
     required: true,
   },
-]
+];
 export const detailsInputs: IDefaultInput[] = [
   {
     type: InputTypes.TEXT,
@@ -51,4 +51,4 @@ export const detailsInputs: IDefaultInput[] = [
     isShow: true,
     disabled: false,
   },
-]
+];
