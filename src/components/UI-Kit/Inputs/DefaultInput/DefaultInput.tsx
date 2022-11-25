@@ -30,13 +30,15 @@ const Component: React.FC<IDefaultInput> = ({
   const [value, setValue] = useState<string>(modelValue ? modelValue[name].value : '')
   const [typeInput, setTypeInput] = useState<InputTypes>(type)
 
-  const [isValid, setValid] = useState<null | boolean>(modelValue ? modelValue[name].error.status : null)
+  const [isValid, setValid] = useState<null | boolean>(
+    modelValue ? modelValue[name].error.status : null,
+  )
 
   const [isFocus, setFocus] = useState<boolean>(false)
   const handleChange = (value: string) => {
     setValue(value)
     if (modelValue) {
-      onChange && onChange(name, {...modelValue[name], value})
+      onChange && onChange(name, { ...modelValue[name], value })
     }
   }
 
@@ -68,9 +70,9 @@ const Component: React.FC<IDefaultInput> = ({
           value={value}
           onChange={handleChange}
           className={cx(
-              styles.input,
-              classNameInput,
-              !isFocus && isValid !== null && !isValid && styles.input__error,
+            styles.input,
+            classNameInput,
+            !isFocus && isValid !== null && !isValid && styles.input__error,
           )}
           disabled={disabled}
           onKeyPress={onKeyPress}
@@ -87,8 +89,7 @@ const Component: React.FC<IDefaultInput> = ({
           className={cx(
             styles.input,
             classNameInput,
-              !isFocus && isValid !== null && !isValid && styles.input__error,
-
+            !isFocus && isValid !== null && !isValid && styles.input__error,
           )}
           disabled={disabled}
           onKeyPress={onKeyPress}

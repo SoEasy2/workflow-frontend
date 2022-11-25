@@ -8,11 +8,11 @@ import { useCookies } from 'react-cookie'
 import { setupUser } from '../../../../../helpers/setupUser'
 import { useAppDispatch } from '../../../../../hooks/redux'
 import { userSlice } from '../../../../../redux/user/slices/UserSlice'
-import { defaultInputs } from './default';
-import { IModelValue, IModelValueInput } from '../../../../UI-Kit/Inputs/DefaultInput/interface';
-import { checkValidValueInput } from '../../../../../helpers/constants/validate/checkValidValueInput';
-import { InputTypes } from '../../../../../helpers/constants/enum';
-import { validateModelValue } from '../../../../../helpers/constants/validate/validateModelValue';
+import { defaultInputs } from './default'
+import { IModelValue, IModelValueInput } from '../../../../UI-Kit/Inputs/DefaultInput/interface'
+import { checkValidValueInput } from '../../../../../helpers/constants/validate/checkValidValueInput'
+import { InputTypes } from '../../../../../helpers/constants/enum'
+import { validateModelValue } from '../../../../../helpers/constants/validate/validateModelValue'
 
 const Component: React.FC = () => {
   const [, setCookie] = useCookies()
@@ -31,22 +31,27 @@ const Component: React.FC = () => {
   const [modelValue, setModelValue] = useState<IModelValue>(defaultInputs)
 
   const handleChangeInput = (name: string, modelValue: IModelValueInput) => {
-    setModelValue(prev => ({...prev, [name]: { ...prev[name], ...modelValue }}))
+    setModelValue((prev) => ({ ...prev, [name]: { ...prev[name], ...modelValue } }))
   }
 
-  const handleBlur = (typeInput: InputTypes, value: string, name: string, callback?: (data: boolean) => void) => {
-    const isValidInput = checkValidValueInput(typeInput, value);
+  const handleBlur = (
+    typeInput: InputTypes,
+    value: string,
+    name: string,
+    callback?: (data: boolean) => void,
+  ) => {
+    const isValidInput = checkValidValueInput(typeInput, value)
     if (!isValidInput) {
-      setModelValue(prev => ({...prev, [name]: { ...prev[name], error: { status: false } }}));
+      setModelValue((prev) => ({ ...prev, [name]: { ...prev[name], error: { status: false } } } ) )
       callback && callback(false)
       return
     }
-    setModelValue(prev => ({...prev, [name]: { ...prev[name], error: { status: true } }}));
-    callback && callback(true);
+    setModelValue((prev) => ({ ...prev, [name]: { ...prev[name], error: { status: true } } } ) )
+    callback && callback(true)
   }
 
   const handleSubmit = async () => {
-    const countError = validateModelValue(modelValue);
+    const countError = validateModelValue(modelValue)
     if (countError) return
     await handleRegister({
       variables: {
@@ -56,7 +61,7 @@ const Component: React.FC = () => {
         },
       },
     })
-    setModelValue(defaultInputs);
+    setModelValue(defaultInputs)
   }
 
   const handleKey = (e: React.KeyboardEvent<HTMLInputElement>) => {
@@ -64,8 +69,6 @@ const Component: React.FC = () => {
       handleSubmit()
     }
   }
-
-
 
   return (
     <>
@@ -86,7 +89,6 @@ const Component: React.FC = () => {
             onChange={handleChangeInput}
             onKeyPress={handleKey}
             onBlur={handleBlur}
-
           />
         ))}
         <div className={styles.formInfo__wrapper__button}>

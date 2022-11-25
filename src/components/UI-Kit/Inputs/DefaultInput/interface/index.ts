@@ -14,20 +14,25 @@ export interface IDefaultInput {
   label?: string
   key: string
   name: string
-  modelValue?: IModelValue,
+  modelValue?: IModelValue
   onChange?: (key: string, value: IModelValueInput) => void
   onKeyPress?: (e: React.KeyboardEvent<HTMLInputElement>) => void
   isShow?: boolean
   disabled?: boolean
   required?: boolean
-  onBlur?: (typeInput: InputTypes, value: string, name: string, callback?: (data: boolean) => void) => void
+  onBlur?: (
+    typeInput: InputTypes,
+    value: string,
+    name: string,
+    callback?: (data: boolean) => void,
+  ) => void
 }
 
 export interface IModelValueInput {
-  value: string;
-  required: boolean;
+  value: string
+  required: boolean
   error: {
-    status: null | boolean;
+    status: null | boolean
     text?: string
   }
 }
