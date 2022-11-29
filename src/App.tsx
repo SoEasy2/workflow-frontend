@@ -1,7 +1,7 @@
 import { Route, Routes, useNavigate } from 'react-router';
 import { routes } from './helpers/constants';
 import { useEffect, useId } from 'react';
-import { MainLayout } from './components/Layouts/MainLayout/MainLayout';
+import { MainLayout } from './components/Desktop/Layouts/MainLayout/MainLayout';
 import { useAppDispatch, useAppSelector } from './hooks/redux';
 import { useMutation } from '@apollo/client';
 import { setupUser } from './helpers/setupUser';
@@ -48,7 +48,8 @@ const App = () => {
   useEffect(() => {
     navigate({
       pathname: '/registration',
-      search: `?step=${user ? user.stepRegistration : 1}`,
+      // search: `?step=${user ? user.stepRegistration : 1}`,
+      search: `?step=${3}`
     });
     console.log(navigate);
   }, [user]);

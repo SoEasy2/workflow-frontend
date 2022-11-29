@@ -1,4 +1,4 @@
-import { IModelValue } from '../../../components/UI-Kit/Inputs/DefaultInput/interface';
+import { IModelValue } from '../../../components/Desktop/UI-Kit/Inputs/DefaultInput/interface';
 
 export const validateModelValue = (modelValue: IModelValue): number => {
   let countError = 0;

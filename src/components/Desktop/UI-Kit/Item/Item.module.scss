@@ -1,0 +1,28 @@
+@import "../../../../sass/_abstract/variables";
+.item{
+  padding: px-to-rem(20);
+  border: px-to-rem(1) solid $global-border-color;
+  display: flex;
+  border-radius: px-to-rem(5);
+  text-align: center;
+  font-weight: 600;
+  gap: px-to-rem(10);
+  flex-direction: column;
+  &__title{
+
+  }
+ &__component{
+
+ }
+}
+.icon{
+
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-end;
+
+  .icon__wrapper{
+    height: px-to-rem(35);
+    width: px-to-rem(35);
+  }
+}

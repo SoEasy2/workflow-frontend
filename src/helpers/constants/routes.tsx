@@ -1,6 +1,6 @@
 import { IRoute } from './types';
-import { Registration, TestError } from '../../pages';
-import { UiKit } from '../../pages/UI-KIT';
+import { Registration, TestError } from '../../pages/Desktop';
+import { UiKit } from '../../pages/Desktop/UI-KIT';
 
 export const routes: IRoute[] = [
   {

@@ -1,4 +1,4 @@
-import { IOption } from '../../../components/UI-Kit/Inputs/CustomSelect/components/Option/interface';
+import { IOption } from '../../../components/Desktop/UI-Kit/Inputs/CustomSelect/components/Option/interface';
 import { OptionEnum } from './enums/option';
 
 export const detailsOptions: IOption[] = [
