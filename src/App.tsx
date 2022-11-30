@@ -49,7 +49,7 @@ const App = () => {
     navigate({
       pathname: '/registration',
       // search: `?step=${user ? user.stepRegistration : 1}`,
-      search: `?step=${3}`
+      search: `?step=${3}`,
     });
     console.log(navigate);
   }, [user]);

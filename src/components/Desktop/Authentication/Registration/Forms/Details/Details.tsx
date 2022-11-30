@@ -1,18 +1,18 @@
 import React, { useId, useState } from 'react';
 import styles from './Details.module.scss';
 import { detailsInputs } from '../../../../../../helpers/constants/registration/inputs';
-import { CustomSelect } from '../../../../UI-Kit/Inputs/CustomSelect';
+import { CustomSelect } from '../../../../../UI-Kit/Inputs/CustomSelect';
 import { detailsOptions } from '../../../../../../helpers/constants/registration/options';
-import { DefaultInput } from '../../../../UI-Kit/Inputs/DefaultInput';
+import { DefaultInput } from '../../../../../UI-Kit/Inputs/DefaultInput';
 import { defaultInputs } from './default';
-import { IModelValue, IModelValueInput } from '../../../../UI-Kit/Inputs/DefaultInput/interface';
+import { IModelValue, IModelValueInput } from '../../../../../UI-Kit/Inputs/DefaultInput/interface';
 
 const Component: React.FC = () => {
-    const [modelValue, setModelValue] = useState<IModelValue>(defaultInputs);
+  const [modelValue, setModelValue] = useState<IModelValue>(defaultInputs);
 
-    const handleChangeInput = (name: string, modelValue: IModelValueInput) => {
-        setModelValue((prev) => ({ ...prev, [name]: { ...prev[name], ...modelValue } }));
-    };
+  const handleChangeInput = (name: string, modelValue: IModelValueInput) => {
+    setModelValue((prev) => ({ ...prev, [name]: { ...prev[name], ...modelValue } }));
+  };
 
   return (
     <>
@@ -23,14 +23,14 @@ const Component: React.FC = () => {
         {detailsInputs.map((input, index) => {
           if (index === 2) {
             return (
-                <CustomSelect
-                    options={detailsOptions}
-                    key={useId()}
-                    placeholder={input.placeholder}
-                    name={input.name}
-                    modelValue={modelValue}
-                    onChange={handleChangeInput}
-                />
+              <CustomSelect
+                options={detailsOptions}
+                key={useId()}
+                placeholder={input.placeholder}
+                name={input.name}
+                modelValue={modelValue}
+                onChange={handleChangeInput}
+              />
             );
           }
           return (
@@ -47,12 +47,17 @@ const Component: React.FC = () => {
           );
         })}
         <div className={styles.formDetails__wrapper__button}>
-          <button className={styles.formDetails__button} onClick={() => console.log('CLICK', modelValue)}>Registration</button>
+          <button
+            className={styles.formDetails__button}
+            onClick={() => console.log('CLICK', modelValue)}
+          >
+            Registration
+          </button>
         </div>
       </div>
       <div className={styles.formDetails__agreement}>
-          <span>By continuing, you’re agreeing to our</span>
-          <span>Customer Terms of Service, and Privacy Policy.</span>
+        <span>By continuing, you’re agreeing to our</span>
+        <span>Customer Terms of Service, and Privacy Policy.</span>
       </div>
     </>
   );

@@ -1,5 +1,5 @@
 import styles from './UI-KIT.module.scss';
-import { Item } from '../../../components/Desktop/UI-Kit/Item';
+import { Item } from '../../../components/UI-Kit/Item';
 import { uiKitList } from '../../../helpers/ui-kit';
 import { useId } from 'react';
 

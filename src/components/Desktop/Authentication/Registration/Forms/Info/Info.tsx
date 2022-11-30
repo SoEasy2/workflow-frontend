@@ -1,7 +1,7 @@
 import React, { useId, useState } from 'react';
 import styles from './Info.module.scss';
 import { infoInputs } from '../../../../../../helpers/constants/registration/inputs';
-import { DefaultInput } from '../../../../UI-Kit/Inputs/DefaultInput';
+import { DefaultInput } from '../../../../../UI-Kit/Inputs/DefaultInput';
 import { useMutation } from '@apollo/client';
 import { REGISTER_USER } from '../../../../../../graphql/auth/registration/mutations';
 import { useCookies } from 'react-cookie';
@@ -9,7 +9,7 @@ import { setupUser } from '../../../../../../helpers/setupUser';
 import { useAppDispatch } from '../../../../../../hooks/redux';
 import { userSlice } from '../../../../../../redux/user/slices/UserSlice';
 import { defaultInputs } from './default';
-import { IModelValue, IModelValueInput } from '../../../../UI-Kit/Inputs/DefaultInput/interface';
+import { IModelValue, IModelValueInput } from '../../../../../UI-Kit/Inputs/DefaultInput/interface';
 import { checkValidValueInput } from '../../../../../../helpers/constants/validate/checkValidValueInput';
 import { InputTypes } from '../../../../../../helpers/constants/enum';
 import { validateModelValue } from '../../../../../../helpers/constants/validate/validateModelValue';

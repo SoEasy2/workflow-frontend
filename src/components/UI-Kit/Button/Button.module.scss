@@ -1,0 +1,27 @@
+@import "../../../sass/_abstract/functions";
+@import "../../../sass/_abstract/variables";
+.button{
+  padding: px-to-rem(8) px-to-rem(16);
+  background-color: $color-white;
+  outline: none;
+  cursor: pointer;
+  border-radius: px-to-rem(8);
+  color: $color-text-primary;
+  font-family: $global-font-inter;
+  font-weight: 500;
+  font-size: px-to-rem(16);
+  line-height: px-to-rem(24);
+  border: px-to-rem(1) solid transparent;
+  transition: all .3s;
+}
+.active{
+  border-color: $global-border-color;
+  &:hover{
+    background-color: $hover-background-color;
+    border-color: transparent;
+    color: $color-text-primary;
+  }
+}
+.disabled{
+  color: $color-white;
+}

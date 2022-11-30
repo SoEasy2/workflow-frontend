@@ -1,4 +1,4 @@
-import { IModelValue } from '../../../../../UI-Kit/Inputs/DefaultInput/interface';
+import { IModelValue } from '../../../../../../UI-Kit/Inputs/DefaultInput/interface';
 
 export const defaultInputs: IModelValue = {
   phone: {

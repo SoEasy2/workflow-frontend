@@ -18,16 +18,12 @@ const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 const client = useApollo();
 const store = setupStore();
 
-console.log('isMobile', isMobile)
+console.log('isMobile', isMobile);
 
 root.render(
   <BrowserRouter>
     <ApolloProvider client={client}>
-      <Provider store={store}>
-          {
-              isMobile ? <AppMobile /> : <App />
-          }
-      </Provider>
+      <Provider store={store}>{isMobile ? <AppMobile /> : <App />}</Provider>
     </ApolloProvider>
   </BrowserRouter>,
 );

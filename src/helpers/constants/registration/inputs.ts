@@ -1,4 +1,4 @@
-import { IDefaultInput } from '../../../components/Desktop/UI-Kit/Inputs/DefaultInput/interface';
+import { IDefaultInput } from '../../../components/UI-Kit/Inputs/DefaultInput/interface';
 import { InputTypes } from '../enum';
 
 export const infoInputs: IDefaultInput[] = [
@@ -42,7 +42,7 @@ export const detailsInputs: IDefaultInput[] = [
     name: 'companyName',
     isShow: false,
     disabled: false,
-    prefix: 'company'
+    prefix: 'company',
   },
   {
     type: InputTypes.TEXT,
@@ -52,7 +52,7 @@ export const detailsInputs: IDefaultInput[] = [
     name: 'amountOfEmployees',
     isShow: false,
     disabled: false,
-    prefix: 'company'
+    prefix: 'company',
   },
   {
     type: InputTypes.PASSWORD,

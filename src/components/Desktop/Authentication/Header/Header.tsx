@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Header.module.scss';
 import { LogoIcon } from '../../../../helpers/icons';
-import { Button } from '../../UI-Kit/Button';
+import { Button } from '../../../UI-Kit/Button';
 import { ButtonTypes } from '../../../../helpers/constants/enum';
 
 const Component: React.FC = () => {

@@ -1,8 +1,10 @@
 import { IRoute } from './types';
 import { Registration, TestError } from '../../pages/Desktop';
 import { UiKit } from '../../pages/Desktop/UI-KIT';
+import { isMobile } from 'react-device-detect';
+import { RegistrationMobile } from '../../pages/Mobile/AuthenticationMobile/RegistrationMobile';
 
-export const routes: IRoute[] = [
+const desktopRoutes: IRoute[] = [
   {
     path: '/registration',
     component: <Registration />,
@@ -16,3 +18,14 @@ export const routes: IRoute[] = [
     component: <UiKit />,
   },
 ];
+
+const mobileRoutes: IRoute[] = [
+  {
+    path: '/registration',
+    component: <RegistrationMobile />
+  }
+]
+
+const routes = isMobile ? mobileRoutes : desktopRoutes;
+
+export { routes }
