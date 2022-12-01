@@ -27,6 +27,7 @@ export interface IDefaultInput {
     callback?: (data: boolean) => void,
   ) => void;
   prefix?: string;
+  classNamePositionHelper?: string
 }
 
 export interface IModelValueInput {

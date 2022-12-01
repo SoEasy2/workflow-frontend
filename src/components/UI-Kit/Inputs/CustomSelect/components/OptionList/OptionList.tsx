@@ -11,7 +11,11 @@ const Component: React.FC<IOptionList> = ({ options, handleClick }) => {
   return (
     <div className={styles.optionList}>
       {options.map((option) => (
-        <Option option={option} key={useId()} handleClick={handleClick} />
+        <Option
+          option={option}
+          key={useId()}
+          handleClick={handleClick}
+        />
       ))}
     </div>
   );

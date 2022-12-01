@@ -26,6 +26,7 @@ const Component: React.FC<IDefaultInput> = ({
   onChange,
   onKeyPress,
   onBlur,
+  classNamePositionHelper
 }) => {
   const [value, setValue] = useState<string>(modelValue ? modelValue[name].value : '');
   const [typeInput, setTypeInput] = useState<InputTypes>(type);
@@ -49,6 +50,7 @@ const Component: React.FC<IDefaultInput> = ({
     onBlur && onBlur(typeInput, value, name, setValid);
   };
 
+
   return (
     <div
       className={cx(
@@ -57,7 +59,10 @@ const Component: React.FC<IDefaultInput> = ({
         classNameWrapper,
       )}
     >
-      <label htmlFor={key} className={cx(styles.label, classNameLabel)}>
+      <label
+        htmlFor={key}
+        className={cx(styles.label, classNameLabel)}
+      >
         {label}
       </label>
       {typeInput === InputTypes.PHONE ? (
@@ -101,7 +106,10 @@ const Component: React.FC<IDefaultInput> = ({
           value.length > 0 &&
           isFocus &&
           (type === InputTypes.TEXT || type === InputTypes.PHONE) && (
-            <div className={styles.helper__remove} onClick={handleClickReset}>
+            <div
+              className={styles.helper__remove}
+              onClick={handleClickReset}
+            >
               <HelperRemoveIcon />
             </div>
           )}
@@ -124,7 +132,7 @@ const Component: React.FC<IDefaultInput> = ({
           </div>
         )}
         {isValid !== null && !isFocus && (
-          <div className={styles.helper__valid}>
+          <div className={cx (styles.helper__valid, classNamePositionHelper)}>
             {isValid ? <HelperValidIcon /> : <HelperNoValidIcon />}
           </div>
         )}

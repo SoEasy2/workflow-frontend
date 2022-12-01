@@ -13,7 +13,12 @@ const UiKit = () => {
         <div className={styles.ui_kit_wrapper}>
           <div className={styles.ui_kit_items}>
             {uiKitList.map((i) => (
-              <Item name={i.name} component={i.component()} key={useId()} props={i.props} />
+              <Item
+                name={i.name}
+                component={i.component()}
+                key={useId()}
+                props={i.props}
+              />
             ))}
           </div>
         </div>

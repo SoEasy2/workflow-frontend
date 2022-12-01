@@ -4,6 +4,6 @@ export interface IUTooltip {
   text?: string;
   className?: string;
   timeout?: number;
-  style?: any;
+  style?: object;
   offset: IOffset;
 }

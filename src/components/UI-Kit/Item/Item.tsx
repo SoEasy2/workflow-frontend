@@ -9,7 +9,7 @@ import { IOffset } from '../../../helpers/constants/types/offset';
 interface IItemProps {
   name: string;
   component: React.ReactNode;
-  props: any;
+  props: object;
 }
 const Component: React.FC<IItemProps> = ({ name, component }) => {
   const [isMove, setMove] = useState<boolean>(false);
@@ -37,12 +37,27 @@ const Component: React.FC<IItemProps> = ({ name, component }) => {
       </div>
       <div className={'item__component'}>{component}</div>
       <div className={'item__popup'}>
-        <div className={styles.icon} onClick={() => setMove((prev) => !prev)}>
-          <div className={styles.icon__wrapper} ref={ref} onMouseEnter={handleMouseEnter}>
+        <div
+          className={styles.icon}
+          onClick={() => setMove((prev) => !prev)}
+        >
+          <div
+            className={styles.icon__wrapper}
+            ref={ref}
+            onMouseEnter={handleMouseEnter}
+          >
             <HelpIcon />
           </div>
         </div>
-        {transition((style, item) => item && <UTooltip style={style} offset={offset} />)}
+        {transition(
+          (style, item) =>
+            item && (
+              <UTooltip
+                style={style}
+                offset={offset}
+              />
+            ),
+        )}
       </div>
     </div>
   );

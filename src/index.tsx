@@ -14,6 +14,8 @@ import { Provider } from 'react-redux';
 import { setupStore } from './redux/store';
 import { AppMobile } from './App.mobile';
 
+console.log('is Mobile', isMobile);
+
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 const client = useApollo();
 const store = setupStore();

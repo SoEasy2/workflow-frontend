@@ -1,5 +1,11 @@
 export const HelperRemoveIcon = () => (
-  <svg width='10' height='10' viewBox='0 0 10 10' fill='none' xmlns='http://www.w3.org/2000/svg'>
+  <svg
+    width='10'
+    height='10'
+    viewBox='0 0 10 10'
+    fill='none'
+    xmlns='http://www.w3.org/2000/svg'
+  >
     <path
       d='M4.99896 3.9635L8.62896 0.333496L9.6659 1.37043L6.0359 5.00043L9.6659 8.63043L8.62896 9.66736L4.99896 6.03736L1.36896 9.66736L0.332031 8.63043L3.96203 5.00043L0.332031 1.37043L1.36896 0.333496L4.99896 3.9635Z'
       fill='#98A0AD'
@@ -7,7 +13,13 @@ export const HelperRemoveIcon = () => (
   </svg>
 );
 export const HelperValidIcon = () => (
-  <svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
+  <svg
+    width='24'
+    height='24'
+    viewBox='0 0 24 24'
+    fill='none'
+    xmlns='http://www.w3.org/2000/svg'
+  >
     <g clipPath='url(#clip0_158_12098)'>
       <path
         d='M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23Z'
@@ -26,13 +38,23 @@ export const HelperValidIcon = () => (
     </g>
     <defs>
       <clipPath id='clip0_158_12098'>
-        <rect width='24' height='24' fill='white' />
+        <rect
+          width='24'
+          height='24'
+          fill='white'
+        />
       </clipPath>
     </defs>
   </svg>
 );
 export const HelperNoValidIcon = () => (
-  <svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
+  <svg
+    width='24'
+    height='24'
+    viewBox='0 0 24 24'
+    fill='none'
+    xmlns='http://www.w3.org/2000/svg'
+  >
     <g clipPath='url(#clip0_158_12083)'>
       <path
         d='M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23Z'
@@ -55,13 +77,23 @@ export const HelperNoValidIcon = () => (
     </g>
     <defs>
       <clipPath id='clip0_158_12083'>
-        <rect width='24' height='24' fill='white' />
+        <rect
+          width='24'
+          height='24'
+          fill='white'
+        />
       </clipPath>
     </defs>
   </svg>
 );
 export const HelperHideIcon = () => (
-  <svg width='21' height='11' viewBox='0 0 21 11' fill='none' xmlns='http://www.w3.org/2000/svg'>
+  <svg
+    width='21'
+    height='11'
+    viewBox='0 0 21 11'
+    fill='none'
+    xmlns='http://www.w3.org/2000/svg'
+  >
     <path
       fillRule='evenodd'
       clipRule='evenodd'
@@ -71,7 +103,13 @@ export const HelperHideIcon = () => (
   </svg>
 );
 export const HelperShowIcon = () => (
-  <svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
+  <svg
+    width='24'
+    height='24'
+    viewBox='0 0 24 24'
+    fill='none'
+    xmlns='http://www.w3.org/2000/svg'
+  >
     <g clipPath='url(#clip0_222_16575)'>
       <path
         fillRule='evenodd'
@@ -88,18 +126,44 @@ export const HelperShowIcon = () => (
     </g>
     <defs>
       <clipPath id='clip0_222_16575'>
-        <rect width='24' height='24' fill='white' />
+        <rect
+          width='24'
+          height='24'
+          fill='white'
+        />
       </clipPath>
     </defs>
   </svg>
 );
 export const HelperOpenSelectIcon = () => (
-  <svg width='10' height='5' viewBox='0 0 10 5' fill='none' xmlns='http://www.w3.org/2000/svg'>
-    <path fillRule='evenodd' clipRule='evenodd' d='M0 5L5 0L10 5L0 5Z' fill='#030235' />
+  <svg
+    width='10'
+    height='5'
+    viewBox='0 0 10 5'
+    fill='none'
+    xmlns='http://www.w3.org/2000/svg'
+  >
+    <path
+      fillRule='evenodd'
+      clipRule='evenodd'
+      d='M0 5L5 0L10 5L0 5Z'
+      fill='#030235'
+    />
   </svg>
 );
 export const HelperHideSelectIcon = () => (
-  <svg width='10' height='5' viewBox='0 0 10 5' fill='none' xmlns='http://www.w3.org/2000/svg'>
-    <path fillRule='evenodd' clipRule='evenodd' d='M0 0L5 5L10 0H0Z' fill='#030235' />
+  <svg
+    width='10'
+    height='5'
+    viewBox='0 0 10 5'
+    fill='none'
+    xmlns='http://www.w3.org/2000/svg'
+  >
+    <path
+      fillRule='evenodd'
+      clipRule='evenodd'
+      d='M0 0L5 5L10 0H0Z'
+      fill='#030235'
+    />
   </svg>
 );

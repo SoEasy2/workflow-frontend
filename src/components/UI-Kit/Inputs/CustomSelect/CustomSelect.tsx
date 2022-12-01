@@ -38,7 +38,10 @@ const Component: React.FC<ISelect> = ({ options, placeholder, modelValue, name, 
   }, []);
 
   return (
-    <div className={styles.select} ref={rootEl}>
+    <div
+      className={styles.select}
+      ref={rootEl}
+    >
       <button
         onClick={() => setOpen((prev) => !prev)}
         className={cx(styles.select__button, open && styles.select__button_active)}
@@ -46,7 +49,12 @@ const Component: React.FC<ISelect> = ({ options, placeholder, modelValue, name, 
         <span>{value ? value.label : placeholder}</span>
         {open ? <HelperOpenSelectIcon /> : <HelperHideSelectIcon />}
       </button>
-      {open && <OptionList options={options} handleClick={handleClick} />}
+      {open && (
+        <OptionList
+          options={options}
+          handleClick={handleClick}
+        />
+      )}
     </div>
   );
 };

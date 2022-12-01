@@ -5,6 +5,7 @@
   text-align: left; //in props
   gap: px-to-rem(8);
   position: relative;
+  width: 100%;
   &_disabled{
     opacity: 0.5;
   }

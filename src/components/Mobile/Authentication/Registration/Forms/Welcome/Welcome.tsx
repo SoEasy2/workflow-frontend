@@ -17,11 +17,23 @@ const Component: React.FC = () => {
           <Slider slides={slides} />
         </div>
         <div className={styles.welcome__buttons}>
-          <Button type={ButtonTypes.ACTIVE} text={'Registration'} className={styles.welcome__button_registration} />
-          <Button type={ButtonTypes.ACTIVE} text={'Sign In'} className={styles.welcome__button_signIn} />
+          <Button
+            type={ButtonTypes.ACTIVE}
+            text={'Registration'}
+            className={styles.welcome__button_registration}
+          />
+          <Button
+            type={ButtonTypes.ACTIVE}
+            text={'Sign In'}
+            className={styles.welcome__button_signIn}
+          />
           <div className={styles.welcome__join}>
             <div>You have code?</div>
-            <Button type={ButtonTypes.ACTIVE} className={styles.welcome__button_join} text={'Join your team'} />
+            <Button
+              type={ButtonTypes.ACTIVE}
+              className={styles.welcome__button_join}
+              text={'Join your team'}
+            />
           </div>
         </div>
       </div>

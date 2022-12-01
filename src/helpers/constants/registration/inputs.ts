@@ -1,7 +1,8 @@
 import { IDefaultInput } from '../../../components/UI-Kit/Inputs/DefaultInput/interface';
 import { InputTypes } from '../enum';
+import { isMobile } from 'react-device-detect';
 
-export const infoInputs: IDefaultInput[] = [
+export const infoInputsDesktop: IDefaultInput[] = [
   {
     type: InputTypes.EMAIL,
     placeholder: 'email',
@@ -23,6 +24,34 @@ export const infoInputs: IDefaultInput[] = [
     required: true,
   },
 ];
+
+const infoInputsMobile: IDefaultInput[] = [
+  {
+    type: InputTypes.EMAIL,
+    placeholder: 'Use work e-mail',
+    label: 'Work e-mail*',
+    key: 'email',
+    name: 'email',
+    isShow: false,
+    disabled: false,
+    required: true,
+  },
+  {
+    type: InputTypes.PHONE,
+    placeholder: 'Phone number*',
+    label: 'Phone number*',
+    key: 'phone',
+    name: 'phone',
+    isShow: false,
+    disabled: false,
+    required: true,
+  },
+];
+
+const infoInputs = isMobile ? infoInputsMobile : infoInputsDesktop;
+
+export { infoInputs }
+
 export const detailsInputs: IDefaultInput[] = [
   {
     type: InputTypes.TEXT,
