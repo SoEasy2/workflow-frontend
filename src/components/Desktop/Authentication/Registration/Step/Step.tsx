@@ -30,7 +30,11 @@ const Component: React.FC<IStepProps> = ({ stepNumber }) => {
         <button className={styles.step__login__button}>Sign in</button>
       </div>
       <div className={styles.step__image}>
-        <img src={image} alt='' className={styles.image} />
+        <img
+          src={image}
+          alt=''
+          className={styles.image}
+        />
       </div>
     </div>
   );

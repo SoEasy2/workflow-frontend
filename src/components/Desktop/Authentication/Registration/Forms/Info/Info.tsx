@@ -92,7 +92,10 @@ const Component: React.FC = () => {
           />
         ))}
         <div className={styles.formInfo__wrapper__button}>
-          <button className={styles.formInfo__button} onClick={handleSubmit}>
+          <button
+            className={styles.formInfo__button}
+            onClick={handleSubmit}
+          >
             Get started
           </button>
         </div>

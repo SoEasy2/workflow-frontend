@@ -20,6 +20,6 @@ const Component: React.FC<IButtonProps> = ({ type, onClick, text, className }) =
   );
 };
 
-const Button = React.memo(Component)
+const Button = React.memo(Component);
 
 export { Button };

@@ -9,7 +9,11 @@ const Component: React.FC = () => {
     <header className={styles.header}>
       <div className={styles.header__wrapper}>
         <LogoIcon />
-        <Button type={ButtonTypes.ACTIVE} text={'Sign in'} className={styles.button} />
+        <Button
+          type={ButtonTypes.ACTIVE}
+          text={'Sign in'}
+          className={styles.button}
+        />
       </div>
     </header>
   );

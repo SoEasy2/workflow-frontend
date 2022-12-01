@@ -17,14 +17,14 @@ export const tooltipTransition = (state: boolean) =>
   });
 
 export const previewMobileTransition = (state: boolean) =>
-    useTransition(state, {
-        from: {
-            opacity: 1
-        },
-        enter: {
-            opacity: 1
-        },
-        leave: {
-            opacity: 0
-        }
-    })
+  useTransition(state, {
+    from: {
+      opacity: 1,
+    },
+    enter: {
+      opacity: 1,
+    },
+    leave: {
+      opacity: 0,
+    },
+  });

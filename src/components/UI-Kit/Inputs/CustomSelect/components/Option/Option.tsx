@@ -4,7 +4,10 @@ import styles from './Option.module.scss';
 
 const Component: React.FC<IOptionProps> = ({ option, handleClick }) => {
   return (
-    <button className={styles.option} onClick={() => handleClick(option)}>
+    <button
+      className={styles.option}
+      onClick={() => handleClick(option)}
+    >
       {option.label}
     </button>
   );

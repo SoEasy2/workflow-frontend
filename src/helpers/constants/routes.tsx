@@ -22,10 +22,10 @@ const desktopRoutes: IRoute[] = [
 const mobileRoutes: IRoute[] = [
   {
     path: '/registration',
-    component: <RegistrationMobile />
-  }
-]
+    component: <RegistrationMobile />,
+  },
+];
 
 const routes = isMobile ? mobileRoutes : desktopRoutes;
 
-export { routes }
+export { routes };

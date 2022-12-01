@@ -1,5 +1,5 @@
 export interface IPreview {
-    className?: string;
-    timeout?: number;
-    style?: any;
+  className?: string;
+  timeout?: number;
+  style?: any;
 }

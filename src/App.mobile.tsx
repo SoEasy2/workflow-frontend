@@ -43,18 +43,23 @@ const AppMobile = () => {
   }, []);
 
   useEffect(() => {
-    !isPreview && navigate({
-      pathname: '/registration',
-      // search: `?step=${user ? user.stepRegistration : 1}`,
-      search: `?step=${3}`,
-    });
+    !isPreview &&
+      navigate({
+        pathname: '/registration',
+        // search: `?step=${user ? user.stepRegistration : 1}`,
+        search: `?step=${3}`,
+      });
   }, [user, isPreview]);
   return (
     <MainLayout>
-      { transition((style, item) => item && <Preview style={style} />) }
+      {transition((style, item) => item && <Preview style={style} />)}
       <Routes>
         {routes.map((route) => (
-          <Route key={useId()} path={route.path} element={route.component} />
+          <Route
+            key={useId()}
+            path={route.path}
+            element={route.component}
+          />
         ))}
       </Routes>
     </MainLayout>
