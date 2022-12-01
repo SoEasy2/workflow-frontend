@@ -50,7 +50,7 @@ const infoInputsMobile: IDefaultInput[] = [
 
 const infoInputs = isMobile ? infoInputsMobile : infoInputsDesktop;
 
-export { infoInputs }
+export { infoInputs };
 
 export const detailsInputs: IDefaultInput[] = [
   {

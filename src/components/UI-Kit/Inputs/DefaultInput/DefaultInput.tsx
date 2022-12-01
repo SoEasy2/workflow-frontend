@@ -26,7 +26,7 @@ const Component: React.FC<IDefaultInput> = ({
   onChange,
   onKeyPress,
   onBlur,
-  classNamePositionHelper
+  classNamePositionHelper,
 }) => {
   const [value, setValue] = useState<string>(modelValue ? modelValue[name].value : '');
   const [typeInput, setTypeInput] = useState<InputTypes>(type);
@@ -49,7 +49,6 @@ const Component: React.FC<IDefaultInput> = ({
     setFocus(false);
     onBlur && onBlur(typeInput, value, name, setValid);
   };
-
 
   return (
     <div
@@ -132,7 +131,7 @@ const Component: React.FC<IDefaultInput> = ({
           </div>
         )}
         {isValid !== null && !isFocus && (
-          <div className={cx (styles.helper__valid, classNamePositionHelper)}>
+          <div className={cx(styles.helper__valid, classNamePositionHelper)}>
             {isValid ? <HelperValidIcon /> : <HelperNoValidIcon />}
           </div>
         )}

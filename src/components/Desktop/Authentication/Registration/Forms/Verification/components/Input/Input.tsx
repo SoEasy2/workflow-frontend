@@ -9,9 +9,17 @@ interface IInput {
   onChange: (e: React.ChangeEvent<HTMLInputElement>, index: number) => void;
   onPaste?: (e: React.ClipboardEvent<HTMLInputElement>) => void;
   keyDown: (e: React.KeyboardEvent<HTMLInputElement>, index: number) => void;
-  className?: string
+  className?: string;
 }
-const Component: React.FC<IInput> = ({ id, value, onChange, index, onPaste, keyDown, className }) => {
+const Component: React.FC<IInput> = ({
+  id,
+  value,
+  onChange,
+  index,
+  onPaste,
+  keyDown,
+  className,
+}) => {
   return (
     <>
       <input
