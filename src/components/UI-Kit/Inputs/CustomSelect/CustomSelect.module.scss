@@ -3,6 +3,14 @@
 .select{
   position: relative;
   z-index: 10;
+  .label{
+    font-family: $global-font-inter;
+    color: $color-label;
+    font-weight: 500;
+    line-height: 24px;
+    font-size: px-to-rem(15);
+    margin-bottom: px-to-rem(5);
+  }
   &__button{
     width: 100%;
     padding: px-to-rem(16) px-to-rem(20);

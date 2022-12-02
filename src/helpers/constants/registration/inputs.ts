@@ -2,7 +2,7 @@ import { IDefaultInput } from '../../../components/UI-Kit/Inputs/DefaultInput/in
 import { InputTypes } from '../enum';
 import { isMobile } from 'react-device-detect';
 
-export const infoInputsDesktop: IDefaultInput[] = [
+const infoInputsDesktop: IDefaultInput[] = [
   {
     type: InputTypes.EMAIL,
     placeholder: 'email',
@@ -52,7 +52,7 @@ const infoInputs = isMobile ? infoInputsMobile : infoInputsDesktop;
 
 export { infoInputs };
 
-export const detailsInputs: IDefaultInput[] = [
+export const detailsInputsDesktop: IDefaultInput[] = [
   {
     type: InputTypes.TEXT,
     placeholder: 'Text',
@@ -94,3 +94,50 @@ export const detailsInputs: IDefaultInput[] = [
     prefix: 'user',
   },
 ];
+
+export const detailsInputsMobile: IDefaultInput[] = [
+  {
+    type: InputTypes.TEXT,
+    placeholder: 'Text',
+    label: 'Full name*',
+    key: 'fullName',
+    name: 'fullName',
+    isShow: false,
+    disabled: false,
+    prefix: 'user',
+  },
+  {
+    type: InputTypes.TEXT,
+    placeholder: 'Text',
+    label: 'Company name*',
+    key: 'companyName',
+    name: 'companyName',
+    isShow: false,
+    disabled: false,
+    prefix: 'company',
+  },
+  {
+    type: InputTypes.TEXT,
+    placeholder: 'Choose',
+    label: 'Amount of employees',
+    key: 'amountOfEmployees',
+    name: 'amountOfEmployees',
+    isShow: false,
+    disabled: false,
+    prefix: 'company',
+  },
+  {
+    type: InputTypes.PASSWORD,
+    placeholder: 'Create password',
+    label: 'Password*',
+    key: 'password',
+    name: 'password',
+    isShow: true,
+    disabled: false,
+    prefix: 'user',
+  },
+];
+
+const detailsInputs = isMobile ? detailsInputsMobile : detailsInputsDesktop;
+
+export { detailsInputs }

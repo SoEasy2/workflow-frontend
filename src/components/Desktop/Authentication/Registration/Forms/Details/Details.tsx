@@ -30,6 +30,7 @@ const Component: React.FC = () => {
                 name={input.name}
                 modelValue={modelValue}
                 onChange={handleChangeInput}
+                label={'Amount employees'}
               />
             );
           }

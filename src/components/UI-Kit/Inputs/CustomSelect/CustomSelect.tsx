@@ -12,8 +12,10 @@ interface ISelect {
   onChange?: (key: string, value: IModelValueInput) => void;
   modelValue?: IModelValue;
   name: string;
+  classNameButton?: string;
+  label?: string
 }
-const Component: React.FC<ISelect> = ({ options, placeholder, modelValue, name, onChange }) => {
+const Component: React.FC<ISelect> = ({ options, placeholder, modelValue, name, onChange, classNameButton, label }) => {
   const [open, setOpen] = useState<boolean>(false);
   const [value, setValue] = useState<IOption | null>(null);
   const handleClick = (option: IOption) => {
@@ -42,9 +44,12 @@ const Component: React.FC<ISelect> = ({ options, placeholder, modelValue, name, 
       className={styles.select}
       ref={rootEl}
     >
+      <div className={styles.label}>
+        { label }
+      </div>
       <button
         onClick={() => setOpen((prev) => !prev)}
-        className={cx(styles.select__button, open && styles.select__button_active)}
+        className={cx(styles.select__button, open && styles.select__button_active, classNameButton)}
       >
         <span>{value ? value.label : placeholder}</span>
         {open ? <HelperOpenSelectIcon /> : <HelperHideSelectIcon />}

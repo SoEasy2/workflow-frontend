@@ -28,6 +28,8 @@ export interface IDefaultInput {
   ) => void;
   prefix?: string;
   classNamePositionHelper?: string;
+  classNamePositionShowPass?: string;
+  classNamePositionReset?: string;
 }
 
 export interface IModelValueInput {

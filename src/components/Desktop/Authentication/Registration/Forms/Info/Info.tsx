@@ -1,4 +1,4 @@
-import React, { useId, useState } from 'react';
+import React, { useEffect, useId, useState } from 'react';
 import styles from './Info.module.scss';
 import { infoInputs } from '../../../../../../helpers/constants/registration/inputs';
 import { DefaultInput } from '../../../../../UI-Kit/Inputs/DefaultInput';
@@ -13,6 +13,7 @@ import { IModelValue, IModelValueInput } from '../../../../../UI-Kit/Inputs/Defa
 import { checkValidValueInput } from '../../../../../../helpers/constants/validate/checkValidValueInput';
 import { InputTypes } from '../../../../../../helpers/constants/enum';
 import { validateModelValue } from '../../../../../../helpers/constants/validate/validateModelValue';
+import { Loader } from '../../../../../UI-Kit/Loader/Loader';
 
 const Component: React.FC = () => {
   const [, setCookie] = useCookies();
@@ -20,13 +21,19 @@ const Component: React.FC = () => {
 
   const { userSet } = userSlice.actions;
 
-  const [handleRegister] = useMutation(REGISTER_USER, {
+  const [handleRegister, { loading, error }] = useMutation(REGISTER_USER, {
     onCompleted: async (data) => {
       const { registerUser } = data;
       setupUser(registerUser.tokens, setCookie);
       await dispatch(userSet(registerUser.user));
     },
+    errorPolicy: 'all'
   });
+
+  useEffect(() => {
+    console.log('LOADING', loading);
+    console.log('ERROR', error)
+  }, [loading, error])
 
   const [modelValue, setModelValue] = useState<IModelValue>(defaultInputs);
 
@@ -72,6 +79,8 @@ const Component: React.FC = () => {
 
   return (
     <>
+      { loading }
+      { loading &&  <Loader isPortal={true} /> }
       <div className={styles.formInfo__wrapper__title}>
         <h4 className={styles.formInfo__title}>Welcome</h4>
         <div className={styles.formInfo__description}>

@@ -4,14 +4,16 @@ import { RegistrationLayout } from '../../../../components/Mobile/Authentication
 import { Welcome } from '../../../../components/Mobile/Authentication/Registration/Forms/Welcome';
 import { Info } from '../../../../components/Mobile/Authentication/Registration/Forms/Info/Info';
 import { Verification } from '../../../../components/Mobile/Authentication/Registration/Forms/Verification/Verification';
+import { Details } from '../../../../components/Mobile/Authentication/Registration/Forms/Details';
 
 const Component: React.FC = () => {
   console.log(Welcome);
   console.log(Info);
+    console.log(Verification)
   return (
     <div className={styles.registration__mobile}>
       <RegistrationLayout>
-        <Verification />
+        <Details />
       </RegistrationLayout>
     </div>
   );

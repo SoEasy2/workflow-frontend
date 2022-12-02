@@ -27,6 +27,8 @@ const Component: React.FC<IDefaultInput> = ({
   onKeyPress,
   onBlur,
   classNamePositionHelper,
+  classNamePositionShowPass,
+  classNamePositionReset
 }) => {
   const [value, setValue] = useState<string>(modelValue ? modelValue[name].value : '');
   const [typeInput, setTypeInput] = useState<InputTypes>(type);
@@ -99,14 +101,14 @@ const Component: React.FC<IDefaultInput> = ({
           onFocus={() => setFocus(true)}
         />
       )}
-      <div className={styles.helper}>
+      <div className={cx(styles.helper, classNamePositionReset)}>
         {!disabled &&
           value &&
           value.length > 0 &&
           isFocus &&
           (type === InputTypes.TEXT || type === InputTypes.PHONE) && (
             <div
-              className={styles.helper__remove}
+              className={cx(styles.helper__remove)}
               onClick={handleClickReset}
             >
               <HelperRemoveIcon />
@@ -114,7 +116,7 @@ const Component: React.FC<IDefaultInput> = ({
           )}
         {!disabled && isShow && (
           <div
-            className={styles.helper__showIcon}
+            className={cx(styles.helper__showIcon, classNamePositionShowPass)}
             onClick={() =>
               setTypeInput((prev) =>
                 prev === InputTypes.TEXT ? InputTypes.PASSWORD : InputTypes.TEXT,

@@ -1,7 +1,6 @@
 import { onError } from '@apollo/client/link/error';
 import { useApollo } from '../client';
 import { REFRESH_USER } from '../auth/refresh/mutations';
-import { returnTokenDependingOnOperation } from '../../helpers/graphql';
 import { Observable } from 'rxjs';
 import { setupUser } from '../../helpers/setupUser';
 import { ITokens } from '../../redux/user/interfaces/tokens.interface';
@@ -9,19 +8,15 @@ import { Cookies } from 'react-cookie';
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-export default onError(async ({ graphQLErrors, networkError, operation, forward }) => {
-  console.log('graphQLErrors', graphQLErrors);
-  // const [cookies, setCookie] = useCookies();
-  // console.log('cookies', cookies);
-  // console.log('setCookie', setCookie);
+export default onError( ({ graphQLErrors, networkError, operation, forward }) => {
   const client = useApollo();
-  console.log('client', client);
-  returnTokenDependingOnOperation(operation);
   if (graphQLErrors) {
+    console.log('graphQLErrors', graphQLErrors);
     for (const err of graphQLErrors) {
       switch (err.extensions?.code) {
         case 'UNAUTHENTICATED': {
-          const test = new Observable((observer) => {
+          console.log('inCase')
+          return  new Observable((observer) => {
             client
               .mutate({ mutation: REFRESH_USER })
               .then((refreshResponse) => {
@@ -49,7 +44,6 @@ export default onError(async ({ graphQLErrors, networkError, operation, forward 
                   error: observer.error.bind(observer),
                   complete: observer.complete.bind(observer),
                 };
-                console.log('SUBSCRIBER');
                 // Retry last failed request
                 forward(operation).subscribe(subscriber);
               })
@@ -57,8 +51,7 @@ export default onError(async ({ graphQLErrors, networkError, operation, forward 
                 // No refresh or client token available, we force user to login
                 observer.error(error);
               });
-          });
-          return await test.toPromise();
+          }).toPromise();
           // const oldHeaders = operation.getContext().headers
           // const response = await client.mutate({ mutation: REFRESH_USER })
           // const {
