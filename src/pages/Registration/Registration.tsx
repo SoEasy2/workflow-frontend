@@ -1,9 +1,5 @@
 const Registration = () => {
-    return (
-        <div >
-            asd
-        </div>
-    );
-};
+  return <div>asdasd</div>
+}
 
-export { Registration };
+export { Registration }

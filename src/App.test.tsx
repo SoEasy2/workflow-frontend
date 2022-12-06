@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react'
-import { TestError } from './pages';
+import { TestError } from './pages'
 
 test('renders learn react link', () => {
   render(<TestError />)
