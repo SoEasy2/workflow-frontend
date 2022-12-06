@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { IDefaultInput } from './interface';
 import cx from 'classnames';
 import styles from './DefaultInput.module.scss';
@@ -13,7 +13,6 @@ import { InputTypes } from '../../../../helpers/constants/enum';
 import PhoneInput from 'react-phone-number-input/input';
 
 const Component: React.FC<IDefaultInput> = ({
-  key,
   name,
   modelValue,
   type = InputTypes.TEXT,
@@ -28,19 +27,27 @@ const Component: React.FC<IDefaultInput> = ({
   onBlur,
   classNamePositionHelper,
   classNamePositionShowPass,
-  classNamePositionReset
+  classNamePositionReset,
+  onFocus,
 }) => {
-  const [value, setValue] = useState<string>(modelValue ? modelValue[name].value : '');
+  const [value, setValue] = useState<string>( '');
   const [typeInput, setTypeInput] = useState<InputTypes>(type);
 
-  const [isValid, setValid] = useState<null | boolean>(
-    modelValue ? modelValue[name].error.status : null,
-  );
+  const [isValid, setValid] = useState<null | boolean>(null);
+
+  useEffect(() => {
+    if (modelValue) {
+      setValid(modelValue[name].error.status);
+      setValue(modelValue[name].value);
+    }
+
+  }, [modelValue])
 
   const [isFocus, setFocus] = useState<boolean>(false);
   const handleChange = (value: string) => {
     setValue(value);
     modelValue && onChange && onChange(name, { ...modelValue[name], value });
+
   };
 
   const handleClickReset = () => {
@@ -48,7 +55,7 @@ const Component: React.FC<IDefaultInput> = ({
   };
 
   const handleBlur = () => {
-    setFocus(false);
+    onFocus ? onFocus(setFocus, false) : setFocus(false);
     onBlur && onBlur(typeInput, value, name, setValid);
   };
 
@@ -61,7 +68,7 @@ const Component: React.FC<IDefaultInput> = ({
       )}
     >
       <label
-        htmlFor={key}
+        htmlFor={name}
         className={cx(styles.label, classNameLabel)}
       >
         {label}
@@ -69,7 +76,7 @@ const Component: React.FC<IDefaultInput> = ({
       {typeInput === InputTypes.PHONE ? (
         <PhoneInput
           type={typeInput}
-          id={key}
+          id={name}
           name={name}
           value={value}
           onChange={handleChange}
@@ -81,12 +88,12 @@ const Component: React.FC<IDefaultInput> = ({
           disabled={disabled}
           onKeyPress={onKeyPress}
           onBlur={handleBlur}
-          onFocus={() => setFocus(true)}
+          onFocus={() => onFocus ? onFocus(setFocus, true) : setFocus(true)}
         />
       ) : (
         <input
           type={typeInput}
-          id={key}
+          id={name}
           name={name}
           value={value}
           onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleChange(e.target.value)}
@@ -98,7 +105,7 @@ const Component: React.FC<IDefaultInput> = ({
           disabled={disabled}
           onKeyPress={onKeyPress}
           onBlur={handleBlur}
-          onFocus={() => setFocus(true)}
+          onFocus={() => onFocus ? onFocus(setFocus, true) : setFocus(true)}
         />
       )}
       <div className={cx(styles.helper, classNamePositionReset)}>
@@ -123,13 +130,15 @@ const Component: React.FC<IDefaultInput> = ({
               )
             }
           >
-            {typeInput === InputTypes.TEXT ? (
+            {
+              typeInput === InputTypes.TEXT ? (
               <HelperShowIcon />
             ) : (
               <div className={styles.helper__hideIcon_top}>
                 <HelperHideIcon />
               </div>
-            )}
+            )
+            }
           </div>
         )}
         {isValid !== null && !isFocus && (

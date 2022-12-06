@@ -12,7 +12,7 @@ const link: unknown = createHttpLink({
   credentials: 'same-origin',
 });
 
-console.log('errorLink,', errorLink,)
+console.log('errorLink,', errorLink);
 
 function createApolloClient() {
   return new ApolloClient({
@@ -23,7 +23,6 @@ function createApolloClient() {
         fetchPolicy: 'cache-first',
       },
     },
-
   });
 }
 

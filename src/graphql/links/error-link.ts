@@ -8,15 +8,15 @@ import { Cookies } from 'react-cookie';
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-export default onError( ({ graphQLErrors, networkError, operation, forward }) => {
+export default onError(({ graphQLErrors, networkError, operation, forward }) => {
   const client = useApollo();
   if (graphQLErrors) {
     console.log('graphQLErrors', graphQLErrors);
     for (const err of graphQLErrors) {
       switch (err.extensions?.code) {
         case 'UNAUTHENTICATED': {
-          console.log('inCase')
-          return  new Observable((observer) => {
+          console.log('inCase');
+          return new Observable((observer) => {
             client
               .mutate({ mutation: REFRESH_USER })
               .then((refreshResponse) => {

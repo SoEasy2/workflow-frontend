@@ -9,7 +9,7 @@ import { Details } from '../../../../components/Mobile/Authentication/Registrati
 const Component: React.FC = () => {
   console.log(Welcome);
   console.log(Info);
-    console.log(Verification)
+  console.log(Verification);
   return (
     <div className={styles.registration__mobile}>
       <RegistrationLayout>

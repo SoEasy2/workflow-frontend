@@ -1,28 +1,28 @@
 import { IModelValue } from '../../../../../../UI-Kit/Inputs/DefaultInput/interface';
 
 export const defaultInputs: IModelValue = {
-    fullName: {
-        value: '',
-        required: true,
-        error: {
-            status: null,
-        },
-        prefix: 'user',
+  fullName: {
+    value: '',
+    required: true,
+    error: {
+      status: null,
     },
-    companyName: {
-        value: '',
-        required: true,
-        error: {
-            status: null,
-        },
-        prefix: 'company',
+    prefix: 'user',
+  },
+  companyName: {
+    value: '',
+    required: true,
+    error: {
+      status: null,
     },
-    password: {
-        value: '',
-        required: true,
-        error: {
-            status: null,
-        },
-        prefix: 'user',
+    prefix: 'company',
+  },
+  password: {
+    value: '',
+    required: true,
+    error: {
+      status: null,
     },
+    prefix: 'user',
+  },
 };

@@ -140,4 +140,4 @@ export const detailsInputsMobile: IDefaultInput[] = [
 
 const detailsInputs = isMobile ? detailsInputsMobile : detailsInputsDesktop;
 
-export { detailsInputs }
+export { detailsInputs };

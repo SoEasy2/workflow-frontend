@@ -14,32 +14,51 @@ import { checkValidValueInput } from '../../../../../../helpers/constants/valida
 import { InputTypes } from '../../../../../../helpers/constants/enum';
 import { validateModelValue } from '../../../../../../helpers/constants/validate/validateModelValue';
 import { Loader } from '../../../../../UI-Kit/Loader/Loader';
+import { InfoExceptions } from '../../../../../../helpers/constants/exceptions/auth/info';
+import { errorTransition } from '../../../../../../helpers/constants';
+import { animated } from 'react-spring';
 
 const Component: React.FC = () => {
   const [, setCookie] = useCookies();
   const dispatch = useAppDispatch();
 
+  const [modelValue, setModelValue] = useState<IModelValue>(defaultInputs);
+
   const { userSet } = userSlice.actions;
 
+  const [isError, setError] = useState<boolean>(false);
+
   const [handleRegister, { loading, error }] = useMutation(REGISTER_USER, {
-    onCompleted: async (data) => {
+    onCompleted: async data => {
+      if (!data) return
       const { registerUser } = data;
       setupUser(registerUser.tokens, setCookie);
       await dispatch(userSet(registerUser.user));
+      setModelValue({ ...defaultInputs });
     },
-    errorPolicy: 'all'
+    errorPolicy: 'all',
   });
 
   useEffect(() => {
-    console.log('LOADING', loading);
-    console.log('ERROR', error)
-  }, [loading, error])
-
-  const [modelValue, setModelValue] = useState<IModelValue>(defaultInputs);
+    (async () => {
+      if (error?.message === InfoExceptions.USER_OR_PHONE_ALREADY_USED) {
+        await Promise.all(Object.keys(modelValue).map(item => setModelValue((prev) => ({ ...prev, [item]: { ...prev[item], error: { status: true } } })) ))
+      }
+      setError(true);
+    })();
+  }, [error]);
 
   const handleChangeInput = (name: string, modelValue: IModelValueInput) => {
     setModelValue((prev) => ({ ...prev, [name]: { ...prev[name], ...modelValue } }));
   };
+
+  const handleFocus = (callBack: (status: boolean) => void, status: boolean) => {
+    setError(false);
+    callBack(status);
+  }
+
+  const transition = errorTransition(isError);
+
 
   const handleBlur = (
     typeInput: InputTypes,
@@ -68,7 +87,6 @@ const Component: React.FC = () => {
         },
       },
     });
-    setModelValue(defaultInputs);
   };
 
   const handleKey = (e: React.KeyboardEvent<HTMLInputElement>) => {
@@ -79,8 +97,8 @@ const Component: React.FC = () => {
 
   return (
     <>
-      { loading }
-      { loading &&  <Loader isPortal={true} /> }
+      {loading}
+      {loading && <Loader isPortal={true} />}
       <div className={styles.formInfo__wrapper__title}>
         <h4 className={styles.formInfo__title}>Welcome</h4>
         <div className={styles.formInfo__description}>
@@ -98,6 +116,7 @@ const Component: React.FC = () => {
             onChange={handleChangeInput}
             onKeyPress={handleKey}
             onBlur={handleBlur}
+            onFocus={handleFocus}
           />
         ))}
         <div className={styles.formInfo__wrapper__button}>
@@ -108,6 +127,17 @@ const Component: React.FC = () => {
             Get started
           </button>
         </div>
+        {transition(
+            (style, item) =>
+                item && (
+                    <animated.div
+                        style={style}
+                        className={styles.error}
+                    >
+                      { error?.message }
+                    </animated.div>
+                ),
+        )}
       </div>
       <div className={styles.formInfo__login}>
         <span>You have a code?</span>
