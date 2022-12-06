@@ -29,8 +29,8 @@ const Component: React.FC = () => {
   const [isError, setError] = useState<boolean>(false);
 
   const [handleRegister, { loading, error }] = useMutation(REGISTER_USER, {
-    onCompleted: async data => {
-      if (!data) return
+    onCompleted: async (data) => {
+      if (!data) return;
       const { registerUser } = data;
       setupUser(registerUser.tokens, setCookie);
       await dispatch(userSet(registerUser.user));
@@ -42,7 +42,14 @@ const Component: React.FC = () => {
   useEffect(() => {
     (async () => {
       if (error?.message === InfoExceptions.USER_OR_PHONE_ALREADY_USED) {
-        await Promise.all(Object.keys(modelValue).map(item => setModelValue((prev) => ({ ...prev, [item]: { ...prev[item], error: { status: true } } })) ))
+        await Promise.all(
+          Object.keys(modelValue).map((item) =>
+            setModelValue((prev) => ({
+              ...prev,
+              [item]: { ...prev[item], error: { status: true } },
+            })),
+          ),
+        );
       }
       setError(true);
     })();
@@ -55,10 +62,9 @@ const Component: React.FC = () => {
   const handleFocus = (callBack: (status: boolean) => void, status: boolean) => {
     setError(false);
     callBack(status);
-  }
+  };
 
   const transition = errorTransition(isError);
-
 
   const handleBlur = (
     typeInput: InputTypes,
@@ -128,15 +134,15 @@ const Component: React.FC = () => {
           </button>
         </div>
         {transition(
-            (style, item) =>
-                item && (
-                    <animated.div
-                        style={style}
-                        className={styles.error}
-                    >
-                      { error?.message }
-                    </animated.div>
-                ),
+          (style, item) =>
+            item && (
+              <animated.div
+                style={style}
+                className={styles.error}
+              >
+                {error?.message}
+              </animated.div>
+            ),
         )}
       </div>
       <div className={styles.formInfo__login}>

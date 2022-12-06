@@ -30,10 +30,7 @@ export interface IDefaultInput {
   classNamePositionHelper?: string;
   classNamePositionShowPass?: string;
   classNamePositionReset?: string;
-  onFocus?: (
-      callback: (status: boolean) => void,
-      status: boolean,
-  ) => void;
+  onFocus?: (callback: (status: boolean) => void, status: boolean) => void;
 }
 
 export interface IModelValueInput {

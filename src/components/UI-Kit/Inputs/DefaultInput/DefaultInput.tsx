@@ -30,7 +30,7 @@ const Component: React.FC<IDefaultInput> = ({
   classNamePositionReset,
   onFocus,
 }) => {
-  const [value, setValue] = useState<string>( '');
+  const [value, setValue] = useState<string>('');
   const [typeInput, setTypeInput] = useState<InputTypes>(type);
 
   const [isValid, setValid] = useState<null | boolean>(null);
@@ -40,14 +40,12 @@ const Component: React.FC<IDefaultInput> = ({
       setValid(modelValue[name].error.status);
       setValue(modelValue[name].value);
     }
-
-  }, [modelValue])
+  }, [modelValue]);
 
   const [isFocus, setFocus] = useState<boolean>(false);
   const handleChange = (value: string) => {
     setValue(value);
     modelValue && onChange && onChange(name, { ...modelValue[name], value });
-
   };
 
   const handleClickReset = () => {
@@ -88,7 +86,7 @@ const Component: React.FC<IDefaultInput> = ({
           disabled={disabled}
           onKeyPress={onKeyPress}
           onBlur={handleBlur}
-          onFocus={() => onFocus ? onFocus(setFocus, true) : setFocus(true)}
+          onFocus={() => (onFocus ? onFocus(setFocus, true) : setFocus(true))}
         />
       ) : (
         <input
@@ -105,7 +103,7 @@ const Component: React.FC<IDefaultInput> = ({
           disabled={disabled}
           onKeyPress={onKeyPress}
           onBlur={handleBlur}
-          onFocus={() => onFocus ? onFocus(setFocus, true) : setFocus(true)}
+          onFocus={() => (onFocus ? onFocus(setFocus, true) : setFocus(true))}
         />
       )}
       <div className={cx(styles.helper, classNamePositionReset)}>
@@ -130,15 +128,13 @@ const Component: React.FC<IDefaultInput> = ({
               )
             }
           >
-            {
-              typeInput === InputTypes.TEXT ? (
+            {typeInput === InputTypes.TEXT ? (
               <HelperShowIcon />
             ) : (
               <div className={styles.helper__hideIcon_top}>
                 <HelperHideIcon />
               </div>
-            )
-            }
+            )}
           </div>
         )}
         {isValid !== null && !isFocus && (
