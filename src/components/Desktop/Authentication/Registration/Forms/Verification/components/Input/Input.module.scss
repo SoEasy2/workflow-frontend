@@ -14,5 +14,8 @@
   font-size: px-to-rem(60);
   line-height: px-to-rem(90);
   text-align: center;
-
+  transition: all .3s;
+}
+.error{
+  border-color: $color-error-input;
 }

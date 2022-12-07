@@ -10,6 +10,7 @@ interface IInput {
   onPaste?: (e: React.ClipboardEvent<HTMLInputElement>) => void;
   keyDown: (e: React.KeyboardEvent<HTMLInputElement>, index: number) => void;
   className?: string;
+  isError?: boolean;
 }
 const Component: React.FC<IInput> = ({
   id,
@@ -19,12 +20,13 @@ const Component: React.FC<IInput> = ({
   onPaste,
   keyDown,
   className,
+  isError,
 }) => {
   return (
     <>
       <input
         type='text'
-        className={cx(styles.input, className)}
+        className={cx(styles.input, className, isError && styles.error)}
         id={id}
         value={value ? value : ''}
         onChange={(e) => onChange(e, index)}

@@ -25,3 +25,11 @@ export const VERIFICATION_CODE = gql`
     }
   }
 `;
+
+export const RESEND_VERIFICATION_CODE = gql`
+  mutation resendVerificationCode{
+    resendVerificationCode{
+      sendCodeDate
+    }
+  }
+`

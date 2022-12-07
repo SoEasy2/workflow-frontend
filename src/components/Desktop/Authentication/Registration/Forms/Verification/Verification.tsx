@@ -3,30 +3,64 @@ import styles from './Verification.module.scss';
 import { Input } from './components/Input';
 import { Button } from '../../../Button';
 import { useMutation } from '@apollo/client';
-import { VERIFICATION_CODE } from '../../../../../../graphql/auth/registration/mutations';
+import { RESEND_VERIFICATION_CODE, VERIFICATION_CODE } from '../../../../../../graphql/auth/registration/mutations';
 import { userSlice } from '../../../../../../redux/user/slices/UserSlice';
-import { useAppDispatch } from '../../../../../../hooks/redux';
+import { useAppDispatch, useAppSelector } from '../../../../../../hooks/redux';
+import getSecondsTimerVerification from '../../../../../../helpers/getSecondsTimerVerification';
 
 const Component: React.FC = () => {
   const [code, setCode] = useState<Array<string | null>>([]);
-  const [seconds, setSeconds] = React.useState(30);
+  const [seconds, setSeconds] = useState(0);
   const [timerActive, setTimerActive] = React.useState(false);
 
-  const dispatch = useAppDispatch();
-
-  const setTimer = React.useCallback(() => {
-    setTimerActive(true);
-    setSeconds(30);
-  }, []);
+  const [isError, setError] = useState<boolean>(false);
 
   const { userUpdate } = userSlice.actions;
+
+  const [handleResend] = useMutation(RESEND_VERIFICATION_CODE, {
+    onCompleted: async (data) => {
+      const { resendVerificationCode } = data;
+      dispatch(userUpdate({ sendCodeDate: resendVerificationCode.sendCodeDate }));
+    },
+    onError: () => {
+      setError(true)
+    }
+  });
+
+  const handleClickResend = async () => {
+    await handleResend();
+  }
 
   const [handleVerification] = useMutation(VERIFICATION_CODE, {
     onCompleted: async (data) => {
       const { verificationUser } = data;
       dispatch(userUpdate({ stepRegistration: +verificationUser.stepRegistration }));
     },
+    onError: () => {
+      setError(true);
+    },
   });
+
+  const { user } = useAppSelector((state) => state.user);
+
+  useEffect(() => {
+    if (user) {
+      setTimer()
+    }
+  }, [user])
+
+  const dispatch = useAppDispatch();
+
+  const setTimer = React.useCallback(() => {
+    if (user) {
+      const secondsVerification = getSecondsTimerVerification(new Date(user.sendCodeDate));
+      secondsVerification > 0 && setSeconds(secondsVerification);
+      console.log('seconds', secondsVerification);
+      secondsVerification > 0 && setTimerActive(true);
+    }
+  }, [user]);
+
+
 
   const onPaste = React.useCallback(
     (e: React.ClipboardEvent<HTMLInputElement>) => {
@@ -49,8 +83,6 @@ const Component: React.FC = () => {
   useEffect(() => {
     if (seconds > 0 && timerActive) {
       setTimeout(setSeconds, 1000, seconds - 1);
-    } else {
-      setTimerActive(false);
     }
   }, [seconds, timerActive]);
 
@@ -68,6 +100,7 @@ const Component: React.FC = () => {
 
   const onChange = React.useCallback(
     (e: React.ChangeEvent<HTMLInputElement>, index: number) => {
+      isError && setError(false);
       const value = e.target.value.split('')[0];
       const newCode = [...code];
       newCode[index] = value;
@@ -113,6 +146,7 @@ const Component: React.FC = () => {
             onChange={onChange}
             onPaste={onPaste}
             keyDown={keyDown}
+            isError={isError}
           />
           <Input
             key={2}
@@ -122,6 +156,7 @@ const Component: React.FC = () => {
             onChange={onChange}
             onPaste={onPaste}
             keyDown={keyDown}
+            isError={isError}
           />
           <div></div>
           <Input
@@ -132,6 +167,7 @@ const Component: React.FC = () => {
             onChange={onChange}
             onPaste={onPaste}
             keyDown={keyDown}
+            isError={isError}
           />
           <Input
             key={4}
@@ -141,6 +177,7 @@ const Component: React.FC = () => {
             onChange={onChange}
             onPaste={onPaste}
             keyDown={keyDown}
+            isError={isError}
           />
         </div>
         <div className={styles.formVerification__wrapper__button}>
@@ -152,7 +189,7 @@ const Component: React.FC = () => {
         </div>
       </div>
       <div className={styles.formVerification__receive}>
-        {timerActive && (
+        {timerActive && seconds > 0 && (
           <div className={styles.formVerification__receive__timer}>
             <span>00</span>
             <span>:</span>
@@ -161,7 +198,7 @@ const Component: React.FC = () => {
         )}
         <div className={styles.formVerification__receive__text}>
           <span>Didn`t receive an email?</span>
-          <button onClick={() => setTimer()}>Resend</button>
+          <button onClick={() => handleClickResend()}>Resend</button>
         </div>
       </div>
     </>

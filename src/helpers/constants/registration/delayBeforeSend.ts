@@ -1,0 +1,1 @@
+export const delayBeforeSend: number = 30;

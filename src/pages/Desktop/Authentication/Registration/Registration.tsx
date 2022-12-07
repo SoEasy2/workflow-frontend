@@ -13,11 +13,13 @@ import { Details } from '../../../../components/Desktop/Authentication/Registrat
 const Component: React.FC = () => {
   const [searchParams] = useSearchParams();
   const [currentStep, setCurrentStep] = useState<number>(1);
+
   useEffect(() => {
     if (searchParams.get('step')) {
       setCurrentStep(Number(searchParams.get('step')));
     }
   }, [searchParams.get('step')]);
+
   return (
     <div className={styles.registration}>
       <Header />

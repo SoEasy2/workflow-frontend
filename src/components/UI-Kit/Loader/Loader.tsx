@@ -1,14 +1,16 @@
 import React from 'react';
 import styles from './Loader.module.scss';
 import { createPortal } from 'react-dom';
+import cx from 'classnames';
 interface IProps {
   isPortal?: boolean;
+  isBackground? : boolean
 }
-const Component: React.FC<IProps> = ({ isPortal = false }) => {
+const Component: React.FC<IProps> = ({ isPortal = false, isBackground = false }) => {
   const getElement = () => {
     if (isPortal)
       return createPortal(
-        <div className={styles.portal}>
+        <div className={cx(styles.portal, isBackground && styles.background)}>
           <div className={styles.ldsRing}>
             <div></div>
             <div></div>
@@ -19,7 +21,7 @@ const Component: React.FC<IProps> = ({ isPortal = false }) => {
         document.body,
       );
     return (
-      <div className={styles.portal}>
+      <div className={cx(styles.portal, styles.background)}>
         <div className={styles.ldsRing}>
           <div></div>
           <div></div>
