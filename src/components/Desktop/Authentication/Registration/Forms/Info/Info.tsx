@@ -9,20 +9,18 @@ import { setupUser } from '../../../../../../helpers/setupUser';
 import { useAppDispatch } from '../../../../../../hooks/redux';
 import { userSlice } from '../../../../../../redux/user/slices/UserSlice';
 import { defaultInputs } from './default';
-import { IModelValue, IModelValueInput } from '../../../../../UI-Kit/Inputs/DefaultInput/interface';
-import { checkValidValueInput } from '../../../../../../helpers/constants/validate/checkValidValueInput';
-import { InputTypes } from '../../../../../../helpers/constants/enum';
 import { validateModelValue } from '../../../../../../helpers/constants/validate/validateModelValue';
 import { Loader } from '../../../../../UI-Kit/Loader/Loader';
 import { InfoExceptions } from '../../../../../../helpers/constants/exceptions/auth/info';
 import { errorTransition } from '../../../../../../helpers/constants';
 import { animated } from 'react-spring';
+import { useInput } from '../../../../../../hooks/inputEvents/useInput';
 
 const Component: React.FC = () => {
   const [, setCookie] = useCookies();
   const dispatch = useAppDispatch();
 
-  const [modelValue, setModelValue] = useState<IModelValue>(defaultInputs);
+  const { handleChangeInput, modelValue, handleBlur, setModelValue } = useInput(defaultInputs);
 
   const { userSet } = userSlice.actions;
 
@@ -55,32 +53,12 @@ const Component: React.FC = () => {
     })();
   }, [error]);
 
-  const handleChangeInput = (name: string, modelValue: IModelValueInput) => {
-    setModelValue((prev) => ({ ...prev, [name]: { ...prev[name], ...modelValue } }));
-  };
-
   const handleFocus = (callBack: (status: boolean) => void, status: boolean) => {
     setError(false);
     callBack(status);
   };
 
   const transition = errorTransition(isError);
-
-  const handleBlur = (
-    typeInput: InputTypes,
-    value: string,
-    name: string,
-    callback?: (data: boolean) => void,
-  ) => {
-    const isValidInput = checkValidValueInput(typeInput, value);
-    if (!isValidInput) {
-      setModelValue((prev) => ({ ...prev, [name]: { ...prev[name], error: { status: false } } }));
-      callback && callback(false);
-      return;
-    }
-    setModelValue((prev) => ({ ...prev, [name]: { ...prev[name], error: { status: true } } }));
-    callback && callback(true);
-  };
 
   const handleSubmit = async () => {
     const countError = validateModelValue(modelValue);

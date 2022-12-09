@@ -4,7 +4,7 @@ import { createPortal } from 'react-dom';
 import cx from 'classnames';
 interface IProps {
   isPortal?: boolean;
-  isBackground? : boolean
+  isBackground?: boolean;
 }
 const Component: React.FC<IProps> = ({ isPortal = false, isBackground = false }) => {
   const getElement = () => {

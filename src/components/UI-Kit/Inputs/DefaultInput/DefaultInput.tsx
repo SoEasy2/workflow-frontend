@@ -11,6 +11,7 @@ import {
 } from '../../../../helpers/icons/helper';
 import { InputTypes } from '../../../../helpers/constants/enum';
 import PhoneInput from 'react-phone-number-input/input';
+import { TypeValid } from '../../../../helpers/constants/enum/typeHelper';
 
 const Component: React.FC<IDefaultInput> = ({
   name,
@@ -29,6 +30,7 @@ const Component: React.FC<IDefaultInput> = ({
   classNamePositionShowPass,
   classNamePositionReset,
   onFocus,
+  typeValid = TypeValid.HELPER,
 }) => {
   const [value, setValue] = useState<string>('');
   const [typeInput, setTypeInput] = useState<InputTypes>(type);
@@ -36,6 +38,7 @@ const Component: React.FC<IDefaultInput> = ({
   const [isValid, setValid] = useState<null | boolean>(null);
 
   useEffect(() => {
+    console.log('change');
     if (modelValue) {
       setValid(modelValue[name].error.status);
       setValue(modelValue[name].value);
@@ -137,7 +140,7 @@ const Component: React.FC<IDefaultInput> = ({
             )}
           </div>
         )}
-        {isValid !== null && !isFocus && (
+        {isValid !== null && !isFocus && typeValid === TypeValid.HELPER && (
           <div className={cx(styles.helper__valid, classNamePositionHelper)}>
             {isValid ? <HelperValidIcon /> : <HelperNoValidIcon />}
           </div>

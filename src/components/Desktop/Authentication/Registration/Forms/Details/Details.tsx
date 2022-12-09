@@ -1,17 +1,43 @@
-import React, { useId, useState } from 'react';
+import React, { useId } from 'react';
 import styles from './Details.module.scss';
 import { detailsInputs } from '../../../../../../helpers/constants/registration/inputs';
 import { CustomSelect } from '../../../../../UI-Kit/Inputs/CustomSelect';
 import { detailsOptions } from '../../../../../../helpers/constants/registration/options';
 import { DefaultInput } from '../../../../../UI-Kit/Inputs/DefaultInput';
 import { defaultInputs } from './default';
-import { IModelValue, IModelValueInput } from '../../../../../UI-Kit/Inputs/DefaultInput/interface';
+import { IModelValue } from '../../../../../UI-Kit/Inputs/DefaultInput/interface';
+import { validateModelValue } from '../../../../../../helpers/constants/validate/validateModelValue';
+import { useInput } from '../../../../../../hooks/inputEvents/useInput';
+import { TypeValid } from '../../../../../../helpers/constants/enum/typeHelper';
+
+const setObjectSend = (object: IModelValue) => {
+  const result = {} as any;
+  Object.keys(object).map((key) => {
+    console.log(String(object[key].objectName));
+    if (object[key].prefix && object[key].objectName) {
+      Object.assign(result, {
+        [String(object[key].prefix)]: {
+          ...result[String(object[key].prefix)],
+          [String(object[key].objectName)]: object[key].value,
+        },
+      });
+    }
+  });
+  return result;
+};
+
+console.log(setObjectSend);
 
 const Component: React.FC = () => {
-  const [modelValue, setModelValue] = useState<IModelValue>(defaultInputs);
+  const { modelValue, handleChangeInput, handleBlur } = useInput(defaultInputs);
 
-  const handleChangeInput = (name: string, modelValue: IModelValueInput) => {
-    setModelValue((prev) => ({ ...prev, [name]: { ...prev[name], ...modelValue } }));
+  const handleClick = () => {
+    const countError = validateModelValue(modelValue);
+    if (countError) return;
+  };
+
+  const handleFocus = (callBack: (status: boolean) => void, status: boolean) => {
+    callBack(status);
   };
 
   return (
@@ -44,13 +70,16 @@ const Component: React.FC = () => {
               isShow={input.isShow}
               modelValue={modelValue}
               onChange={handleChangeInput}
+              onBlur={handleBlur}
+              typeValid={TypeValid.ERROR}
+              onFocus={handleFocus}
             />
           );
         })}
         <div className={styles.formDetails__wrapper__button}>
           <button
             className={styles.formDetails__button}
-            onClick={() => console.log('CLICK', modelValue)}
+            onClick={handleClick}
           >
             Registration
           </button>

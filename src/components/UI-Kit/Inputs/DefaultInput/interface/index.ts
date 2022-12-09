@@ -1,5 +1,6 @@
 import React from 'react';
 import { InputTypes } from '../../../../../helpers/constants/enum';
+import { TypeValid } from '../../../../../helpers/constants/enum/typeHelper';
 
 export interface IModelValue {
   [U: string]: IModelValueInput;
@@ -31,6 +32,7 @@ export interface IDefaultInput {
   classNamePositionShowPass?: string;
   classNamePositionReset?: string;
   onFocus?: (callback: (status: boolean) => void, status: boolean) => void;
+  typeValid?: TypeValid;
 }
 
 export interface IModelValueInput {
@@ -41,4 +43,6 @@ export interface IModelValueInput {
     text?: string;
   };
   prefix?: string;
+
+  objectName?: string;
 }

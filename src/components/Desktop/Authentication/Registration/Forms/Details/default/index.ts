@@ -8,6 +8,7 @@ export const defaultInputs: IModelValue = {
       status: null,
     },
     prefix: 'user',
+    objectName: 'username',
   },
   companyName: {
     value: '',
@@ -16,6 +17,16 @@ export const defaultInputs: IModelValue = {
       status: null,
     },
     prefix: 'company',
+    objectName: 'name',
+  },
+  amountOfEmployees: {
+    value: '',
+    required: true,
+    error: {
+      status: null,
+    },
+    prefix: 'company',
+    objectName: 'amountOfEmployees',
   },
   password: {
     value: '',
@@ -24,5 +35,6 @@ export const defaultInputs: IModelValue = {
       status: null,
     },
     prefix: 'user',
+    objectName: 'password',
   },
 };

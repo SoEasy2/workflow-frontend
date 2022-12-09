@@ -30,8 +30,8 @@ const App = () => {
       setFirstLoading(false);
     },
     onError: () => {
-      setFirstLoading(false)
-    }
+      setFirstLoading(false);
+    },
   });
 
   useEffect(() => {
@@ -61,7 +61,7 @@ const App = () => {
   }, [user]);
   return (
     <MainLayout>
-      { isFirstLoading && <Loader isBackground={true} /> }
+      {isFirstLoading && <Loader isBackground={true} />}
       <Routes>
         {routes.map((route) => (
           <Route

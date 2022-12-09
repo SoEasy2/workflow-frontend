@@ -1,1 +1,1 @@
-export const delayBeforeSend: number = 30;
+export const delayBeforeSend = 30;
