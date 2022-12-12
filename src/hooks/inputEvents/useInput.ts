@@ -11,6 +11,7 @@ export const useInput = (defaultValue: IModelValue) => {
 
   const handleChangeInput = useCallback(
     (name: string, modelValue: IModelValueInput) => {
+      console.log('modelValue on chabge', modelValue);
       setModelValue((prev) => ({ ...prev, [name]: { ...prev[name], ...modelValue } }));
     },
     [modelValue],

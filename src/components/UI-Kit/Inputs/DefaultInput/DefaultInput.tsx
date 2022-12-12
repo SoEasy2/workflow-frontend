@@ -38,10 +38,8 @@ const Component: React.FC<IDefaultInput> = ({
   const [isValid, setValid] = useState<null | boolean>(null);
 
   useEffect(() => {
-    console.log('change');
     if (modelValue) {
       setValid(modelValue[name].error.status);
-      setValue(modelValue[name].value);
     }
   }, [modelValue]);
 
@@ -53,10 +51,10 @@ const Component: React.FC<IDefaultInput> = ({
 
   const handleClickReset = () => {
     setValue('');
+    modelValue && onChange && onChange(name, { ...modelValue[name], value: '' });
   };
 
   const handleBlur = () => {
-    onFocus ? onFocus(setFocus, false) : setFocus(false);
     onBlur && onBlur(typeInput, value, name, setValid);
   };
 
@@ -109,7 +107,10 @@ const Component: React.FC<IDefaultInput> = ({
           onFocus={() => (onFocus ? onFocus(setFocus, true) : setFocus(true))}
         />
       )}
-      <div className={cx(styles.helper, classNamePositionReset)}>
+      <div
+        className={cx(styles.helper, classNamePositionReset)}
+        onClick={handleClickReset}
+      >
         {!disabled &&
           value &&
           value.length > 0 &&
@@ -117,7 +118,7 @@ const Component: React.FC<IDefaultInput> = ({
           (type === InputTypes.TEXT || type === InputTypes.PHONE) && (
             <div
               className={cx(styles.helper__remove)}
-              onClick={handleClickReset}
+              onClick={() => console.log('click')}
             >
               <HelperRemoveIcon />
             </div>

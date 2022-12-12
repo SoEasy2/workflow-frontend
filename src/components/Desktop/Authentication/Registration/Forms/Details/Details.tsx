@@ -13,7 +13,6 @@ import { TypeValid } from '../../../../../../helpers/constants/enum/typeHelper';
 const setObjectSend = (object: IModelValue) => {
   const result = {} as any;
   Object.keys(object).map((key) => {
-    console.log(String(object[key].objectName));
     if (object[key].prefix && object[key].objectName) {
       Object.assign(result, {
         [String(object[key].prefix)]: {
@@ -26,14 +25,14 @@ const setObjectSend = (object: IModelValue) => {
   return result;
 };
 
-console.log(setObjectSend);
-
 const Component: React.FC = () => {
   const { modelValue, handleChangeInput, handleBlur } = useInput(defaultInputs);
 
   const handleClick = () => {
     const countError = validateModelValue(modelValue);
     if (countError) return;
+    const objectSend = setObjectSend(modelValue);
+    console.log(objectSend);
   };
 
   const handleFocus = (callBack: (status: boolean) => void, status: boolean) => {

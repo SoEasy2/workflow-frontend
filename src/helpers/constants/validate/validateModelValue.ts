@@ -9,7 +9,6 @@ export const validateModelValue = (
   Object.keys(modelValue).forEach((key) => {
     if (modelValue[key].required && !modelValue[key].value) {
       countError++;
-      console.log('false');
       callback &&
         callback((prev) => ({ ...prev, [key]: { ...prev[key], error: { status: true } } }));
     }
