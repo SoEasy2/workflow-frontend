@@ -56,6 +56,7 @@ const Component: React.FC<IDefaultInput> = ({
 
   const handleBlur = () => {
     onBlur && onBlur(typeInput, value, name, setValid);
+    setFocus(false);
   };
 
   return (
@@ -118,7 +119,7 @@ const Component: React.FC<IDefaultInput> = ({
           (type === InputTypes.TEXT || type === InputTypes.PHONE) && (
             <div
               className={cx(styles.helper__remove)}
-              onClick={() => console.log('click')}
+              onClick={handleClickReset}
             >
               <HelperRemoveIcon />
             </div>

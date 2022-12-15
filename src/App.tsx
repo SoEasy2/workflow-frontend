@@ -9,6 +9,7 @@ import { useCookies } from 'react-cookie';
 import { userSlice } from './redux/user/slices/UserSlice';
 import { REFRESH_USER } from './graphql/auth/refresh/mutations';
 import { Loader } from './components/UI-Kit/Loader/Loader';
+import { StepEnum } from './helpers/constants/registration/enums/step';
 
 const App = () => {
   const navigate = useNavigate();
@@ -53,11 +54,22 @@ const App = () => {
   }, []);
 
   useEffect(() => {
-    navigate({
-      pathname: '/registration',
-      search: `?step=${user ? user.stepRegistration : 1}`,
-    });
-    console.log(navigate);
+    if (user && Number(user.stepRegistration) === StepEnum.COMPLETE) {
+      navigate({
+        pathname: '/complete',
+      });
+    } else if (user) {
+      console.log('user', user);
+      navigate({
+        pathname: '/registration',
+        search: `?step=${user.stepRegistration}`,
+      });
+    } else {
+      navigate({
+        pathname: '/registration',
+        search: `?step=${StepEnum.REGISTRATION}`,
+      });
+    }
   }, [user]);
   return (
     <MainLayout>

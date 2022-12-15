@@ -1,14 +1,22 @@
 import React, { useId } from 'react';
 import styles from './Details.module.scss';
-import { detailsInputs } from '../../../../../../helpers/constants/registration/inputs';
-import { CustomSelect } from '../../../../../UI-Kit/Inputs/CustomSelect';
-import { detailsOptions } from '../../../../../../helpers/constants/registration/options';
-import { DefaultInput } from '../../../../../UI-Kit/Inputs/DefaultInput';
+import { detailsInputs } from '../../../../../helpers/constants/registration/inputs';
+import { CustomSelect } from '../../../../UI-Kit/Inputs/CustomSelect';
+import { detailsOptions } from '../../../../../helpers/constants/registration/options';
+import { DefaultInput } from '../../../../UI-Kit/Inputs/DefaultInput';
 import { defaultInputs } from './default';
-import { IModelValue } from '../../../../../UI-Kit/Inputs/DefaultInput/interface';
-import { validateModelValue } from '../../../../../../helpers/constants/validate/validateModelValue';
-import { useInput } from '../../../../../../hooks/inputEvents/useInput';
-import { TypeValid } from '../../../../../../helpers/constants/enum/typeHelper';
+import { IModelValue } from '../../../../UI-Kit/Inputs/DefaultInput/interface';
+import { validateModelValue } from '../../../../../helpers/constants/validate/validateModelValue';
+import { useInput } from '../../../../../hooks/inputEvents/useInput';
+import { TypeValid } from '../../../../../helpers/constants/enum/typeHelper';
+import { useMutation } from '@apollo/client';
+import {
+  DETAILS_USER,
+} from '../../../../../graphql/auth/registration/mutations';
+import { userSlice } from '../../../../../redux/user/slices/UserSlice';
+import { useAppDispatch } from '../../../../../hooks/redux';
+import { Loader } from '../../../../UI-Kit/Loader/Loader';
+import { DetailsExceptions } from '../../../../../helpers/constants/exceptions/auth/Details';
 
 const setObjectSend = (object: IModelValue) => {
   const result = {} as any;
@@ -26,14 +34,38 @@ const setObjectSend = (object: IModelValue) => {
 };
 
 const Component: React.FC = () => {
-  const { modelValue, handleChangeInput, handleBlur } = useInput(defaultInputs);
+  const { modelValue, handleChangeInput, handleBlur, setModelValue } = useInput(defaultInputs);
 
-  const handleClick = () => {
+  const dispatch = useAppDispatch();
+
+  const handleClick = async () => {
     const countError = validateModelValue(modelValue);
     if (countError) return;
     const objectSend = setObjectSend(modelValue);
-    console.log(objectSend);
+    await handleRegister({
+      variables: {
+        detailsInput: objectSend,
+      },
+    });
   };
+
+  const { userUpdate } = userSlice.actions;
+
+  const [handleRegister, { loading }] = useMutation(DETAILS_USER, {
+    onCompleted: async (data) => {
+      const { details } = data;
+      dispatch(userUpdate(details));
+    },
+    onError: (error) => {
+      const { message } = error;
+      if (message.trim() === DetailsExceptions.COMPANY_ALREADY_EXISTS) {
+        setModelValue((prev) => ({
+          ...prev,
+          ['companyName']: { ...prev['companyName'], error: { status: false } },
+        }));
+      }
+    },
+  });
 
   const handleFocus = (callBack: (status: boolean) => void, status: boolean) => {
     callBack(status);
@@ -41,6 +73,7 @@ const Component: React.FC = () => {
 
   return (
     <>
+      {loading && <Loader isPortal={true} />}
       <div className={styles.formDetails__wrapper__title}>
         <h4 className={styles.formDetails__title}>Company details</h4>
       </div>

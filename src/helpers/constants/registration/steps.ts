@@ -14,4 +14,8 @@ export const steps: IStep[] = [
     text: 'Company details',
     step: StepEnum.DETAILS,
   },
+  {
+    text: 'Login',
+    step: StepEnum.LOGIN,
+  },
 ];

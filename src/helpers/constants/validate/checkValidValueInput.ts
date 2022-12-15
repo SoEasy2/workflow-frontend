@@ -10,6 +10,9 @@ export const checkValidValueInput = (typeInput: InputTypes, value: string): bool
     case InputTypes.EMAIL: {
       return EMAIL_REGEXP_VALID.test(value);
     }
+    case InputTypes.EMAIL_OR_PHONE: {
+      return isValidPhoneNumber(value) || EMAIL_REGEXP_VALID.test(value);
+    }
     default:
       return true;
   }

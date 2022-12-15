@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { Header } from '../../../../components/Desktop/Authentication/Header';
 import { Layout } from '../../../../components/Desktop/Authentication/Layout';
-import { Info } from '../../../../components/Desktop/Authentication/Registration/Forms/Info';
-import { Step } from '../../../../components/Desktop/Authentication/Registration/Step';
+import { Info } from '../../../../components/Desktop/Authentication/Forms/Info';
+import { Step } from '../../../../components/Desktop/Authentication/Step';
 import styles from './Registration.module.scss';
 import { ModalLayout } from '../../../../components/Desktop/Authentication/ModalLayout';
 import { useSearchParams } from 'react-router-dom';
 import { StepEnum } from '../../../../helpers/constants/registration/enums/step';
-import { Verification } from '../../../../components/Desktop/Authentication/Registration/Forms/Verification';
-import { Details } from '../../../../components/Desktop/Authentication/Registration/Forms/Details';
+import { Verification } from '../../../../components/Desktop/Authentication/Forms/Verification';
+import { Details } from '../../../../components/Desktop/Authentication/Forms/Details';
 
 const Component: React.FC = () => {
   const [searchParams] = useSearchParams();
@@ -43,6 +43,6 @@ const Component: React.FC = () => {
     </div>
   );
 };
-const Registration = React.memo(Component);
+const RegistrationPage = React.memo(Component);
 
-export { Registration };
+export { RegistrationPage };

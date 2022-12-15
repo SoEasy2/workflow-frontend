@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import styles from './Verification.module.scss';
 import { Input } from './components/Input';
-import { Button } from '../../../Button';
+import { Button } from '../../Button';
 import { useMutation } from '@apollo/client';
 import {
   RESEND_VERIFICATION_CODE,
   VERIFICATION_CODE,
-} from '../../../../../../graphql/auth/registration/mutations';
-import { userSlice } from '../../../../../../redux/user/slices/UserSlice';
-import { useAppDispatch, useAppSelector } from '../../../../../../hooks/redux';
-import getSecondsTimerVerification from '../../../../../../helpers/getSecondsTimerVerification';
+} from '../../../../../graphql/auth/registration/mutations';
+import { userSlice } from '../../../../../redux/user/slices/UserSlice';
+import { useAppDispatch, useAppSelector } from '../../../../../hooks/redux';
+import getSecondsTimerVerification from '../../../../../helpers/getSecondsTimerVerification';
+import { Loader } from '../../../../UI-Kit/Loader/Loader';
 
 const Component: React.FC = () => {
   const [code, setCode] = useState<Array<string | null>>([]);
@@ -20,10 +21,10 @@ const Component: React.FC = () => {
 
   const { userUpdate } = userSlice.actions;
 
-  const [handleResend] = useMutation(RESEND_VERIFICATION_CODE, {
+  const [handleResend, { loading }] = useMutation(RESEND_VERIFICATION_CODE, {
     onCompleted: async (data) => {
       const { resendVerificationCode } = data;
-      dispatch(userUpdate({ sendCodeDate: resendVerificationCode.sendCodeDate }));
+      dispatch(userUpdate({ ...resendVerificationCode }));
     },
     onError: () => {
       setError(true);
@@ -128,6 +129,7 @@ const Component: React.FC = () => {
 
   return (
     <>
+      {loading && <Loader isPortal={true} />}
       <div className={styles.formVerification__wrapper__title}>
         <h4 className={styles.formVerification__title}>Verification code</h4>
         <div className={styles.formVerification__description}>

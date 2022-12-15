@@ -33,3 +33,19 @@ export const RESEND_VERIFICATION_CODE = gql`
     }
   }
 `;
+
+export const DETAILS_USER = gql`
+  mutation details($detailsInput: DetailsInput!) {
+    details(detailsInput: $detailsInput) {
+      currentCompany {
+        name
+        user
+        targetUser
+        id
+        amountOfEmployees
+      }
+      username
+      stepRegistration
+    }
+  }
+`;

@@ -1,13 +1,18 @@
 import { IRoute } from './types';
-import { Registration, TestError } from '../../pages/Desktop';
+import { RegistrationPage, TestError } from '../../pages/Desktop';
 import { UiKit } from '../../pages/Desktop/UI-KIT';
 import { isMobile } from 'react-device-detect';
 import { RegistrationMobile } from '../../pages/Mobile/AuthenticationMobile/RegistrationMobile';
+import { LoginPage } from '../../pages/Desktop/Authentication/Login';
 
 const desktopRoutes: IRoute[] = [
   {
     path: '/registration',
-    component: <Registration />,
+    component: <RegistrationPage />,
+  },
+  {
+    path: '/login',
+    component: <LoginPage />,
   },
   {
     path: '/*',

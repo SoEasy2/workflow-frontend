@@ -1,14 +1,14 @@
-import { IModelValue } from '../../../../../../UI-Kit/Inputs/DefaultInput/interface';
+import { IModelValue } from '../../../../../UI-Kit/Inputs/DefaultInput/interface';
 
 export const defaultInputs: IModelValue = {
-  phone: {
+  email: {
     value: '',
     required: true,
     error: {
       status: null,
     },
   },
-  email: {
+  password: {
     value: '',
     required: true,
     error: {

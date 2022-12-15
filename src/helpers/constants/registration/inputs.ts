@@ -141,3 +141,32 @@ export const detailsInputsMobile: IDefaultInput[] = [
 const detailsInputs = isMobile ? detailsInputsMobile : detailsInputsDesktop;
 
 export { detailsInputs };
+
+const loginInputsMobile: IDefaultInput[] = [];
+
+const loginInputsDesktop: IDefaultInput[] = [
+  {
+    type: InputTypes.EMAIL_OR_PHONE,
+    placeholder: 'E-mail or phone number',
+    label: 'E-mail or phone number',
+    key: 'login',
+    name: 'login',
+    isShow: false,
+    disabled: false,
+    required: true,
+  },
+  {
+    type: InputTypes.PASSWORD,
+    placeholder: 'Create password',
+    label: 'Password*',
+    key: 'password',
+    name: 'password',
+    isShow: false,
+    disabled: false,
+    required: true,
+  },
+];
+
+const loginInputs = isMobile ? loginInputsMobile : loginInputsDesktop;
+
+export { loginInputs };

@@ -9,11 +9,19 @@ export const REFRESH_USER = gql`
       }
       user {
         id
+        username
         email
         phone
         stepRegistration
         sendCodeDate
         codeEmail
+        currentCompany {
+          name
+          user
+          targetUser
+          id
+          amountOfEmployees
+        }
       }
     }
   }

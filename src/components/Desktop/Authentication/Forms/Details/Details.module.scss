@@ -1,5 +1,5 @@
-@import '../../../../../../sass/_abstract/functions';
-@import '../../../../../../sass/_abstract/variables';
+@import '../../../../../sass/_abstract/functions';
+@import '../../../../../sass/_abstract/variables';
 .formDetails{
   &__wrapper__title{
     display: flex;
@@ -71,7 +71,7 @@
     color: $color-text-gray;
     font-weight: 400;
     font-size: px-to-rem(15);
-    line-height: px-to-rem(15);
+    line-height: px-to-rem(20);
     text-align: left;
     span + span {
       margin-left: 4px;

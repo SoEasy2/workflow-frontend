@@ -4,7 +4,7 @@ import { useMutation } from '@apollo/client';
 import { VERIFICATION_CODE } from '../../../../../../graphql/auth/registration/mutations';
 import { userSlice } from '../../../../../../redux/user/slices/UserSlice';
 import { useAppDispatch } from '../../../../../../hooks/redux';
-import { Input } from '../../../../../Desktop/Authentication/Registration/Forms/Verification/components/Input';
+import { Input } from '../../../../../Desktop/Authentication/Forms/Verification/components/Input';
 import { Button } from '../../../../../Desktop/Authentication/Button';
 import { BackMobileIcon } from '../../../../../../helpers/iconsMobile';
 

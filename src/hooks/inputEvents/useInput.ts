@@ -11,7 +11,6 @@ export const useInput = (defaultValue: IModelValue) => {
 
   const handleChangeInput = useCallback(
     (name: string, modelValue: IModelValueInput) => {
-      console.log('modelValue on chabge', modelValue);
       setModelValue((prev) => ({ ...prev, [name]: { ...prev[name], ...modelValue } }));
     },
     [modelValue],
@@ -19,8 +18,7 @@ export const useInput = (defaultValue: IModelValue) => {
 
   const handleBlur = useCallback(
     (typeInput: InputTypes, value: string, name: string, callback?: (data: boolean) => void) => {
-      const isValidInput = checkValidValueInput(typeInput, value);
-      if (!isValidInput) {
+      if (!checkValidValueInput(typeInput, value)) {
         setModelValue((prev) => ({ ...prev, [name]: { ...prev[name], error: { status: false } } }));
         callback && callback(false);
         return;
