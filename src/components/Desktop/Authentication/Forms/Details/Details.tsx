@@ -10,9 +10,7 @@ import { validateModelValue } from '../../../../../helpers/constants/validate/va
 import { useInput } from '../../../../../hooks/inputEvents/useInput';
 import { TypeValid } from '../../../../../helpers/constants/enum/typeHelper';
 import { useMutation } from '@apollo/client';
-import {
-  DETAILS_USER,
-} from '../../../../../graphql/auth/registration/mutations';
+import { DETAILS_USER } from '../../../../../graphql/auth/registration/mutations';
 import { userSlice } from '../../../../../redux/user/slices/UserSlice';
 import { useAppDispatch } from '../../../../../hooks/redux';
 import { Loader } from '../../../../UI-Kit/Loader/Loader';

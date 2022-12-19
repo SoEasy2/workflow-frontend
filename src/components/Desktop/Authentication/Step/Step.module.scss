@@ -34,6 +34,8 @@
     }
   }
   &__login{
+    display: flex;
+    gap: px-to-rem(4);
     &__text{
       font-family: $global-font-inter;
       font-weight: 400;
@@ -57,8 +59,9 @@
     max-height: px-to-rem(787);
     max-width: px-to-rem(647);
   }
-  &__login{
-
+  &__registration{
+    display: flex;
+    gap: px-to-rem(4)
   }
 }
 .image{

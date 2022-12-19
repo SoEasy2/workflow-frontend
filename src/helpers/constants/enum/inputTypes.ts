@@ -3,5 +3,5 @@ export enum InputTypes {
   PASSWORD = 'password',
   PHONE = 'phone',
   EMAIL = 'email',
-  EMAIL_OR_PHONE = 'text',
+  EMAIL_OR_PHONE = 'textt',
 }

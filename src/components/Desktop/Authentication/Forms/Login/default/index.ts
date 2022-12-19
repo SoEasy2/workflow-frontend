@@ -1,7 +1,7 @@
 import { IModelValue } from '../../../../../UI-Kit/Inputs/DefaultInput/interface';
 
 export const defaultInputs: IModelValue = {
-  email: {
+  login: {
     value: '',
     required: true,
     error: {

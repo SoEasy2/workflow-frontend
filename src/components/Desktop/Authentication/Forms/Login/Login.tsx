@@ -7,13 +7,13 @@ import { animated } from 'react-spring';
 import { useInput } from '../../../../../hooks/inputEvents/useInput';
 import { defaultInputs } from './default';
 import { useMutation } from '@apollo/client';
-import { REGISTER_USER } from '../../../../../graphql/auth/registration/mutations';
 import { setupUser } from '../../../../../helpers/setupUser';
 import { errorTransition } from '../../../../../helpers/constants';
 import { useAppDispatch } from '../../../../../hooks/redux';
 import { userSlice } from '../../../../../redux/user/slices/UserSlice';
 import { useCookies } from 'react-cookie';
 import { validateModelValue } from '../../../../../helpers/constants/validate/validateModelValue';
+import { LOGIN_USER } from '../../../../../graphql/auth/login/mutations';
 
 const Component: React.FC = () => {
   const { handleChangeInput, modelValue, handleBlur, setModelValue } = useInput(defaultInputs);
@@ -28,7 +28,7 @@ const Component: React.FC = () => {
 
   console.log(setError);
 
-  const [handleRegister, { loading, error }] = useMutation(REGISTER_USER, {
+  const [handleLogin, { loading, error }] = useMutation(LOGIN_USER, {
     onCompleted: async (data) => {
       if (!data) return;
       const { registerUser } = data;
@@ -38,18 +38,17 @@ const Component: React.FC = () => {
     },
     errorPolicy: 'all',
   });
-  console.log(handleRegister);
 
   const transition = errorTransition(isError);
 
   const handleSubmit = async () => {
     const countError = validateModelValue(modelValue);
     if (countError) return;
-    await handleRegister({
+    await handleLogin({
       variables: {
-        user: {
-          email: modelValue.email.value,
-          phone: modelValue.phone.value,
+        loginUserInput: {
+          login: modelValue.login.value,
+          password: modelValue.password.value,
         },
       },
     });
