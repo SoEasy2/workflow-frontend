@@ -39,7 +39,7 @@ const Component: React.FC<IDefaultInput> = ({
 
   useEffect(() => {
     if (modelValue) {
-      console.log("modelValue", modelValue[name]);
+      console.log('modelValue', modelValue[name]);
       setValid(modelValue[name].error.status);
     }
   }, [modelValue]);
