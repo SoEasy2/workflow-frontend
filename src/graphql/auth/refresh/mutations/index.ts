@@ -21,6 +21,7 @@ export const REFRESH_USER = gql`
           targetUser
           id
           amountOfEmployees
+          code
         }
       }
     }

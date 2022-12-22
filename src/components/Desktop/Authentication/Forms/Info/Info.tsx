@@ -15,10 +15,14 @@ import { InfoExceptions } from '../../../../../helpers/constants/exceptions/auth
 import { errorTransition } from '../../../../../helpers/constants';
 import { animated } from 'react-spring';
 import { useInput } from '../../../../../hooks/inputEvents/useInput';
+import { useNavigate } from 'react-router';
+import { StepConnect } from '../../../../../helpers/constants/registration/enums/stepConnect';
 
 const Component: React.FC = () => {
   const [, setCookie] = useCookies();
   const dispatch = useAppDispatch();
+
+  const navigate = useNavigate();
 
   const { handleChangeInput, modelValue, handleBlur, setModelValue } = useInput(defaultInputs);
 
@@ -26,13 +30,20 @@ const Component: React.FC = () => {
 
   const [isError, setError] = useState<boolean>(false);
 
+  const handleClickJoin = () => {
+    navigate({
+      pathname: '/connect-with-code',
+      search: `?step=${StepConnect.CONNECT_WITH_CODE}`,
+    });
+  };
+
   const [handleRegister, { loading, error }] = useMutation(REGISTER_USER, {
     onCompleted: async (data) => {
       if (!data) return;
       const { registerUser } = data;
       setupUser(registerUser.tokens, setCookie);
       await dispatch(userSet(registerUser.user));
-      setModelValue({ ...defaultInputs });
+      // setModelValue({ ...defaultInputs });
     },
     errorPolicy: 'all',
   });
@@ -124,7 +135,7 @@ const Component: React.FC = () => {
       </div>
       <div className={styles.formInfo__login}>
         <span>You have a code?</span>
-        <button>Join your team</button>
+        <button onClick={handleClickJoin}>Join your team</button>
       </div>
     </>
   );

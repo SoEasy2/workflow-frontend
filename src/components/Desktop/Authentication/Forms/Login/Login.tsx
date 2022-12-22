@@ -1,4 +1,4 @@
-import React, { useId, useState } from 'react';
+import React, { useEffect, useId, useState } from 'react';
 import { Loader } from '../../../../UI-Kit/Loader/Loader';
 import styles from '../Info/Info.module.scss';
 import { loginInputs } from '../../../../../helpers/constants/registration/inputs';
@@ -14,6 +14,8 @@ import { userSlice } from '../../../../../redux/user/slices/UserSlice';
 import { useCookies } from 'react-cookie';
 import { validateModelValue } from '../../../../../helpers/constants/validate/validateModelValue';
 import { LOGIN_USER } from '../../../../../graphql/auth/login/mutations';
+import { StepConnect } from '../../../../../helpers/constants/registration/enums/stepConnect';
+import { useNavigate } from 'react-router';
 
 const Component: React.FC = () => {
   const { handleChangeInput, modelValue, handleBlur, setModelValue } = useInput(defaultInputs);
@@ -22,22 +24,38 @@ const Component: React.FC = () => {
 
   const [isError, setError] = useState<boolean>(false);
 
+  const navigate = useNavigate();
+
   const dispatch = useAppDispatch();
 
   const { userSet } = userSlice.actions;
 
-  console.log(setError);
+  const handleClickJoin = () => {
+    navigate({
+      pathname: '/connect-with-code',
+      search: `?step=${StepConnect.CONNECT_WITH_CODE}`,
+    });
+  };
 
   const [handleLogin, { loading, error }] = useMutation(LOGIN_USER, {
     onCompleted: async (data) => {
       if (!data) return;
-      const { registerUser } = data;
-      setupUser(registerUser.tokens, setCookie);
-      await dispatch(userSet(registerUser.user));
+      const { login } = data;
+      setupUser(login.tokens, setCookie);
+      await dispatch(userSet(login.user));
       setModelValue({ ...defaultInputs });
     },
     errorPolicy: 'all',
   });
+
+  const handleFocus = (callBack: (status: boolean) => void, status: boolean) => {
+    setError(false);
+    callBack(status);
+  };
+
+  useEffect(() => {
+    setError(!!error);
+  }, [error]);
 
   const transition = errorTransition(isError);
 
@@ -73,6 +91,7 @@ const Component: React.FC = () => {
             modelValue={modelValue}
             onChange={handleChangeInput}
             onBlur={handleBlur}
+            onFocus={handleFocus}
           />
         ))}
         <div className={styles.formInfo__wrapper__button}>
@@ -90,14 +109,14 @@ const Component: React.FC = () => {
                 style={style}
                 className={styles.error}
               >
-                {error?.message}
+                Invalid login / password
               </animated.div>
             ),
         )}
       </div>
       <div className={styles.formInfo__login}>
         <span>You have a code?</span>
-        <button>Join your team</button>
+        <button onClick={handleClickJoin}>Join your team</button>
       </div>
     </>
   );

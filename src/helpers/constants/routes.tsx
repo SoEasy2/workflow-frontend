@@ -4,6 +4,7 @@ import { UiKit } from '../../pages/Desktop/UI-KIT';
 import { isMobile } from 'react-device-detect';
 import { RegistrationMobile } from '../../pages/Mobile/AuthenticationMobile/RegistrationMobile';
 import { LoginPage } from '../../pages/Desktop/Authentication/Login';
+import { ConnectWithCodePage } from '../../pages/Desktop/Authentication/ConnectWithCode';
 
 const desktopRoutes: IRoute[] = [
   {
@@ -13,6 +14,10 @@ const desktopRoutes: IRoute[] = [
   {
     path: '/login',
     component: <LoginPage />,
+  },
+  {
+    path: '/connect-with-code',
+    component: <ConnectWithCodePage />,
   },
   {
     path: '/*',

@@ -1,6 +1,10 @@
 @import '../../../../../sass/_abstract/functions';
 @import '../../../../../sass/_abstract/variables';
-.formVerification{
+.connect{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
   &__wrapper__title{
     display: flex;
     flex-direction: column;
@@ -39,6 +43,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: px-to-rem(10);
       div{
         width: px-to-rem(16);
         border: 1px solid $global-border-color;

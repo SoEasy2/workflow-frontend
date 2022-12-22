@@ -12,7 +12,7 @@ import { Details } from '../../../../components/Desktop/Authentication/Forms/Det
 
 const Component: React.FC = () => {
   const [searchParams] = useSearchParams();
-  const [currentStep, setCurrentStep] = useState<number>(1);
+  const [currentStep, setCurrentStep] = useState<number>(StepEnum.REGISTRATION);
 
   useEffect(() => {
     if (searchParams.get('step')) {
