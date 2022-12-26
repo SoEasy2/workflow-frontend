@@ -35,7 +35,12 @@ const Component: React.FC = () => {
               case StepEnum.VERIFICATION:
                 return <Verification />;
               case StepEnum.DETAILS:
-                return <Details inputs={detailsInputs} mutation={DETAILS_USER} />;
+                return (
+                  <Details
+                    inputs={detailsInputs}
+                    mutation={DETAILS_USER}
+                  />
+                );
               default:
                 return <Info />;
             }

@@ -27,7 +27,7 @@ const Component: React.FC = () => {
   }, [searchParams.get('step')]);
   useEffect(() => {
     if (!company) setCurrentStep(StepConnect.CONNECT_WITH_CODE);
-    else if (company && !user) setCurrentStep(StepConnect.CONNECT_DETAILS)
+    else if (company && !user) setCurrentStep(StepConnect.CONNECT_DETAILS);
     console.log('company', company);
   }, [company]);
 
@@ -49,14 +49,16 @@ const Component: React.FC = () => {
               case StepConnect.CONNECT_WITH_CODE:
                 return <ConnectWithCode setCompany={setCompany} />;
               case StepConnect.CONNECT_DETAILS:
-                return <ConnectDetails
+                return (
+                  <ConnectDetails
                     inputs={detailsConnectInputs}
                     mutation={DETAILS_BY_CODE_COMPANY}
                     defaultModelValue={defaultInputs}
                     company={company}
-                />
+                  />
+                );
               case StepConnect.CONNECT_VERIFICATION:
-                return <Verification />
+                return <Verification />;
               default:
                 return <ConnectWithCode setCompany={setCompany} />;
             }

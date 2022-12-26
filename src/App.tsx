@@ -56,12 +56,12 @@ const App = () => {
   }, []);
 
   useEffect(() => {
-    if (user &&
-        (
-            (user.typeRegistration === TypeRegistration.REGISTRATION_DEFAULT && user.stepRegistration === StepEnum.COMPLETE)
-            ||
-            (user.typeRegistration === TypeRegistration.REGISTRATION_BY_CODE && user.stepRegistration === StepConnect.CONNECT_COMPLETE)
-        )
+    if (
+      user &&
+      ((user.typeRegistration === TypeRegistration.REGISTRATION_DEFAULT &&
+        user.stepRegistration === StepEnum.COMPLETE) ||
+        (user.typeRegistration === TypeRegistration.REGISTRATION_BY_CODE &&
+          user.stepRegistration === StepConnect.CONNECT_COMPLETE))
     ) {
       navigate({
         pathname: '/complete',
@@ -71,7 +71,7 @@ const App = () => {
         pathname: '/registration',
         search: `?step=${user.stepRegistration}`,
       });
-    } else if(user && user.typeRegistration === TypeRegistration.REGISTRATION_BY_CODE){
+    } else if (user && user.typeRegistration === TypeRegistration.REGISTRATION_BY_CODE) {
       navigate({
         pathname: '/connect-with-code',
         search: `?step=${user.stepRegistration}`,

@@ -36,7 +36,9 @@ interface IDetails {
 }
 
 const Component: React.FC<IDetails> = ({ defaultModelValue, mutation, inputs }) => {
-  const { modelValue, handleChangeInput, handleBlur, setModelValue } = useInput(defaultModelValue || defaultInputs);
+  const { modelValue, handleChangeInput, handleBlur, setModelValue } = useInput(
+    defaultModelValue || defaultInputs,
+  );
 
   const dispatch = useAppDispatch();
 

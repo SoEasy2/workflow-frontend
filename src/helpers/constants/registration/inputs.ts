@@ -144,7 +144,7 @@ const detailsInputs = isMobile ? detailsInputsMobile : detailsInputsDesktop;
 
 export { detailsInputs };
 
-const detailsConnectInputsDesktop:IDefaultInput[] = [
+const detailsConnectInputsDesktop: IDefaultInput[] = [
   {
     type: InputTypes.TEXT,
     placeholder: 'Text',
@@ -186,11 +186,11 @@ const detailsConnectInputsDesktop:IDefaultInput[] = [
   },
 ];
 
-const detailsConnectInputsMobile:IDefaultInput[] = [];
+const detailsConnectInputsMobile: IDefaultInput[] = [];
 
 const detailsConnectInputs = isMobile ? detailsConnectInputsMobile : detailsConnectInputsDesktop;
 
-export{ detailsConnectInputs }
+export { detailsConnectInputs };
 
 const loginInputsMobile: IDefaultInput[] = [];
 
