@@ -9,6 +9,8 @@ import { useSearchParams } from 'react-router-dom';
 import { StepEnum } from '../../../../helpers/constants/registration/enums/step';
 import { Verification } from '../../../../components/Desktop/Authentication/Forms/Verification';
 import { Details } from '../../../../components/Desktop/Authentication/Forms/Details';
+import { detailsInputs } from '../../../../helpers/constants/registration/inputs';
+import { DETAILS_USER } from '../../../../graphql/auth/registration/mutations';
 
 const Component: React.FC = () => {
   const [searchParams] = useSearchParams();
@@ -33,7 +35,7 @@ const Component: React.FC = () => {
               case StepEnum.VERIFICATION:
                 return <Verification />;
               case StepEnum.DETAILS:
-                return <Details />;
+                return <Details inputs={detailsInputs} mutation={DETAILS_USER} />;
               default:
                 return <Info />;
             }

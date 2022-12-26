@@ -15,6 +15,7 @@ export const REFRESH_USER = gql`
         stepRegistration
         sendCodeDate
         codeEmail
+        typeRegistration
         currentCompany {
           name
           user

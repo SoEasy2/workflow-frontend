@@ -33,6 +33,7 @@ export interface IDefaultInput {
   classNamePositionReset?: string;
   onFocus?: (callback: (status: boolean) => void, status: boolean) => void;
   typeValid?: TypeValid;
+  isSelect?: boolean;
 }
 
 export interface IModelValueInput {

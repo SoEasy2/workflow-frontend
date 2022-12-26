@@ -10,6 +10,8 @@ import { userSlice } from './redux/user/slices/UserSlice';
 import { REFRESH_USER } from './graphql/auth/refresh/mutations';
 import { Loader } from './components/UI-Kit/Loader/Loader';
 import { StepEnum } from './helpers/constants/registration/enums/step';
+import { TypeRegistration } from './helpers/constants/registration/enums/typeRegistration';
+import { StepConnect } from './helpers/constants/registration/enums/stepConnect';
 
 const App = () => {
   const navigate = useNavigate();
@@ -54,14 +56,24 @@ const App = () => {
   }, []);
 
   useEffect(() => {
-    if (user && Number(user.stepRegistration) === StepEnum.COMPLETE) {
+    if (user &&
+        (
+            (user.typeRegistration === TypeRegistration.REGISTRATION_DEFAULT && user.stepRegistration === StepEnum.COMPLETE)
+            ||
+            (user.typeRegistration === TypeRegistration.REGISTRATION_BY_CODE && user.stepRegistration === StepConnect.CONNECT_COMPLETE)
+        )
+    ) {
       navigate({
         pathname: '/complete',
       });
-    } else if (user) {
-      console.log('user', user);
+    } else if (user && user.typeRegistration === TypeRegistration.REGISTRATION_DEFAULT) {
       navigate({
         pathname: '/registration',
+        search: `?step=${user.stepRegistration}`,
+      });
+    } else if(user && user.typeRegistration === TypeRegistration.REGISTRATION_BY_CODE){
+      navigate({
+        pathname: '/connect-with-code',
         search: `?step=${user.stepRegistration}`,
       });
     } else {

@@ -82,6 +82,7 @@ export const detailsInputsDesktop: IDefaultInput[] = [
     isShow: false,
     disabled: false,
     prefix: 'company',
+    isSelect: true,
   },
   {
     type: InputTypes.PASSWORD,
@@ -125,6 +126,7 @@ export const detailsInputsMobile: IDefaultInput[] = [
     isShow: false,
     disabled: false,
     prefix: 'company',
+    isSelect: true,
   },
   {
     type: InputTypes.PASSWORD,
@@ -141,6 +143,54 @@ export const detailsInputsMobile: IDefaultInput[] = [
 const detailsInputs = isMobile ? detailsInputsMobile : detailsInputsDesktop;
 
 export { detailsInputs };
+
+const detailsConnectInputsDesktop:IDefaultInput[] = [
+  {
+    type: InputTypes.TEXT,
+    placeholder: 'Text',
+    label: 'Full name*',
+    key: 'username',
+    name: 'username',
+    isShow: false,
+    disabled: false,
+  },
+  {
+    type: InputTypes.EMAIL,
+    placeholder: 'email',
+    label: 'E-mail*',
+    key: 'email',
+    name: 'email',
+    isShow: false,
+    disabled: false,
+    required: true,
+  },
+  {
+    type: InputTypes.PHONE,
+    placeholder: 'Phone number*',
+    label: 'Phone number*',
+    key: 'phone',
+    name: 'phone',
+    isShow: false,
+    disabled: false,
+    required: true,
+  },
+  {
+    type: InputTypes.PASSWORD,
+    placeholder: 'Create password',
+    label: 'Password*',
+    key: 'password',
+    name: 'password',
+    isShow: true,
+    disabled: false,
+    prefix: 'user',
+  },
+];
+
+const detailsConnectInputsMobile:IDefaultInput[] = [];
+
+const detailsConnectInputs = isMobile ? detailsConnectInputsMobile : detailsConnectInputsDesktop;
+
+export{ detailsConnectInputs }
 
 const loginInputsMobile: IDefaultInput[] = [];
 

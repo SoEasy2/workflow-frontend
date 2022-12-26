@@ -1,16 +1,14 @@
 import React, { useId } from 'react';
 import styles from './Details.module.scss';
-import { detailsInputs } from '../../../../../helpers/constants/registration/inputs';
 import { CustomSelect } from '../../../../UI-Kit/Inputs/CustomSelect';
 import { detailsOptions } from '../../../../../helpers/constants/registration/options';
 import { DefaultInput } from '../../../../UI-Kit/Inputs/DefaultInput';
 import { defaultInputs } from './default';
-import { IModelValue } from '../../../../UI-Kit/Inputs/DefaultInput/interface';
+import { IDefaultInput, IModelValue } from '../../../../UI-Kit/Inputs/DefaultInput/interface';
 import { validateModelValue } from '../../../../../helpers/constants/validate/validateModelValue';
 import { useInput } from '../../../../../hooks/inputEvents/useInput';
 import { TypeValid } from '../../../../../helpers/constants/enum/typeHelper';
-import { useMutation } from '@apollo/client';
-import { DETAILS_USER } from '../../../../../graphql/auth/registration/mutations';
+import { DocumentNode, useMutation } from '@apollo/client';
 import { userSlice } from '../../../../../redux/user/slices/UserSlice';
 import { useAppDispatch } from '../../../../../hooks/redux';
 import { Loader } from '../../../../UI-Kit/Loader/Loader';
@@ -31,8 +29,14 @@ const setObjectSend = (object: IModelValue) => {
   return result;
 };
 
-const Component: React.FC = () => {
-  const { modelValue, handleChangeInput, handleBlur, setModelValue } = useInput(defaultInputs);
+interface IDetails {
+  defaultModelValue?: IModelValue;
+  inputs: IDefaultInput[];
+  mutation: DocumentNode;
+}
+
+const Component: React.FC<IDetails> = ({ defaultModelValue, mutation, inputs }) => {
+  const { modelValue, handleChangeInput, handleBlur, setModelValue } = useInput(defaultModelValue || defaultInputs);
 
   const dispatch = useAppDispatch();
 
@@ -49,7 +53,7 @@ const Component: React.FC = () => {
 
   const { userUpdate } = userSlice.actions;
 
-  const [handleRegister, { loading }] = useMutation(DETAILS_USER, {
+  const [handleRegister, { loading }] = useMutation(mutation, {
     onCompleted: async (data) => {
       const { details } = data;
       dispatch(userUpdate(details));
@@ -76,8 +80,8 @@ const Component: React.FC = () => {
         <h4 className={styles.formDetails__title}>Company details</h4>
       </div>
       <div className={styles.formDetails__form}>
-        {detailsInputs.map((input, index) => {
-          if (index === 2) {
+        {inputs.map((input) => {
+          if (input.isSelect) {
             return (
               <CustomSelect
                 options={detailsOptions}

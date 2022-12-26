@@ -3,7 +3,7 @@
 .connect{
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  gap: px-to-rem(80);
   height: 100%;
   &__wrapper__title{
     display: flex;

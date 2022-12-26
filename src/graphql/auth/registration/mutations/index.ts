@@ -10,6 +10,7 @@ export const REGISTER_USER = gql`
         stepRegistration
         sendCodeDate
         codeEmail
+        typeRegistration
       }
       tokens {
         accessToken
