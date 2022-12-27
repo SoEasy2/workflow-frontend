@@ -1,30 +1,25 @@
-import React from 'react'
-import { ButtonTypes } from '../../../helpers/constants/enum/buttonTypes'
-import cx from 'classnames'
-import styles from './Button.module.scss'
+import React from 'react';
+import { ButtonTypes } from '../../../helpers/constants/enum';
+import cx from 'classnames';
+import styles from './Button.module.scss';
+import { IButtonProps } from './interface';
 
-interface IButtonProps {
-  type: ButtonTypes
-  onClick?: () => void
-  text?: string
-  className?: string
-}
-
-const Button: React.FC<IButtonProps> = ({ type, onClick, text, className }) => {
+const Component: React.FC<IButtonProps> = ({ type, onClick, text, className }) => {
   return (
     <button
       className={cx(
         styles.button,
         type === ButtonTypes.ACTIVE && styles.active,
         type === ButtonTypes.DISABLED && styles.disabled,
-        type === ButtonTypes.DEFAULT && styles.default,
         className,
       )}
       onClick={onClick}
     >
       {text}
     </button>
-  )
-}
+  );
+};
 
-export { Button }
+const Button = React.memo(Component);
+
+export { Button };

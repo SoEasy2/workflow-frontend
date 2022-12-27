@@ -3,7 +3,6 @@ body {
   position: relative;
   line-height: 1.2;
   cursor: default;
-  height: 100%;
   width: 100%;
   top: 0;
   left: 0;
@@ -12,6 +11,7 @@ body {
 
 * {
   touch-action: manipulation;
+  box-sizing: border-box;
 }
 
 img {
@@ -27,5 +27,6 @@ html{
 }
 
 body{
+  max-height: 100% !important;
   height: 100% !important;
 }

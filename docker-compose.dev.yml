@@ -1,7 +1,7 @@
 version: '3.3'
 services:
   workflow-frontend:
-    image: node:14
+    image: node:16
     ports:
       - "3000:3000"
     build: ./Dockerfile

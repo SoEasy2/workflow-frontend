@@ -1,0 +1,63 @@
+@import "../../../../../../sass/_abstract/_variables.scss";
+.details{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  height: 100%;
+  &__wrapper{
+    display: flex;
+    flex-direction: column;
+    margin-top: px-to-rem(10);
+  }
+  &__back{
+    cursor: pointer;
+  }
+  &__title{
+    font-family: $global-font-inter;
+    font-weight: 600;
+    font-size: px-to-rem(24);
+    line-height: px-to-rem(28);
+    color: $color-text-primary;
+    margin-top: px-to-rem(20);
+  }
+  &__form{
+    display: flex;
+    flex-direction: column;
+    gap: px-to-rem(17);
+    margin-top: px-to-rem(14);
+  }
+  &__agreement{
+    margin-top: px-to-rem(17);
+    font-family: $global-font-inter;
+    color: $color-text-gray;
+    font-weight: 400;
+    font-size: px-to-rem(13);
+    line-height: px-to-rem(20);
+    text-align: left;
+    span + span {
+      margin-left: 4px;
+      font-weight: 500;
+      color: $color-text-primary;
+      text-decoration: underline;
+    }
+  }
+  .button{
+    margin-top: px-to-rem(10);
+    width: 100%;
+    background-color: $primary-background-color;
+    color: $color-white;
+  }
+  .input {
+    padding: px-to-rem(8) px-to-rem(40) px-to-rem(8) px-to-rem(20);
+  }
+  .select{
+    padding: px-to-rem(8) px-to-rem(20) px-to-rem(8);
+  }
+  .positionHelper{
+    top: px-to-rem(42)
+  }
+  .positionReset{
+    top: px-to-rem(43);
+  }
+}

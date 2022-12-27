@@ -1,0 +1,43 @@
+@import '../../../../../sass/_abstract/_variables.scss';
+.button__bar {
+  display: inline-block;
+  vertical-align: middle;
+  margin: auto;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 40px;
+  width: 70px;
+  text-align: center;
+}
+
+.button__bar li {
+  list-style: none;
+  cursor: pointer;
+  display: inline-block;
+  margin: 0 3px;
+  padding: 0;
+}
+
+.button__bar li button {
+  border: none;
+  background-color: $color-slider-no-active-dot;
+  color: transparent;
+  cursor: pointer;
+  display: block;
+  height: 7px;
+  width: 7px;
+  border-radius: 50%;
+  transition: .4s;
+}
+
+.button__bar li.slick-active button {
+  width: 22px;
+  background-color: $color-slider-active-dot;
+  border-radius: 50px;
+}
+
+.slick-slide img {
+  border: 5px solid #fff;
+  display: block;
+  margin: auto;
+}
