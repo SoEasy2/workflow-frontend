@@ -5,19 +5,28 @@ import { Button } from '../../Button';
 import { useMutation } from '@apollo/client';
 import {
   RESEND_VERIFICATION_CODE,
-  VERIFICATION_CODE,
 } from '../../../../../graphql/auth/registration/mutations';
 import { userSlice } from '../../../../../redux/user/slices/UserSlice';
 import { useAppDispatch, useAppSelector } from '../../../../../hooks/redux';
 import getSecondsTimerVerification from '../../../../../helpers/getSecondsTimerVerification';
 import { Loader } from '../../../../UI-Kit/Loader/Loader';
 
-const Component: React.FC = () => {
+interface IVerification {
+  isErrorVerification: boolean;
+  setErrorVerification: (data: boolean) => void;
+  handleClickVerification: (code: string) => void;
+}
+
+const Component: React.FC<IVerification> = ({
+  isErrorVerification,
+  setErrorVerification,
+  handleClickVerification,
+}) => {
   const [code, setCode] = useState<Array<string | null>>([]);
   const [seconds, setSeconds] = useState(0);
   const [timerActive, setTimerActive] = React.useState(false);
 
-  const [isError, setError] = useState<boolean>(false);
+  const dispatch = useAppDispatch();
 
   const { userUpdate } = userSlice.actions;
 
@@ -27,23 +36,13 @@ const Component: React.FC = () => {
       dispatch(userUpdate({ ...resendVerificationCode }));
     },
     onError: () => {
-      setError(true);
+      setErrorVerification(true);
     },
   });
 
   const handleClickResend = async () => {
     await handleResend();
   };
-
-  const [handleVerification] = useMutation(VERIFICATION_CODE, {
-    onCompleted: async (data) => {
-      const { verificationUser } = data;
-      dispatch(userUpdate({ stepRegistration: +verificationUser.stepRegistration }));
-    },
-    onError: () => {
-      setError(true);
-    },
-  });
 
   const { user } = useAppSelector((state) => state.user);
 
@@ -52,8 +51,6 @@ const Component: React.FC = () => {
       setTimer();
     }
   }, [user]);
-
-  const dispatch = useAppDispatch();
 
   const setTimer = React.useCallback(() => {
     if (user) {
@@ -102,7 +99,7 @@ const Component: React.FC = () => {
 
   const onChange = React.useCallback(
     (e: React.ChangeEvent<HTMLInputElement>, index: number) => {
-      isError && setError(false);
+      isErrorVerification && setErrorVerification(false);
       const value = e.target.value.split('')[0];
       const newCode = [...code];
       newCode[index] = value;
@@ -120,11 +117,7 @@ const Component: React.FC = () => {
     if (!code.length) {
       return;
     }
-    await handleVerification({
-      variables: {
-        emailCode: code.join(''),
-      },
-    });
+    await handleClickVerification(code.join(''));
   };
 
   return (
@@ -149,7 +142,7 @@ const Component: React.FC = () => {
             onChange={onChange}
             onPaste={onPaste}
             keyDown={keyDown}
-            isError={isError}
+            isError={isErrorVerification}
           />
           <Input
             key={2}
@@ -159,7 +152,7 @@ const Component: React.FC = () => {
             onChange={onChange}
             onPaste={onPaste}
             keyDown={keyDown}
-            isError={isError}
+            isError={isErrorVerification}
           />
           <div></div>
           <Input
@@ -170,7 +163,7 @@ const Component: React.FC = () => {
             onChange={onChange}
             onPaste={onPaste}
             keyDown={keyDown}
-            isError={isError}
+            isError={isErrorVerification}
           />
           <Input
             key={4}
@@ -180,7 +173,7 @@ const Component: React.FC = () => {
             onChange={onChange}
             onPaste={onPaste}
             keyDown={keyDown}
-            isError={isError}
+            isError={isErrorVerification}
           />
         </div>
         <div className={styles.formVerification__wrapper__button}>

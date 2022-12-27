@@ -11,6 +11,7 @@ import { useAppDispatch } from '../../../../../hooks/redux';
 import { Loader } from '../../../../UI-Kit/Loader/Loader';
 import { setupUser } from '../../../../../helpers/setupUser';
 import { useCookies } from 'react-cookie';
+import { DefaultObject } from '../../../../../types/defaultObject';
 
 interface IDetails {
   defaultModelValue: IModelValue;
@@ -29,7 +30,7 @@ const Component: React.FC<IDetails> = ({ defaultModelValue, mutation, inputs, co
   const handleClick = async () => {
     const countError = validateModelValue(modelValue);
     if (countError) return;
-    const sendObject = {} as any;
+    const sendObject = {} as DefaultObject<string>;
     Object.keys(modelValue).map((key) => {
       sendObject[key] = modelValue[key].value;
     });

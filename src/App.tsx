@@ -59,10 +59,11 @@ const App = () => {
     if (
       user &&
       ((user.typeRegistration === TypeRegistration.REGISTRATION_DEFAULT &&
-        user.stepRegistration === StepEnum.COMPLETE) ||
+        +user.stepRegistration === StepEnum.COMPLETE) ||
         (user.typeRegistration === TypeRegistration.REGISTRATION_BY_CODE &&
-          user.stepRegistration === StepConnect.CONNECT_COMPLETE))
+          +user.stepRegistration === StepConnect.CONNECT_COMPLETE))
     ) {
+      console.log('this');
       navigate({
         pathname: '/complete',
       });

@@ -33,3 +33,11 @@ export const DETAILS_BY_CODE_COMPANY = gql`
     }
   }
 `;
+export const VERIFICATION_CONNECT = gql`
+  mutation verificationConnectUser($emailCode: String!) {
+    verificationConnectUser(emailCode: $emailCode) {
+      id
+      stepRegistration
+    }
+  }
+`;
