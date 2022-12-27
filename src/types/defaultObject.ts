@@ -1,3 +1,3 @@
 export interface DefaultObject<T> {
-    [U: string]: T;
+  [U: string]: T;
 }

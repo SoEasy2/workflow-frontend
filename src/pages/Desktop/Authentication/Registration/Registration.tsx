@@ -10,10 +10,7 @@ import { StepEnum } from '../../../../helpers/constants/registration/enums/step'
 import { Verification } from '../../../../components/Desktop/Authentication/Forms/Verification';
 import { Details } from '../../../../components/Desktop/Authentication/Forms/Details';
 import { detailsInputs } from '../../../../helpers/constants/registration/inputs';
-import {
-  DETAILS_USER,
-  VERIFICATION_CODE,
-} from '../../../../graphql/auth/registration/mutations';
+import { DETAILS_USER, VERIFICATION_CODE } from '../../../../graphql/auth/registration/mutations';
 import { steps } from '../../../../helpers/constants';
 import { useMutation } from '@apollo/client';
 import { userSlice } from '../../../../redux/user/slices/UserSlice';

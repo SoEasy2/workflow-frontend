@@ -3,9 +3,7 @@ import styles from './Verification.module.scss';
 import { Input } from './components/Input';
 import { Button } from '../../Button';
 import { useMutation } from '@apollo/client';
-import {
-  RESEND_VERIFICATION_CODE,
-} from '../../../../../graphql/auth/registration/mutations';
+import { RESEND_VERIFICATION_CODE } from '../../../../../graphql/auth/registration/mutations';
 import { userSlice } from '../../../../../redux/user/slices/UserSlice';
 import { useAppDispatch, useAppSelector } from '../../../../../hooks/redux';
 import getSecondsTimerVerification from '../../../../../helpers/getSecondsTimerVerification';
