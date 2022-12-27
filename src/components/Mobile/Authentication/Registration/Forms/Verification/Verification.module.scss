@@ -1,0 +1,108 @@
+@import '../../../../../../sass/_abstract/functions';
+@import '../../../../../../sass/_abstract/variables';
+.formVerification{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  &__back{
+    margin: px-to-rem(10) 0 px-to-rem(20);
+  }
+  &__wrapper__title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: px-to-rem(10);
+    margin-bottom: px-to-rem(50);
+  }
+  &__title{
+    font-family: $global-font-inter;
+    font-size: px-to-rem(26);
+    line-height: px-to-rem(28);
+    color: $color-text-primary;
+    letter-spacing: px-to-rem(-0.24);
+    font-weight: 600;
+  }
+  &__description{
+    font-family: $global-font-inter;
+    font-size: px-to-rem(17);
+    line-height: px-to-rem(20);
+    color: $color-text-gray;
+    display: flex;
+    flex-direction: column;
+    gap: px-to-rem(3);
+    &__email{
+
+    }
+  }
+  &__form {
+    max-width: px-to-rem(512);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: px-to-rem(85);
+    &__inputs{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: px-to-rem(24);
+      div{
+        width: px-to-rem(16);
+        border: 1px solid $global-border-color;
+        height: fit-content;
+      }
+    }
+  }
+  &__receive{
+    font-family: $global-font-inter;
+    font-weight: 400;
+    font-size: px-to-rem(15);
+    line-height: px-to-rem(22);
+    color: $color-text-primary;
+    display: flex;
+    flex-direction: column;
+    gap: px-to-rem(53);
+    &__timer{
+      span{
+        font-family: $global-font-inter;
+        font-weight: 600;
+        font-size: px-to-rem(28);
+        line-height: px-to-rem(40);
+        color: $color-text-primary;
+      }
+    }
+    &__text{
+      display: flex;
+      justify-content: center;
+      gap: px-to-rem(5);
+      button{
+        font-family: $global-font-inter;
+        font-weight: 600;
+        font-size: px-to-rem(15);
+        line-height: px-to-rem(22);
+        color: $color-text-primary;
+        cursor: pointer;
+        background-color: transparent;
+        outline: none;
+        border: none;
+      }
+      span{
+        font-family: $global-font-inter;
+        font-weight: 400;
+        font-size: px-to-rem(15);
+        line-height: px-to-rem(24);
+        color: $color-text-primary;
+      }
+    }
+  }
+}
+.input {
+  font-size: px-to-rem(32);
+  line-height: px-to-rem(48);
+  padding: px-to-rem(36) px-to-rem(23);
+  border-radius: px-to-rem(49);
+  max-width: px-to-rem(76);
+  max-height: px-to-rem(120);
+}

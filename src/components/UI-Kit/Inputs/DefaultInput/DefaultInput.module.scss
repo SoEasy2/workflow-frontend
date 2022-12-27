@@ -1,10 +1,11 @@
-@import "../../../../sass/_abstract/_variables";
+@import "../../../../sass/_abstract/variables";
 .input__wrapper{
   display: flex;
   flex-direction: column;
   text-align: left; //in props
   gap: px-to-rem(8);
   position: relative;
+  width: 100%;
   &_disabled{
     opacity: 0.5;
   }
@@ -28,6 +29,10 @@
   line-height: 24px;
   border-radius: px-to-rem(12);
   background-color: $color-white;
+
+  &__error{
+    border-color: $color-no-valid-border;
+  }
 
   &:hover {
     background-color: $global-background-color;

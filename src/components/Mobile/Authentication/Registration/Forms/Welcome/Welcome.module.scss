@@ -1,0 +1,44 @@
+@import '../../../../../../sass/_abstract/_variables.scss';
+
+.welcome{
+  height: 100%;
+  &__wrapper{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-around;
+  }
+  &__buttons{
+    display: flex;
+    flex-direction: column;
+  }
+  &__button_registration {
+    background-color: $primary-background-color;
+    color: $color-white;
+    margin-bottom: px-to-rem(23);
+  }
+  &__button_signIn {
+    color: $color-text-primary;
+    font-weight: 600;
+    font-size: px-to-rem(18);
+    line-height: px-to-rem(20);
+    margin-bottom: px-to-rem(36);
+    border: none
+  }
+  &__join {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: $global-font-inter;
+    font-size: px-to-rem(15);
+    line-height: px-to-rem(24);
+    gap: 5px;
+  }
+  &__button_join {
+    border: none;
+    font-size: px-to-rem(15);
+    line-height: px-to-rem(24);
+    font-weight: 600;
+    padding: 0;
+  }
+}

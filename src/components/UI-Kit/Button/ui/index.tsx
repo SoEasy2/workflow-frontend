@@ -1,6 +1,6 @@
-import { IUIKit } from '../../../../helpers/ui-kit/types'
-import { Button } from '../Button'
-import { ButtonTypes } from '../../../../helpers/constants/enum'
+import { IUIKit } from '../../../../helpers/ui-kit/types';
+import { Button } from '../Button';
+import { ButtonTypes } from '../../../../helpers/constants/enum';
 
 export const ButtonsVariants: IUIKit[] = [
   {
@@ -12,7 +12,7 @@ export const ButtonsVariants: IUIKit[] = [
     component: function () {
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
-      return <Button {...this.props} />
+      return <Button {...this.props} />;
     },
   },
-]
+];

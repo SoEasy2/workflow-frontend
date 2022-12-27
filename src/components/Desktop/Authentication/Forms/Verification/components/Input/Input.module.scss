@@ -1,0 +1,21 @@
+@import '../../../../../../../sass/_abstract/functions';
+@import '../../../../../../../sass/_abstract/variables';
+.input{
+  width: 100%;
+  height: 100%;
+  max-height: px-to-rem(156);
+  max-width: px-to-rem(108);
+  border-radius: px-to-rem(80);
+  border: $global-border-default-input;
+  outline: none;
+  padding: px-to-rem(45) px-to-rem(24);
+  font-family: $global-font-inter;
+  color: $color-text-primary;
+  font-size: px-to-rem(60);
+  line-height: px-to-rem(90);
+  text-align: center;
+  transition: all .3s;
+}
+.error{
+  border-color: $color-error-input;
+}

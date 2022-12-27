@@ -1,6 +1,6 @@
-import { IUIKit } from '../../../../../helpers/ui-kit/types'
-import { DefaultInput } from '../DefaultInput'
-import { InputTypes } from '../../../../../helpers/constants/enum'
+import { IUIKit } from '../../../../../helpers/ui-kit/types';
+import { DefaultInput } from '../DefaultInput';
+import { InputTypes } from '../../../../../helpers/constants/enum';
 
 export const InputsVariants: IUIKit[] = [
   {
@@ -14,7 +14,7 @@ export const InputsVariants: IUIKit[] = [
     component: function () {
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
-      return <DefaultInput {...this.props} />
+      return <DefaultInput {...this.props} />;
     },
   },
   {
@@ -28,7 +28,7 @@ export const InputsVariants: IUIKit[] = [
     component: function () {
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
-      return <DefaultInput {...this.props} />
+      return <DefaultInput {...this.props} />;
     },
   },
   {
@@ -41,7 +41,7 @@ export const InputsVariants: IUIKit[] = [
     component: function () {
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
-      return <DefaultInput {...this.props} />
+      return <DefaultInput {...this.props} />;
     },
   },
-]
+];

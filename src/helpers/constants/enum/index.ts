@@ -1,2 +1,2 @@
-export * from './buttonTypes'
-export * from './inputTypes'
+export * from './buttonTypes';
+export * from './inputTypes';

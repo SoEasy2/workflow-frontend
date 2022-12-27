@@ -1,5 +1,5 @@
-@import "../../../sass/_abstract/_functions.scss";
-@import "../../../sass/_abstract/_variables.scss";
+@import "../../../sass/_abstract/functions";
+@import "../../../sass/_abstract/variables";
 .button{
   padding: px-to-rem(8) px-to-rem(16);
   background-color: $color-white;
@@ -24,5 +24,4 @@
 }
 .disabled{
   color: $color-white;
-  background-color: $disable-background-color;
 }
