@@ -18,6 +18,7 @@ $color-text-mobile: #414157;
 $color-slider-no-active-dot: #EBEBED;
 $color-slider-active-dot: #030235;
 $color-exception: #ef2d2d;
+$color-sidebar-item: #D0D3D8;
 //Fonts
 $global-font-inter: 'Inter UI', sans-serif;
 
@@ -26,7 +27,8 @@ $global-background-color: #FAFAFB;
 $primary-background-color: #030235;
 $hover-background-color: #FAFAFB;
 $helper-background-light-gray-color: $color-light-gray;
-
+$background-color-sidebar: #080721;
+$background-color-sidebar-item-hover: #16152B;
 //Shadows
 $shadow-auth:
         drop-shadow(px-to-rem(0) px-to-rem(4) px-to-rem(4) rgba($color-black, 0.25))

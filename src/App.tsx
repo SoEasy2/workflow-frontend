@@ -63,7 +63,6 @@ const App = () => {
         (user.typeRegistration === TypeRegistration.REGISTRATION_BY_CODE &&
           +user.stepRegistration === StepConnect.CONNECT_COMPLETE))
     ) {
-      console.log('this');
       navigate({
         pathname: '/complete',
       });
@@ -84,6 +83,12 @@ const App = () => {
       });
     }
   }, [user]);
+
+  useEffect(() => {
+    navigate({
+      pathname: '/dashboard',
+    });
+  }, []);
   return (
     <MainLayout>
       {isFirstLoading && <Loader isBackground={true} />}

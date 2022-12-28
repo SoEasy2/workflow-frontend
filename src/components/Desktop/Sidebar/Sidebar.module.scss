@@ -1,0 +1,24 @@
+@import '../../../sass/_abstract/_variables.scss';
+.sidebar{
+  background-color: $background-color-sidebar;
+  height: 100%;
+  width: px-to-rem(280);
+  &__logo{
+    color: $color-white;
+    margin-left: px-to-rem(24);
+  }
+  &__list{
+    display: flex;
+    flex-direction: column;
+    gap: px-to-rem(16);
+  }
+  &__title{
+    color: $color-text-not-focused;
+    font-family: $global-font-inter;
+    font-weight: 500;
+    font-size: px-to-rem(17);
+    line-height: px-to-rem(24);
+    text-transform: uppercase;
+    margin: 0 0 px-to-rem(10) px-to-rem(24);
+  }
+}

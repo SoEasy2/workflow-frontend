@@ -1,0 +1,32 @@
+@import "../../../../../sass/_abstract/_variables.scss";
+.timer{
+  display: flex;
+  align-items: center;
+  gap: px-to-rem(10);
+  &__button{
+    padding: px-to-rem(12) px-to-rem(12) px-to-rem(12) px-to-rem(16);
+    cursor: pointer;
+    background-color: $primary-background-color;
+    color: $color-white;
+    outline: none;
+    border: none;
+    border-radius: px-to-rem(56);
+    display: flex;
+  }
+  &__time{
+    display: flex;
+    align-items: center;
+    gap: px-to-rem(0.5);
+  }
+}
+.time, span{
+  font-family: $global-font-inter;
+  font-weight: 500;
+  font-size: px-to-rem(20);
+  line-height: px-to-rem(28);
+  color: $color-text-primary;
+  display: flex;
+}
+span{
+  margin-bottom: px-to-rem(2);
+}

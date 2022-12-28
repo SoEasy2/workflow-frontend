@@ -1,0 +1,9 @@
+@import '../../../../../sass/_abstract/_variables.scss';
+.sidebar__layout{
+  width: 100%;
+  height: 100%;
+  padding: px-to-rem(20) px-to-rem(0);
+  display: flex;
+  flex-direction: column;
+  gap: px-to-rem(40);
+}
