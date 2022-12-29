@@ -1,0 +1,42 @@
+@import "../../../../sass/_abstract/_variables.scss";
+.wrapper{
+  position: relative;
+  border-radius: px-to-rem(8);
+  background-color: $global-background-color;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  transition: .4s;
+  &__focus{
+    box-shadow: 0 px-to-rem(1) 0 rgba(2, 3, 3, 0.05);
+    background-color: $color-white;
+  }
+}
+.input{
+  width: 100%;
+  background-color: transparent;
+  transition: .4s;
+  font-family: $global-font-inter;
+  font-size: px-to-rem(15);
+  line-height: px-to-rem(24);
+  color: $color-text-not-focused;
+  outline: none;
+  border: none;
+  padding: px-to-rem(10) px-to-rem(10) px-to-rem(10) px-to-rem(48);
+  &__focus{
+    color: $color-text-primary;
+  }
+}
+.icon{
+  color: $color-text-primary;
+  &__search{
+    position: absolute;
+    left: px-to-rem(16);
+    top: px-to-rem(10);
+  }
+}
+.divider{
+  border: px-to-rem(1) solid rgba(89, 100, 118, 0.16);
+  height: px-to-rem(32);
+  width: px-to-rem(1);
+}

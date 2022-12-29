@@ -44,3 +44,22 @@ export const errorTransition = (state: boolean) =>
       transform: 'scale(0)',
     },
   });
+
+export const barTransitions = (state: boolean) =>
+  useTransition(state, {
+    from: {
+      position: 'relative',
+      right: 0,
+      width: 0,
+    },
+    enter: {
+      position: 'relative',
+      right: 0,
+      width: 580,
+    },
+    leave: {
+      position: 'relative',
+      right: 0,
+      width: 0,
+    },
+  });

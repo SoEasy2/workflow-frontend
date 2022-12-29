@@ -5,6 +5,7 @@ import { HelperHideSelectIcon, HelperOpenSelectIcon } from '../../../../helpers/
 import { OptionList } from './components/OptionList';
 import cx from 'classnames';
 import { IModelValue, IModelValueInput } from '../DefaultInput/interface';
+import useOnClickOutside from '../../../../hooks/clickOutside/useClickOutside';
 
 interface ISelect {
   options: IOption[];
@@ -36,15 +37,14 @@ const Component: React.FC<ISelect> = ({
   };
   const rootEl = useRef<HTMLDivElement>(null);
 
+  useOnClickOutside(rootEl, () => setOpen(false));
+
   useEffect(() => {
-    const onClick = (e: any) => rootEl.current?.contains(e.target) || setOpen(false);
-    document.addEventListener('click', onClick);
     const searchOption =
       modelValue && modelValue[name]
         ? options.find((item) => item.value === Number(modelValue[name].value))
         : null;
     setValue(searchOption ? searchOption : null);
-    return () => document.removeEventListener('click', onClick);
   }, []);
 
   return (

@@ -12,6 +12,7 @@ import { Loader } from './components/UI-Kit/Loader/Loader';
 import { StepEnum } from './helpers/constants/registration/enums/step';
 import { TypeRegistration } from './helpers/constants/registration/enums/typeRegistration';
 import { StepConnect } from './helpers/constants/registration/enums/stepConnect';
+import useEventListener from './hooks/eventListener/useEvenetListener';
 
 const App = () => {
   const navigate = useNavigate();
@@ -37,22 +38,16 @@ const App = () => {
     },
   });
 
+  useEventListener('resize', () => {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    document.body.style.zoom = 1 / window.devicePixelRatio;
+  });
+
   useEffect(() => {
-    addEventListener('resize', () => {
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
-      document.body.style.zoom = 1 / window.devicePixelRatio;
-    });
     (async () => {
       await handleRefresh();
     })();
-
-    return () =>
-      removeEventListener('resize', () => {
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore
-        document.body.style.zoom = 1 / window.devicePixelRatio;
-      });
   }, []);
 
   useEffect(() => {

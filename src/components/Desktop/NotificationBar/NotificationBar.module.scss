@@ -1,0 +1,67 @@
+@import "../../../sass/_abstract/_variables.scss";
+.notificationBar{
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(24, 32, 50, 0.1);
+  z-index: 100;
+  position: absolute;
+  display: flex;
+  justify-content: flex-end;
+  &__close{
+    display: flex;
+    justify-content: flex-end;
+    color: $color-black;
+    padding: px-to-rem(30) px-to-rem(45);
+    .close{
+      cursor: pointer;
+      padding: px-to-rem(5);
+      transform: rotate(180deg);
+    }
+  }
+  &__title{
+    margin-left: px-to-rem(32);
+  }
+  .title{
+    font-weight: 500;
+    color: $color-text-primary;
+    font-family: $global-font-inter;
+    font-size: px-to-rem(32);
+    line-height: px-to-rem(40);
+  }
+  &__tabs{
+    display: flex;
+    gap: px-to-rem(24);
+    margin: px-to-rem(32) 0 0 px-to-rem(32);;
+  }
+  &__tab{
+    font-family: $global-font-inter;
+    font-weight: 500;
+    font-size: px-to-rem(15);
+    line-height: px-to-rem(16);
+    color: $color-text-not-focused;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    transition: .3s;
+    &_active{
+      color: $color-text-primary;
+    }
+  }
+  .hr{
+    height: px-to-rem(2);
+    background-color: rgba(89, 100, 118, 0.16);
+    border: none;
+    width: 100%;
+    margin-top: px-to-rem(15);
+  }
+  &__content{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+}

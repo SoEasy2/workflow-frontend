@@ -37,3 +37,45 @@ export const NotificationIcon = () => (
     />
   </svg>
 );
+
+export const SearchIcon = () => (
+  <svg
+    width='24'
+    height='24'
+    viewBox='0 0 24 24'
+    fill='none'
+    xmlns='http://www.w3.org/2000/svg'
+  >
+    <circle
+      cx='10'
+      cy='10'
+      r='7'
+      stroke='currentColor'
+      strokeWidth='2'
+    />
+    <path
+      d='M21 21L15 15'
+      stroke='currentColor'
+      strokeWidth='2'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    />
+  </svg>
+);
+
+export const ArrowHandleIcon = () => (
+  <svg
+    width='7'
+    height='14'
+    viewBox='0 0 7 14'
+    fill='none'
+    xmlns='http://www.w3.org/2000/svg'
+  >
+    <path
+      fillRule='evenodd'
+      clipRule='evenodd'
+      d='M6.80577 0.241206C6.54679 -0.0804021 6.1269 -0.0804021 5.86792 0.241206L0.194235 6.41768C-0.0647449 6.73928 -0.0647449 7.26071 0.194235 7.58232L5.86792 13.7588C6.1269 14.0804 6.54679 14.0804 6.80577 13.7588C7.06474 13.4372 7.06474 12.9158 6.80577 12.5941L1.601 7L6.80577 1.40585C7.06474 1.08424 7.06474 0.562814 6.80577 0.241206Z'
+      fill='currentColor'
+    />
+  </svg>
+);
