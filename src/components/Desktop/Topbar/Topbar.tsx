@@ -4,24 +4,36 @@ import { NotificationIcon } from '../../../helpers/icons';
 import { Timer } from './components/Timer';
 import { InputSearchWithFilter } from '../../UI-Kit/Inputs/InputSearchWithFilter/InputSearchWithFilter';
 import { NotificationBar } from '../NotificationBar';
-import { barTransitions } from '../../../helpers/constants';
+import { barTransitions, popupTransition } from '../../../helpers/constants';
+import { UserPopup } from '../Popups/UserPopup';
+import { ProfileBar } from '../ProfileBar';
 
 const Component: React.FC = () => {
   const [isNotification, setNotification] = useState<boolean>(false);
   const notificationBarTransition = barTransitions(isNotification);
+
+  const [isPopupUser, setPopupUser] = useState<boolean>(false);
+  const popupUserTransition = popupTransition(isPopupUser);
+
+  const [isProfileBar, setProfileBar] = useState<boolean>(false);
+  const profileBarTransition = barTransitions(isProfileBar);
+
   return (
     <>
-      {/* { isNotification &&*/}
-      {/*    <NotificationBar*/}
-      {/*      isOpen={isNotification}*/}
-      {/*      setOpen={setNotification}*/}
-      {/*   />*/}
-      {/* }*/}
       {notificationBarTransition(
         (style, item) =>
           item && (
             <NotificationBar
               setOpen={setNotification}
+              style={style}
+            />
+          ),
+      )}
+      {profileBarTransition(
+        (style, item) =>
+          item && (
+            <ProfileBar
+              setOpen={setProfileBar}
               style={style}
             />
           ),
@@ -42,11 +54,24 @@ const Component: React.FC = () => {
             >
               <NotificationIcon />
             </div>
-            <div className={styles.user__image}>
+            <div
+              className={styles.user__image}
+              onClick={() => setPopupUser(true)}
+            >
               <img
                 src='https://giffun.ru/wp-content/uploads/2019/04/kachat_krasivye_kartinki_na_telefon_besplatno_29_23075447-500x313.jpg'
                 alt='profile img'
               />
+              {popupUserTransition(
+                (style, item) =>
+                  item && (
+                    <UserPopup
+                      style={style}
+                      setOpen={setPopupUser}
+                      setOpenProfile={setProfileBar}
+                    />
+                  ),
+              )}
             </div>
           </div>
         </div>

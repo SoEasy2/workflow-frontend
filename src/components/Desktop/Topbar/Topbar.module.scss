@@ -34,6 +34,8 @@
   &__image{
     width: px-to-rem(40);
     height: px-to-rem(40);
+    position: relative;
+    cursor: pointer;
     img{
       height: 100%;
       width: 100%;
