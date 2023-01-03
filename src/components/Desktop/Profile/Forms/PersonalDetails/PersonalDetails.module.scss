@@ -1,0 +1,15 @@
+@import '../../../../../sass/_abstract/_variables.scss';
+.personalForm{
+  display: grid;
+  grid-template-columns: repeat(2, 48%);
+  grid-gap: px-to-rem(24) px-to-rem(20);
+  div:nth-child(2n + 1):last-child {
+    grid-column: 1 / span 2;
+  }
+}
+.input{
+  font-size: px-to-rem(15);
+  line-height: px-to-rem(24);
+  border-radius: px-to-rem(12);
+  padding: px-to-rem(10) px-to-rem(16);
+}

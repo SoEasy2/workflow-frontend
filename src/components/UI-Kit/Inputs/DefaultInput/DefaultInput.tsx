@@ -31,6 +31,8 @@ const Component: React.FC<IDefaultInput> = ({
   classNamePositionReset,
   onFocus,
   typeValid = TypeValid.HELPER,
+  withReset = true,
+  placeholder,
 }) => {
   const [value, setValue] = useState<string>('');
   const [typeInput, setTypeInput] = useState<InputTypes>(type);
@@ -39,7 +41,6 @@ const Component: React.FC<IDefaultInput> = ({
 
   useEffect(() => {
     if (modelValue) {
-      console.log('modelValue', modelValue[name]);
       setValid(modelValue[name].error.status);
     }
   }, [modelValue]);
@@ -90,6 +91,7 @@ const Component: React.FC<IDefaultInput> = ({
           onKeyPress={onKeyPress}
           onBlur={handleBlur}
           onFocus={() => (onFocus ? onFocus(setFocus, true) : setFocus(true))}
+          placeholder={placeholder}
         />
       ) : (
         <input
@@ -103,6 +105,7 @@ const Component: React.FC<IDefaultInput> = ({
             classNameInput,
             !isFocus && isValid !== null && !isValid && styles.input__error,
           )}
+          placeholder={placeholder}
           disabled={disabled}
           onKeyPress={onKeyPress}
           onBlur={handleBlur}
@@ -115,6 +118,7 @@ const Component: React.FC<IDefaultInput> = ({
       >
         {!disabled &&
           value &&
+          withReset &&
           value.length > 0 &&
           isFocus &&
           (type === InputTypes.TEXT || type === InputTypes.PHONE) && (

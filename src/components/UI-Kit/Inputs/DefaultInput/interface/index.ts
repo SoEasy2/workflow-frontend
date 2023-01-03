@@ -34,6 +34,7 @@ export interface IDefaultInput {
   onFocus?: (callback: (status: boolean) => void, status: boolean) => void;
   typeValid?: TypeValid;
   isSelect?: boolean;
+  withReset?: boolean;
 }
 
 export interface IModelValueInput {

@@ -9,6 +9,24 @@
   position: absolute;
   display: flex;
   justify-content: flex-end;
+  .layout{
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+  .button {
+    font-family: $global-font-inter;
+    background-color: $primary-background-color;
+    color: $color-white;
+    font-size: px-to-rem(18);
+    line-height: px-to-rem(20);
+    font-weight: 500;
+    &:hover{
+      background-color: rgba($primary-background-color, 0.93);
+      color: $color-white;
+    }
+  }
   &__head{
     background-color: $global-background-color;
     &__status{
@@ -24,6 +42,7 @@
     &__profile{
       display: flex;
       align-items: center;
+      gap: px-to-rem(10);
     }
     &__img{
       width: px-to-rem(56);
@@ -54,11 +73,31 @@
       flex-direction: column;
       justify-content: space-around;
     }
+    &__tabs{
+      display: flex;
+      gap: px-to-rem(25);
+    }
+    &__tab{
+      font-family: $global-font-inter;
+      margin-top: px-to-rem(30);
+      font-weight: 500;
+      font-size: px-to-rem(15);
+      line-height: px-to-rem(16);
+      color: $color-text-not-focused;
+      cursor: pointer;
+      outline: none;
+      border: none;
+      background-color: transparent;
+      transition: .3s;
+      &_active{
+        color: $color-text-primary;
+      }
+    }
   }
   &__wrapper{
     display: flex;
     width: 100%;
     flex-direction: column;
-    padding: px-to-rem(25) px-to-rem(40);
+    padding: px-to-rem(25) px-to-rem(20) px-to-rem(15);
   }
 }
