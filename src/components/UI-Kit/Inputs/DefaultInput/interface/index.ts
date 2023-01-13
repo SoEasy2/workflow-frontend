@@ -1,6 +1,7 @@
 import React from 'react';
 import { InputTypes } from '../../../../../helpers/constants/enum';
 import { TypeValid } from '../../../../../helpers/constants/enum/typeHelper';
+import { IOption } from '../../CustomSelect/components/Option/interface';
 
 export interface IModelValue {
   [U: string]: IModelValueInput;
@@ -35,6 +36,7 @@ export interface IDefaultInput {
   typeValid?: TypeValid;
   isSelect?: boolean;
   withReset?: boolean;
+  options?: IOption[];
 }
 
 export interface IModelValueInput {

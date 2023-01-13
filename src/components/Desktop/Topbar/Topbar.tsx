@@ -7,6 +7,7 @@ import { NotificationBar } from '../NotificationBar';
 import { barTransitions, popupTransition } from '../../../helpers/constants';
 import { UserPopup } from '../Popups/UserPopup';
 import { ProfileBar } from '../ProfileBar';
+import { AdminSettingsBar } from '../AdminSettingsBar';
 
 const Component: React.FC = () => {
   const [isNotification, setNotification] = useState<boolean>(false);
@@ -17,6 +18,9 @@ const Component: React.FC = () => {
 
   const [isProfileBar, setProfileBar] = useState<boolean>(false);
   const profileBarTransition = barTransitions(isProfileBar);
+
+  const [isAdminSettings, setAdminSettings] = useState<boolean>(false);
+  const settingsAdminBarTransition = barTransitions(isAdminSettings);
 
   return (
     <>
@@ -34,6 +38,15 @@ const Component: React.FC = () => {
           item && (
             <ProfileBar
               setOpen={setProfileBar}
+              style={style}
+            />
+          ),
+      )}
+      {settingsAdminBarTransition(
+        (style, item) =>
+          item && (
+            <AdminSettingsBar
+              setOpen={setAdminSettings}
               style={style}
             />
           ),
@@ -69,6 +82,7 @@ const Component: React.FC = () => {
                       style={style}
                       setOpen={setPopupUser}
                       setOpenProfile={setProfileBar}
+                      setOpenAdminSettings={setAdminSettings}
                     />
                   ),
               )}

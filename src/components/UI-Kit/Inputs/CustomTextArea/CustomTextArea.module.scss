@@ -1,0 +1,48 @@
+@import "../../../../sass/_abstract/_variables.scss";
+.textarea {
+  border: $global-border-default-input;
+  outline: none;
+  transition: all .4s;
+  padding: px-to-rem(14) px-to-rem(40) px-to-rem(14) px-to-rem(20);
+  font-family: $global-font-inter;
+  color: $color-text-not-focused;
+  font-weight: 400;
+  font-size: px-to-rem(16);
+  line-height: 24px;
+  border-radius: px-to-rem(12);
+  background-color: $color-white;
+  resize: none;
+  width: 100%;
+  max-width: 100%;
+  height: px-to-rem(200);
+
+  &__error{
+    border-color: $color-no-valid-border;
+  }
+
+  &:hover {
+    background-color: $global-background-color;
+  }
+  &:focus {
+    border: $global-border-focus-input;
+    color: $color-text-primary;
+  }
+}
+.textarea__wrapper{
+  display: flex;
+  flex-direction: column;
+  text-align: left; //in props
+  gap: px-to-rem(8);
+  position: relative;
+  width: 100%;
+  &_disabled{
+    opacity: 0.5;
+  }
+}
+.label{
+  font-family: $global-font-inter;
+  color: $color-label;
+  font-weight: 500;
+  line-height: 24px;
+  font-size: px-to-rem(15);
+}

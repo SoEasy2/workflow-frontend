@@ -15,6 +15,7 @@ export const LOGIN_USER = gql`
         stepRegistration
         sendCodeDate
         codeEmail
+        typeRegistration
         currentCompany {
           name
           user

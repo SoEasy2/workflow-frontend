@@ -15,12 +15,22 @@
     justify-content: space-between;
     flex-direction: column;
   }
+  &__content{
+    height: 100%;
+  }
+  &__form{
+    height: 78%;
+  }
+  &__complete{
+    border-top: px-to-rem(2) solid $color-pale-gray;
+  }
   .button {
     font-family: $global-font-inter;
     background-color: $primary-background-color;
     color: $color-white;
     font-size: px-to-rem(18);
     line-height: px-to-rem(20);
+    padding: px-to-rem(16) px-to-rem(0);
     font-weight: 500;
     &:hover{
       background-color: rgba($primary-background-color, 0.93);
@@ -89,8 +99,11 @@
       border: none;
       background-color: transparent;
       transition: .3s;
+      border-bottom: px-to-rem(2) solid rgba(89, 100, 118, 0.16);
+      padding-bottom: px-to-rem(15);
       &_active{
         color: $color-text-primary;
+        border-color: $primary-background-color;
       }
     }
   }
@@ -98,6 +111,13 @@
     display: flex;
     width: 100%;
     flex-direction: column;
-    padding: px-to-rem(25) px-to-rem(20) px-to-rem(15);
+    padding: px-to-rem(25) px-to-rem(20) px-to-rem(0);
   }
+}
+.formLayout {
+  height: 100%;
+  justify-content: space-between;
+}
+.close{
+  cursor: pointer;
 }

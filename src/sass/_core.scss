@@ -31,3 +31,32 @@ body{
   height: 100% !important;
   overflow: hidden;
 }
+
+//.ant-picker-input {
+//  input {
+//    color: red !important;
+//  }
+//}
+.ant-picker {
+  border: $global-border-default-input;
+  cursor: pointer;
+  transition: all .4s;
+  &:hover:not(.ant-picker-focused) {
+    border: $global-border-default-input;
+  }
+  input {
+    font-family: $global-font-inter !important;
+    color: $color-text-not-focused !important;
+    font-weight: 400 !important;
+    font-size: px-to-rem(16);
+    line-height: 24px;
+  }
+  &-focused{
+    border: $global-border-focus-input !important;
+    color: $color-text-primary !important;
+    box-shadow: none !important;
+    input {
+      color: $color-text-primary !important;
+    }
+  }
+}

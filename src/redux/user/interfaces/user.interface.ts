@@ -10,8 +10,10 @@ export interface IUser {
   sendCodeDate: Date;
   codeEmail: string;
   stepRegistration: StepEnum | StepConnect;
-  name?: string;
+  username?: string;
   currentCompany?: ICompany;
-
   typeRegistration: TypeRegistration;
+  birthday?: string;
+  address?: string;
+  description?: string;
 }

@@ -1,0 +1,123 @@
+@import "../../../sass/_abstract/_variables.scss";
+.settingsBar {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(24, 32, 50, 0.1);
+  z-index: 100;
+  position: absolute;
+  display: flex;
+  justify-content: flex-end;
+  .layout{
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+  &__content{
+    height: 100%;
+  }
+  &__form{
+    height: 78%;
+  }
+  &__complete{
+    border-top: px-to-rem(2) solid $color-pale-gray;
+  }
+  .button {
+    font-family: $global-font-inter;
+    background-color: $primary-background-color;
+    color: $color-white;
+    font-size: px-to-rem(18);
+    line-height: px-to-rem(20);
+    padding: px-to-rem(16) px-to-rem(0);
+    font-weight: 500;
+    &:hover{
+      background-color: rgba($primary-background-color, 0.93);
+      color: $color-white;
+    }
+  }
+  &__head{
+    background-color: $global-background-color;
+    &__status{
+      display: flex;
+      justify-content: flex-end;
+    }
+    &__user{
+      margin-top: px-to-rem(65);
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+    &__profile{
+      display: flex;
+      align-items: center;
+      gap: px-to-rem(10);
+    }
+    &__img{
+      width: px-to-rem(56);
+      height: px-to-rem(56);
+      img{
+        object-fit: cover;
+        border-radius: px-to-rem(56);
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .name{
+      font-family: $global-font-inter;
+      font-weight: 600;
+      font-size: px-to-rem(26);
+      line-height: px-to-rem(40);
+      color: $color-text-primary
+    }
+    .position{
+      color: $color-text-gray;
+      font-family: $global-font-inter;
+      font-weight: 400;
+      font-size: px-to-rem(15);
+      line-height: px-to-rem(20);
+    }
+    &__username{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+    }
+    &__tabs{
+      display: flex;
+      gap: px-to-rem(25);
+    }
+    &__tab{
+      font-family: $global-font-inter;
+      margin-top: px-to-rem(30);
+      font-weight: 500;
+      font-size: px-to-rem(15);
+      line-height: px-to-rem(16);
+      color: $color-text-not-focused;
+      cursor: pointer;
+      outline: none;
+      border: none;
+      background-color: transparent;
+      transition: .3s;
+      border-bottom: px-to-rem(2) solid rgba(89, 100, 118, 0.16);
+      padding-bottom: px-to-rem(15);
+      &_active{
+        color: $color-text-primary;
+        border-color: $primary-background-color;
+      }
+    }
+  }
+  &__wrapper{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    padding: px-to-rem(25) px-to-rem(20) px-to-rem(0);
+  }
+}
+.formLayout {
+  height: 100%;
+  justify-content: space-between;
+}
+.close{
+  cursor: pointer;
+}

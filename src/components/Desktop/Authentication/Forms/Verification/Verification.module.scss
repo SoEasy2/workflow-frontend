@@ -56,6 +56,8 @@
     flex-direction: column;
     gap: px-to-rem(15);
     &__timer{
+      display: flex;
+      justify-content: center;
       span{
         font-family: $global-font-inter;
         font-weight: 600;

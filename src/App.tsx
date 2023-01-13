@@ -59,7 +59,7 @@ const App = () => {
           +user.stepRegistration === StepConnect.CONNECT_COMPLETE))
     ) {
       navigate({
-        pathname: '/complete',
+        pathname: '/dashboard',
       });
     } else if (user && user.typeRegistration === TypeRegistration.REGISTRATION_DEFAULT) {
       navigate({
@@ -79,11 +79,11 @@ const App = () => {
     }
   }, [user]);
 
-  useEffect(() => {
-    navigate({
-      pathname: '/dashboard',
-    });
-  }, []);
+  // useEffect(() => {
+  //   navigate({
+  //     pathname: '/dashboard',
+  //   });
+  // }, []);
   return (
     <MainLayout>
       {isFirstLoading && <Loader isBackground={true} />}

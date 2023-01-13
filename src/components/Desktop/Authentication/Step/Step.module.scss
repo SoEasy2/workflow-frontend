@@ -25,6 +25,7 @@
     font-size: px-to-rem(20);
     line-height: px-to-rem(28);
     color: $color-label;
+    display: flex;
     .current{
       font-weight: 600;
       color: $color-text-primary;

@@ -38,11 +38,11 @@ const Component: React.FC = () => {
   };
 
   const [handleLogin, { loading, error }] = useMutation(LOGIN_USER, {
-    onCompleted: async (data) => {
+    onCompleted: (data) => {
       if (!data) return;
       const { login } = data;
       setupUser(login.tokens, setCookie);
-      await dispatch(userSet(login.user));
+      dispatch(userSet(login.user));
       setModelValue({ ...defaultInputs });
     },
     errorPolicy: 'all',

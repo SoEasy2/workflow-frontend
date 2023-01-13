@@ -7,7 +7,7 @@ import cx from 'classnames';
 import { IModelValue, IModelValueInput } from '../DefaultInput/interface';
 import useOnClickOutside from '../../../../hooks/clickOutside/useClickOutside';
 
-interface ISelect {
+export interface ISelect {
   options: IOption[];
   placeholder?: string;
   onChange?: (key: string, value: IModelValueInput) => void;
@@ -42,7 +42,11 @@ const Component: React.FC<ISelect> = ({
   useEffect(() => {
     const searchOption =
       modelValue && modelValue[name]
-        ? options.find((item) => item.value === Number(modelValue[name].value))
+        ? options.find(
+            (item) =>
+              item.value === Number(modelValue[name].value) ||
+              item.value === modelValue[name].value,
+          )
         : null;
     setValue(searchOption ? searchOption : null);
   }, []);

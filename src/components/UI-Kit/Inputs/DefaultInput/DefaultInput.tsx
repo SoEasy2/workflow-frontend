@@ -34,7 +34,7 @@ const Component: React.FC<IDefaultInput> = ({
   withReset = true,
   placeholder,
 }) => {
-  const [value, setValue] = useState<string>('');
+  const [value, setValue] = useState<string>(modelValue ? modelValue[name].value : '');
   const [typeInput, setTypeInput] = useState<InputTypes>(type);
 
   const [isValid, setValid] = useState<null | boolean>(null);
@@ -42,6 +42,7 @@ const Component: React.FC<IDefaultInput> = ({
   useEffect(() => {
     if (modelValue) {
       setValid(modelValue[name].error.status);
+      setValue(modelValue[name].value);
     }
   }, [modelValue]);
 
@@ -112,10 +113,7 @@ const Component: React.FC<IDefaultInput> = ({
           onFocus={() => (onFocus ? onFocus(setFocus, true) : setFocus(true))}
         />
       )}
-      <div
-        className={cx(styles.helper, classNamePositionReset)}
-        onClick={handleClickReset}
-      >
+      <div className={cx(styles.helper, classNamePositionReset)}>
         {!disabled &&
           value &&
           withReset &&

@@ -3,13 +3,36 @@
   display: grid;
   grid-template-columns: repeat(2, 48%);
   grid-gap: px-to-rem(24) px-to-rem(20);
+  height: 76%;
   div:nth-child(2n + 1):last-child {
     grid-column: 1 / span 2;
   }
+  &__complete{
+    border-top: px-to-rem(2) solid $color-pale-gray;
+  }
+  &__wrapper{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    padding: px-to-rem(25) px-to-rem(0) px-to-rem(15);
+  }
 }
 .input{
-  font-size: px-to-rem(15);
+  font-size: px-to-rem(15) !important;
   line-height: px-to-rem(24);
   border-radius: px-to-rem(12);
   padding: px-to-rem(10) px-to-rem(16);
+}
+.button {
+  font-family: $global-font-inter;
+  background-color: $primary-background-color;
+  color: $color-white;
+  font-size: px-to-rem(18);
+  line-height: px-to-rem(20);
+  padding: px-to-rem(16) px-to-rem(0);
+  font-weight: 500;
+  &:hover{
+    background-color: rgba($primary-background-color, 0.93);
+    color: $color-white;
+  }
 }

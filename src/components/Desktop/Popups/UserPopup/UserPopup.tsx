@@ -2,20 +2,34 @@ import React, { useRef } from 'react';
 import styles from './UserPopup.module.scss';
 import { animated } from 'react-spring';
 import useClickOutside from '../../../../hooks/clickOutside/useClickOutside';
+import { useAppSelector } from '../../../../hooks/redux';
 
 interface IUserPopup {
   style?: object;
   setOpen: (data: boolean) => void;
   setOpenProfile: (data: boolean) => void;
+  setOpenAdminSettings: (data: boolean) => void;
 }
-const Component: React.FC<IUserPopup> = ({ style, setOpen, setOpenProfile }) => {
+const Component: React.FC<IUserPopup> = ({
+  style,
+  setOpen,
+  setOpenProfile,
+  setOpenAdminSettings,
+}) => {
   const contentRef = useRef<HTMLDivElement>(null);
+
+  const { user } = useAppSelector((state) => state.user);
 
   useClickOutside(contentRef, () => setOpen(false));
 
   const handleClickProfile = () => {
     setOpen(false);
     setOpenProfile(true);
+  };
+
+  const handleClickAdminSettings = () => {
+    setOpen(false);
+    setOpenAdminSettings(true);
   };
 
   return (
@@ -33,7 +47,7 @@ const Component: React.FC<IUserPopup> = ({ style, setOpen, setOpenProfile }) => 
               />
             </div>
             <div className={styles.userPopup__username}>
-              <div className={styles.name}>Name Name</div>
+              <div className={styles.name}>{user?.username}</div>
               <div className={styles.position}>Owner</div>
             </div>
           </div>
@@ -51,7 +65,12 @@ const Component: React.FC<IUserPopup> = ({ style, setOpen, setOpenProfile }) => 
           >
             My profile
           </button>
-          <button className={styles.userPopup__button}>Admin settings</button>
+          <button
+            className={styles.userPopup__button}
+            onClick={handleClickAdminSettings}
+          >
+            Admin settings
+          </button>
           <button className={styles.userPopup__button}>Archive</button>
           <div className={styles.divider} />
           <button className={styles.userPopup__button}>Sign out</button>

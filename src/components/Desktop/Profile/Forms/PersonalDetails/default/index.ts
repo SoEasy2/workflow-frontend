@@ -17,35 +17,35 @@ export const defaultInputs: IModelValue = {
   },
   department: {
     value: '',
-    required: true,
+    required: false,
     error: {
       status: null,
     },
   },
   manager: {
     value: '',
-    required: true,
+    required: false,
     error: {
       status: null,
     },
   },
   birthday: {
     value: '',
-    required: true,
+    required: false,
     error: {
       status: null,
     },
   },
   address: {
     value: '',
-    required: true,
+    required: false,
     error: {
       status: null,
     },
   },
   description: {
     value: '',
-    required: true,
+    required: false,
     error: {
       status: null,
     },

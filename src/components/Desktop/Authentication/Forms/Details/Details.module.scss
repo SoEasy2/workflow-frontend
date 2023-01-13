@@ -73,6 +73,9 @@
     font-size: px-to-rem(15);
     line-height: px-to-rem(20);
     text-align: left;
+    span {
+      display: inline;
+    }
     span + span {
       margin-left: 4px;
       color: $color-agreement-link;

@@ -6,7 +6,7 @@ const Component: React.FC<IOptionProps> = ({ option, handleClick }) => {
   return (
     <button
       className={styles.option}
-      onClick={() => handleClick(option)}
+      onClick={() => handleClick && handleClick(option)}
     >
       {option.label}
     </button>

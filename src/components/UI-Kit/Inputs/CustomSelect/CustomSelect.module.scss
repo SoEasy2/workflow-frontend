@@ -29,6 +29,9 @@
     color: $color-text-not-focused;
     transition: .3s;
     cursor: pointer;
+    span {
+      color: inherit;
+    }
     &_active{
       border: $global-border-focus-input;
       color: $color-text-primary;

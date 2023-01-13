@@ -4,4 +4,7 @@ export enum InputTypes {
   PHONE = 'phone',
   EMAIL = 'email',
   EMAIL_OR_PHONE = 'textt',
+  DATE = 'date',
+  TEXTAREA = 'textarea',
+  SELECT = 'select',
 }

@@ -26,7 +26,7 @@ const personalProfileInputsDesktop: IDefaultInput[] = [
     withReset: false,
   },
   {
-    type: InputTypes.TEXT,
+    type: InputTypes.SELECT,
     placeholder: 'Choose',
     label: 'Department',
     key: 'department',
@@ -37,7 +37,7 @@ const personalProfileInputsDesktop: IDefaultInput[] = [
     withReset: false,
   },
   {
-    type: InputTypes.TEXT,
+    type: InputTypes.SELECT,
     placeholder: 'Choose',
     label: 'Manager',
     key: 'manager',
@@ -48,11 +48,11 @@ const personalProfileInputsDesktop: IDefaultInput[] = [
     withReset: false,
   },
   {
-    type: InputTypes.TEXT,
+    type: InputTypes.DATE,
     placeholder: 'Choose date',
     label: 'Birthday',
-    key: 'manager',
-    name: 'manager',
+    key: 'birthday',
+    name: 'birthday',
     isShow: false,
     disabled: false,
     required: true,
@@ -70,9 +70,9 @@ const personalProfileInputsDesktop: IDefaultInput[] = [
     withReset: false,
   },
   {
-    type: InputTypes.TEXT,
+    type: InputTypes.TEXTAREA,
     placeholder: 'Add more details to your profile',
-    label: 'Descriptor',
+    label: 'Description',
     key: 'description',
     name: 'description',
     isShow: false,
@@ -85,3 +85,50 @@ const personalProfileInputsMobile: IDefaultInput[] = [];
 const personalProfileInputs = isMobile ? personalProfileInputsMobile : personalProfileInputsDesktop;
 
 export { personalProfileInputs };
+
+const changePasswordInputsDesktop: IDefaultInput[] = [
+  {
+    type: InputTypes.PASSWORD,
+    placeholder: 'Enter current password',
+    label: 'Current password',
+    key: 'password',
+    name: 'password',
+    isShow: true,
+    disabled: false,
+    required: true,
+    withReset: false,
+  },
+  {
+    type: InputTypes.PASSWORD,
+    placeholder: 'Create new password',
+    label: 'New password',
+    key: 'newPassword',
+    name: 'newPassword',
+    isShow: true,
+    disabled: false,
+    required: true,
+    withReset: false,
+  },
+];
+const changePasswordInputsMobile: IDefaultInput[] = [];
+const changePasswordInputs: IDefaultInput[] = isMobile
+  ? changePasswordInputsMobile
+  : changePasswordInputsDesktop;
+export { changePasswordInputs };
+
+const settingInputsDesktop: IDefaultInput[] = [
+  {
+    type: InputTypes.SELECT,
+    placeholder: 'Choose',
+    label: 'Language',
+    key: 'language',
+    name: 'language',
+    isShow: false,
+    disabled: false,
+    required: true,
+    withReset: false,
+  },
+];
+const settingInputsMobile: IDefaultInput[] = [];
+const settingInputs: IDefaultInput[] = isMobile ? settingInputsMobile : settingInputsDesktop;
+export { settingInputs };
