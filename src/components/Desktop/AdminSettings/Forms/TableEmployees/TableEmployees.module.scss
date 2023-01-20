@@ -1,0 +1,56 @@
+@import "../../../../../sass/_abstract/_variables.scss";
+.tableEmployees {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  &__complete{
+    border-top: px-to-rem(2) solid $color-pale-gray;
+  }
+  .content{
+    display: flex;
+    flex-direction: column;
+    min-height: 81%;
+    max-height: 81%;
+    overflow: auto;
+  }
+  &__wrapper{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    padding: px-to-rem(25) px-to-rem(0) px-to-rem(15);
+  }
+  .head{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: px-to-rem(16);
+    align-items: center;
+    &__text {
+      font-family: $global-font-inter;
+      font-size: px-to-rem(15);
+      line-height: px-to-rem(24);
+      color: $color-text-primary;
+      &_employee{
+        font-weight: 600;
+        text-transform: uppercase;
+      }
+      &_permission{
+        font-weight: 400;
+      }
+    }
+  }
+}
+.button {
+  font-family: $global-font-inter;
+  background-color: $primary-background-color;
+  color: $color-white;
+  font-size: px-to-rem(18);
+  line-height: px-to-rem(20);
+  padding: px-to-rem(16) px-to-rem(0);
+  font-weight: 500;
+  width: 100%;
+  &:hover{
+    background-color: rgba($primary-background-color, 0.93);
+    color: $color-white;
+  }
+}

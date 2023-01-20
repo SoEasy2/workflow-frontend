@@ -1,0 +1,26 @@
+@import '../../../../../../../../../sass/_abstract/_variables.scss';
+.option {
+  padding: px-to-rem(12) px-to-rem(12) px-to-rem(12) px-to-rem(16);
+  background-color: transparent;
+  transition: all .4s;
+  cursor: pointer;
+  &:hover {
+    background-color: $hover-background-color;
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+  }
+  &__title {
+    font-family: $global-font-inter;
+    color: $color-text-primary;
+    font-weight: 600;
+    font-size: px-to-rem(15);
+    line-height: px-to-rem(24);
+  }
+  &__text {
+    font-family: $global-font-inter;
+    color: $color-text-gray;
+    line-height: px-to-rem(20);
+  }
+}

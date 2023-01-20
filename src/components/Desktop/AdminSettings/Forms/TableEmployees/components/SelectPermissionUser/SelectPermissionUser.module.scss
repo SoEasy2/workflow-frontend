@@ -1,0 +1,39 @@
+@import "../../../../../../../sass/_abstract/_variables.scss";
+.select{
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding: px-to-rem(8);
+  align-items: center;
+  gap: px-to-rem(8);
+  cursor: pointer;
+  &__arrow{
+    transition: .3s;
+    display: flex;
+    &_open{
+      transform: rotate(180deg);
+    }
+  }
+  &__label {
+    color: $color-text-not-focused;
+    font-family: $global-font-inter;
+    font-size: px-to-rem(15);
+    line-height: px-to-rem(16);
+    font-weight: 500;
+  }
+}
+.option {
+  &__list{
+    position: absolute;
+    background-color: $color-white;
+    padding: px-to-rem(8);
+    top: px-to-rem(30);
+    right: 0;
+    z-index: 100;
+    box-shadow: 0 px-to-rem(16) px-to-rem(24) rgba(2, 3, 3, 0.03),
+    0 px-to-rem(6) px-to-rem(30) rgba(2, 3, 3, 0.02),
+    0 px-to-rem(8) px-to-rem(10) rgba(2, 3, 3, 0.04);
+    border-radius: px-to-rem(12);
+    width: px-to-rem(348);
+  }
+}

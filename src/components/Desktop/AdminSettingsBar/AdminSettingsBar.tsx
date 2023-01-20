@@ -1,5 +1,5 @@
 import React, { useId, useRef, useState } from 'react';
-import { personalProfileInputs, settingInputs } from '../../../helpers/constants/profile/constants';
+import { personalProfileInputs } from '../../../helpers/constants/profile/constants';
 import { useAppSelector } from '../../../hooks/redux';
 import useOnClickOutside from '../../../hooks/clickOutside/useClickOutside';
 import { createPortal } from 'react-dom';
@@ -10,10 +10,10 @@ import cx from 'classnames';
 import { ArrowHandleIcon } from '../../../helpers/icons';
 import { Layout } from '../Profile/Layout';
 import { PersonalDetails } from '../Profile/Forms/PersonalDetails';
-import { Settings } from '../Profile/Forms/Settings';
 import { tabsAdminSettings } from '../../../helpers/constants/adminSettings/constants';
 import { CompanyDetails } from '../AdminSettings/Forms/CompanyDetails';
 import { companyDetails } from '../../../helpers/constants/adminSettings/constants/inputs';
+import { TableEmployees } from '../AdminSettings/Forms/TableEmployees';
 
 interface IAdminSettingsBar {
   style?: object;
@@ -87,7 +87,7 @@ const Component: React.FC<IAdminSettingsBar> = ({ style, setOpen }) => {
                     case tabsAdminSettings.COMPANY_DETAILS:
                       return <CompanyDetails inputs={companyDetails} />;
                     case tabsAdminSettings.ACCESSES_PERMISSIONS:
-                      return <Settings inputs={settingInputs} />;
+                      return <TableEmployees />;
                     default:
                       return <PersonalDetails inputs={personalProfileInputs} />;
                   }
