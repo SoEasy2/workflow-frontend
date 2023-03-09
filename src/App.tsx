@@ -86,15 +86,19 @@ const App = () => {
   // }, []);
   return (
     <MainLayout>
-      {isFirstLoading && <Loader isBackground={true} />}
+      {
+        isFirstLoading && <Loader isBackground={true} />
+      }
       <Routes>
-        {routes.map((route) => (
-          <Route
-            key={useId()}
-            path={route.path}
-            element={route.component}
-          />
-        ))}
+        {
+          routes.map((route) => (
+            <Route
+              key={useId()}
+              path={route.path}
+              element={route.component}
+            />
+        ))
+        }
       </Routes>
     </MainLayout>
   );
