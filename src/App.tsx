@@ -33,6 +33,7 @@ const App = () => {
       await dispatch(userSet(refresh.user));
       setFirstLoading(false);
     },
+
     onError: () => {
       setFirstLoading(false);
     },
