@@ -12,6 +12,7 @@ export const HelperRemoveIcon = () => (
     />
   </svg>
 );
+
 export const HelperValidIcon = () => (
   <svg
     width='24'
