@@ -1,5 +1,4 @@
 import React from 'react';
-import { FolderList } from '../../../components/Desktop/FolderList';
 import { Sidebar } from '../../../components/Desktop/Sidebar';
 import { Topbar } from '../../../components/Desktop/Topbar';
 import styles from './Dashboard.module.scss';
@@ -10,7 +9,6 @@ const Component: React.FC = () => {
       <Sidebar />
       <div className={styles.dashboard__content}>
         <Topbar />
-        <FolderList />
       </div>
     </div>
   );
