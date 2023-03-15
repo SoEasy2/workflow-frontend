@@ -1,6 +1,7 @@
 import React from 'react';
 import { PlusFill, PlusNoFill, More } from '../../../helpers/icons/taskmanager';
 import styles from './TaskManger.module.scss';
+import image from '../../../../src/assets/images/bars/emptyState.jpg'
 
 const Component: React.FC = () => {
   return (
@@ -33,7 +34,7 @@ const Component: React.FC = () => {
       </div>
       <div className={styles.content}>
         <img
-          src='../../../../src/assets/images/bars/emptyState.jpg'
+          src={image}
           alt='empyState'
           className={styles.content__img}
         />

@@ -13,6 +13,7 @@ import { StepEnum } from './helpers/constants/registration/enums/step';
 import { TypeRegistration } from './helpers/constants/registration/enums/typeRegistration';
 import { StepConnect } from './helpers/constants/registration/enums/stepConnect';
 import useEventListener from './hooks/eventListener/useEvenetListener';
+import { RouteEnum } from './helpers/constants/enum/route';
 
 const App = () => {
   const navigate = useNavigate();
@@ -60,21 +61,21 @@ const App = () => {
           +user.stepRegistration === StepConnect.CONNECT_COMPLETE))
     ) {
       navigate({
-        pathname: '/dashboard',
+        pathname: RouteEnum.DASHBOARD,
       });
     } else if (user && user.typeRegistration === TypeRegistration.REGISTRATION_DEFAULT) {
       navigate({
-        pathname: '/registration',
+        pathname: RouteEnum.REGISTRATION,
         search: `?step=${user.stepRegistration}`,
       });
     } else if (user && user.typeRegistration === TypeRegistration.REGISTRATION_BY_CODE) {
       navigate({
-        pathname: '/connect-with-code',
+        pathname: RouteEnum.CONNECT_WITH_CODE,
         search: `?step=${user.stepRegistration}`,
       });
     } else {
       navigate({
-        pathname: '/registration',
+        pathname: RouteEnum.REGISTRATION,
         search: `?step=${StepEnum.REGISTRATION}`,
       });
     }
