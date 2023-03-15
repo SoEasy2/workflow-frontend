@@ -1,19 +1,22 @@
 @import '../../../../../sass/_abstract/_variables.scss';
 
 .card {
-  width: 236px;
-  height: 168px;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
   font-family: $global-font-inter;
+  box-shadow: 0px 2px 12px 0px rgba(34, 60, 80, 0.2);
+  border-radius: 12px 12px 0px 0px;
+  cursor: pointer;
   &__top {
     // background: #a5ddb8;
     display: flex;
     align-items: center;
+    padding: px-to-rem(24) px-to-rem(16) px-to-rem(18) px-to-rem(12);
     border-radius: 12px 12px 0px 0px;
+    gap: px-to-rem(10)
   }
 
-  &__icon {
-    padding: px-to-rem(28) px-to-rem(10) px-to-rem(18) px-to-rem(10);
-  }
 
   &__title {
     font-weight: 500;
@@ -46,10 +49,10 @@
   &__bottom_block {
     background: #ffffff;
     border-radius: 0px 0px 12px 12px;
-    height: 74px;
     display: flex;
     justify-content: space-between;
     padding: px-to-rem(12) px-to-rem(16) px-to-rem(16) px-to-rem(16);
+    gap: px-to-rem(33);
   }
   &__counter {
     display: flex;

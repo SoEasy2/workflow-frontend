@@ -1,6 +1,8 @@
 .wrapper {
-  margin: 32px;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  row-gap: 25px;
+  padding: 32px;
+  display: flex;
+  gap: 35px;
+  width: 100%;
+  max-width: 100%;
+  flex-wrap: wrap;
 }
