@@ -1,6 +1,6 @@
 @import '../../../../../sass/_abstract/_variables.scss';
 
-.card {
+.folder {
   width: fit-content;
   display: flex;
   flex-direction: column;
@@ -9,35 +9,38 @@
   border-radius: 12px 12px 0px 0px;
   cursor: pointer;
   &__top {
-    // background: #a5ddb8;
     display: flex;
     align-items: center;
     padding: px-to-rem(24) px-to-rem(16) px-to-rem(18) px-to-rem(12);
     border-radius: 12px 12px 0px 0px;
-    gap: px-to-rem(10)
+    gap: px-to-rem(10);
   }
-
-
+  &__icon {
+    display: flex;
+    margin-right: 10px;
+  }
   &__title {
     font-weight: 500;
     font-size: px-to-rem(17);
     line-height: px-to-rem(24);
     color: #030235;
   }
-
   &__folder {
     display: flex;
     align-items: center;
   }
-
   &__creator {
     font-weight: 400;
     font-size: px-to-rem(13);
     line-height: px-to-rem(18);
     color: #030235;
     opacity: 0.7;
-  }
 
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 90px;
+    white-space: nowrap;
+  }
   &__task {
     font-weight: 400;
     font-size: px-to-rem(13);
@@ -45,7 +48,6 @@
     color: #030235;
     opacity: 0.7;
   }
-
   &__bottom_block {
     background: #ffffff;
     border-radius: 0px 0px 12px 12px;
@@ -58,44 +60,14 @@
     display: flex;
     align-self: flex-end;
   }
-
-  &__members {
-    display: flex;
-    flex-direction: column;
-    p {
-      font-weight: 400;
-      font-size: px-to-rem(13);
-      line-height: px-to-rem(18);
-      color: #98a0ad;
-      margin-bottom: 4px;
-    }
+  &__counter p:first-of-type {
+    margin-right: 8px;
   }
-  &__newTasks {
-    padding: 0 px-to-rem(4);
-    font-weight: 600;
-    font-size: px-to-rem(12);
-    line-height: px-to-rem(16);
-    color: #6c9883;
-    margin-right: px-to-rem(8);
-    background: #e7f5f1;
-    border-radius: 58px;
-  }
-
   &__dot {
     width: px-to-rem(4);
     height: px-to-rem(4);
     background: #6b6e85;
     border-radius: 50%;
     margin: 0 px-to-rem(5);
-  }
-
-  &__newAlerts {
-    padding: 0 px-to-rem(4);
-    font-weight: 600;
-    font-size: px-to-rem(12);
-    line-height: px-to-rem(16);
-    color: #af7e7a;
-    background: #f5e8e7;
-    border-radius: px-to-rem(58);
   }
 }

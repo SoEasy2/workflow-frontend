@@ -1,0 +1,9 @@
+@import '../../../../../sass/_abstract/_variables.scss';
+.Label {
+  font-family: $global-font-inter;
+  padding: 0 px-to-rem(4);
+  font-weight: 600;
+  font-size: px-to-rem(12);
+  line-height: px-to-rem(16);
+  border-radius: px-to-rem(58);
+}

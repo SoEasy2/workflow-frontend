@@ -1,0 +1,74 @@
+import React, { ReactElement } from 'react';
+import { Label } from '../Label';
+import { Member } from '../Member';
+import styles from './Folder.module.scss';
+
+interface Members {
+  link: string;
+  name: string;
+}
+
+interface IFolder {
+  type: string;
+  icon: ReactElement;
+  color: string;
+  title: string;
+  creator: string;
+  countOfTasks: number;
+  countOfMembers: Members[];
+  newTasks: number;
+  newAlerts: number;
+}
+
+const Component: React.FC<IFolder> = ({
+  type,
+  icon,
+  color,
+  title,
+  creator,
+  countOfTasks,
+  countOfMembers,
+  newTasks,
+  newAlerts,
+}) => {
+  console.log(type);
+
+  return (
+    <div className={styles.folder}>
+      <div
+        className={styles.folder__top}
+        style={{ background: color }}
+      >
+        <div className={styles.folder__icon}>{icon}</div>
+        <div>
+          <div className={styles.folder__title}>{title}</div>
+          <div className={styles.folder__folder}>
+            <div className={styles.folder__creator}>{creator}</div>
+            <div className={styles.folder__dot}></div>
+            <div className={styles.folder__task}>{countOfTasks} tasks</div>
+          </div>
+        </div>
+      </div>
+
+      <div className={styles.folder__bottom_block}>
+        <Member countOfMembers={countOfMembers} />
+        <div className={styles.folder__counter}>
+          <Label
+            text={`${newTasks} tasks`}
+            color={'#6c9883'}
+            bgColor={'#e7f5f1'}
+          />
+          <Label
+            text={`${newAlerts} tasks`}
+            color={'#af7e7a'}
+            bgColor={'#f5e8e7'}
+          />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const Folder = React.memo(Component);
+
+export { Folder };

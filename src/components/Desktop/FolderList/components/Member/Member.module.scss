@@ -1,0 +1,13 @@
+@import '../../../../../sass/_abstract/_variables.scss';
+
+.Members {
+  display: flex;
+  flex-direction: column;
+  p {
+    font-weight: 400;
+    font-size: px-to-rem(13);
+    line-height: px-to-rem(18);
+    color: #98a0ad;
+    margin-bottom: 4px;
+  }
+}

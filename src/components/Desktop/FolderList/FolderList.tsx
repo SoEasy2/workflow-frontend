@@ -1,7 +1,12 @@
 import React, { ReactElement, useId } from 'react';
-import { TaskCard } from './components/TaskCard';
-import { TestSvg } from './components/TaskCard/shared/Test';
-import styles from './TaskManager.module.scss';
+import { Folder } from './components/Folder';
+import { TestSvg } from './components/Folder/shared/Test';
+import styles from './FolderList.module.scss';
+
+interface Members {
+  link: string;
+  name: string;
+}
 
 interface MockTaskCard {
   type: string;
@@ -10,7 +15,7 @@ interface MockTaskCard {
   title: string;
   creator: string;
   countOfTasks: number;
-  countOfMembers: { link: string; name: string }[];
+  countOfMembers: Members[];
   newTasks: number;
   newAlerts: number;
 }
@@ -278,7 +283,7 @@ const Component: React.FC = () => {
     <div className={styles.wrapper}>
       {cards.map((elem) => {
         return (
-          <TaskCard
+          <Folder
             key={useId()}
             type={elem.type}
             color={elem.color}
@@ -296,6 +301,6 @@ const Component: React.FC = () => {
   );
 };
 
-const TaskManager = React.memo(Component);
+const FolderList = React.memo(Component);
 
-export { TaskManager };
+export { FolderList };
