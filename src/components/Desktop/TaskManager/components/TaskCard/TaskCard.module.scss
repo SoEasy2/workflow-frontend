@@ -1,12 +1,9 @@
 @import '../../../../../sass/_abstract/_variables.scss';
 
-body {
-  font-family: $global-font-inter;
-}
 .card {
   width: 236px;
   height: 168px;
-
+  font-family: $global-font-inter;
   &__top {
     // background: #a5ddb8;
     display: flex;
