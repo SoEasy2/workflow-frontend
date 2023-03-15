@@ -1,0 +1,30 @@
+.flex {
+  display: flex;
+}
+
+.Avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #030235;
+  display: flex;
+  justify-content: center;
+  font-size: 10px;
+  align-items: center;
+  color: #ffffff;
+  border: 0.75px solid #ffffff;
+  margin-left: -2px;
+}
+
+.Counter {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  font-size: 10px;
+  align-items: center;
+  background: #fafafb;
+  border: 1px solid #ffffff;
+  margin-left: -2px;
+}
