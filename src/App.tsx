@@ -80,11 +80,11 @@ const App = () => {
     }
   }, [user]);
 
-  // useEffect(() => {
-  //   navigate({
-  //     pathname: '/dashboard',
-  //   });
-  // }, []);
+  /* useEffect(() => {
+    navigate({
+      pathname: '/dashboard',
+    });
+  }, []); */
   return (
     <MainLayout>
       {isFirstLoading && <Loader isBackground={true} />}

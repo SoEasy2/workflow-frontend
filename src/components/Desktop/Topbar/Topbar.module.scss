@@ -1,29 +1,30 @@
-@import "../../../sass/_abstract/_variables.scss";
-.topbar{
+@import '../../../sass/_abstract/_variables.scss';
+.topbar {
   width: 100%;
   background-color: $color-white;
   padding: px-to-rem(12) px-to-rem(32);
-  box-shadow: 0 24px 38px rgba(47, 53, 57, 0.03), 0 9px 46px rgba(71, 116, 138, 0.02), 0 11px 15px rgba(95, 137, 158, 0.04);
-  &__wrapper{
+  box-shadow: 0 24px 38px rgba(47, 53, 57, 0.03), 0 9px 46px rgba(71, 116, 138, 0.02),
+    0 11px 15px rgba(95, 137, 158, 0.04);
+  &__wrapper {
     display: flex;
     justify-content: flex-end;
     align-items: center;
     gap: px-to-rem(180);
   }
-  &__search{
+  &__search {
     width: px-to-rem(900);
   }
 }
-.user{
+.user {
   display: flex;
   align-items: center;
   gap: px-to-rem(20);
-  &__divider{
+  &__divider {
     border: px-to-rem(1) solid rgba(89, 100, 118, 0.16);
     height: px-to-rem(32);
     width: px-to-rem(1);
   }
-  &__notification{
+  &__notification {
     color: $primary-background-color;
     padding: px-to-rem(12);
     border: px-to-rem(1) solid rgba(89, 100, 118, 0.16);
@@ -31,12 +32,12 @@
     display: flex;
     cursor: pointer;
   }
-  &__image{
+  &__image {
     width: px-to-rem(40);
     height: px-to-rem(40);
     position: relative;
     cursor: pointer;
-    img{
+    img {
       height: 100%;
       width: 100%;
       border-radius: px-to-rem(56);

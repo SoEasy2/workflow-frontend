@@ -1,19 +1,19 @@
 @import '../../../../../../sass/_abstract/_variables.scss';
 @import '../../../../../../sass/_abstract/_functions.scss';
 
-.sliderItem{
+.sliderItem {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   word-break: break-word;
-  &__title{
+  &__title {
     font-family: $global-font-inter;
     font-size: px-to-rem(20);
     line-height: px-to-rem(26);
     color: $color-text-primary;
   }
-  &__text{
+  &__text {
     font-family: $global-font-inter;
     font-size: px-to-rem(15);
     line-height: px-to-rem(24);

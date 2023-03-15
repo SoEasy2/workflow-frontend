@@ -1,8 +1,8 @@
-@import "../../../../sass/_abstract/_variables.scss";
+@import '../../../../sass/_abstract/_variables.scss';
 .textarea {
   border: $global-border-default-input;
   outline: none;
-  transition: all .4s;
+  transition: all 0.4s;
   padding: px-to-rem(14) px-to-rem(40) px-to-rem(14) px-to-rem(20);
   font-family: $global-font-inter;
   color: $color-text-not-focused;
@@ -16,7 +16,7 @@
   max-width: 100%;
   height: px-to-rem(200);
 
-  &__error{
+  &__error {
     border-color: $color-no-valid-border;
   }
 
@@ -28,18 +28,18 @@
     color: $color-text-primary;
   }
 }
-.textarea__wrapper{
+.textarea__wrapper {
   display: flex;
   flex-direction: column;
   text-align: left; //in props
   gap: px-to-rem(8);
   position: relative;
   width: 100%;
-  &_disabled{
+  &_disabled {
     opacity: 0.5;
   }
 }
-.label{
+.label {
   font-family: $global-font-inter;
   color: $color-label;
   font-weight: 500;

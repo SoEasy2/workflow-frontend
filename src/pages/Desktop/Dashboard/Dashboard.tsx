@@ -9,6 +9,7 @@ const Component: React.FC = () => {
       <Sidebar />
       <div className={styles.dashboard__content}>
         <Topbar />
+        {/* <TaskManagerPage/> */}
       </div>
     </div>
   );

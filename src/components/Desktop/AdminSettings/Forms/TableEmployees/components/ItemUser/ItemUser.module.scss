@@ -1,5 +1,5 @@
-@import "../../../../../../../sass/_abstract/variables";
-.itemUser{
+@import '../../../../../../../sass/_abstract/variables';
+.itemUser {
   padding: px-to-rem(14) px-to-rem(6);
   border-top: px-to-rem(1) solid rgba(89, 100, 118, 0.16);
   border-bottom: px-to-rem(1) solid rgba(89, 100, 118, 0.16);
@@ -13,7 +13,7 @@
     gap: px-to-rem(8);
     align-items: center;
   }
-  &__img{
+  &__img {
     width: px-to-rem(32);
     height: px-to-rem(32);
     img {

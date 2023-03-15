@@ -1,18 +1,18 @@
 @import '../../../sass/_abstract/_variables.scss';
-.sidebar{
+.sidebar {
   background-color: $background-color-sidebar;
   height: 100%;
   width: px-to-rem(280);
-  &__logo{
+  &__logo {
     color: $color-white;
     margin-left: px-to-rem(24);
   }
-  &__list{
+  &__list {
     display: flex;
     flex-direction: column;
     gap: px-to-rem(16);
   }
-  &__title{
+  &__title {
     color: $color-text-not-focused;
     font-family: $global-font-inter;
     font-weight: 500;

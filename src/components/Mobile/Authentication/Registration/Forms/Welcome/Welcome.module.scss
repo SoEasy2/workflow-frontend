@@ -1,14 +1,14 @@
 @import '../../../../../../sass/_abstract/_variables.scss';
 
-.welcome{
+.welcome {
   height: 100%;
-  &__wrapper{
+  &__wrapper {
     display: flex;
     flex-direction: column;
     height: 100%;
     justify-content: space-around;
   }
-  &__buttons{
+  &__buttons {
     display: flex;
     flex-direction: column;
   }
@@ -23,7 +23,7 @@
     font-size: px-to-rem(18);
     line-height: px-to-rem(20);
     margin-bottom: px-to-rem(36);
-    border: none
+    border: none;
   }
   &__join {
     display: flex;

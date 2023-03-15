@@ -1,19 +1,19 @@
-@import "../../../../../../sass/_abstract/_variables.scss";
-.details{
+@import '../../../../../../sass/_abstract/_variables.scss';
+.details {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
   height: 100%;
-  &__wrapper{
+  &__wrapper {
     display: flex;
     flex-direction: column;
     margin-top: px-to-rem(10);
   }
-  &__back{
+  &__back {
     cursor: pointer;
   }
-  &__title{
+  &__title {
     font-family: $global-font-inter;
     font-weight: 600;
     font-size: px-to-rem(24);
@@ -21,13 +21,13 @@
     color: $color-text-primary;
     margin-top: px-to-rem(20);
   }
-  &__form{
+  &__form {
     display: flex;
     flex-direction: column;
     gap: px-to-rem(17);
     margin-top: px-to-rem(14);
   }
-  &__agreement{
+  &__agreement {
     margin-top: px-to-rem(17);
     font-family: $global-font-inter;
     color: $color-text-gray;
@@ -42,7 +42,7 @@
       text-decoration: underline;
     }
   }
-  .button{
+  .button {
     margin-top: px-to-rem(10);
     width: 100%;
     background-color: $primary-background-color;
@@ -51,13 +51,13 @@
   .input {
     padding: px-to-rem(8) px-to-rem(40) px-to-rem(8) px-to-rem(20);
   }
-  .select{
+  .select {
     padding: px-to-rem(8) px-to-rem(20) px-to-rem(8);
   }
-  .positionHelper{
-    top: px-to-rem(42)
+  .positionHelper {
+    top: px-to-rem(42);
   }
-  .positionReset{
+  .positionReset {
     top: px-to-rem(43);
   }
 }

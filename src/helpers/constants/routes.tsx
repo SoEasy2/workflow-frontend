@@ -6,11 +6,16 @@ import { RegistrationMobile } from '../../pages/Mobile/AuthenticationMobile/Regi
 import { LoginPage } from '../../pages/Desktop/Authentication/Login';
 import { ConnectWithCodePage } from '../../pages/Desktop/Authentication/ConnectWithCode';
 import { DashboardPage } from '../../pages/Desktop/Dashboard';
+import { TaskManagerPage } from '../../pages/Desktop/TaskManager';
 
 const desktopRoutes: IRoute[] = [
   {
     path: '/registration',
     component: <RegistrationPage />,
+  },
+  {
+    path: '/taskmanager',
+    component: <TaskManagerPage />,
   },
   {
     path: '/login',

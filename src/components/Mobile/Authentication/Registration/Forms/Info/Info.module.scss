@@ -1,5 +1,5 @@
 @import '../../../../../../sass/_abstract/_variables.scss';
-.info{
+.info {
   padding-top: px-to-rem(10);
   height: 100%;
   width: 100%;
@@ -7,34 +7,34 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
-  &__wrapper{
+  &__wrapper {
     display: flex;
     flex-direction: column;
     gap: px-to-rem(21);
     width: 100%;
   }
-  &__button_close{
+  &__button_close {
     cursor: pointer;
     display: inline;
   }
-  &__text{
+  &__text {
     display: flex;
     flex-direction: column;
     gap: px-to-rem(10);
   }
-  &__title{
+  &__title {
     font-family: $global-font-inter;
     font-size: px-to-rem(26);
     line-height: px-to-rem(28);
     color: $color-text-primary;
     font-weight: 600;
   }
-  &__description{
+  &__description {
     color: $color-text-mobile;
     font-size: px-to-rem(17);
     line-height: px-to-rem(24);
   }
-  &__form{
+  &__form {
     display: flex;
     flex-direction: column;
     gap: px-to-rem(16);
@@ -42,10 +42,10 @@
   .input {
     padding: px-to-rem(8) px-to-rem(40) px-to-rem(8) px-to-rem(20);
   }
-  .positionHelper{
-    top: px-to-rem(42)
+  .positionHelper {
+    top: px-to-rem(42);
   }
-  .button{
+  .button {
     width: 100%;
     background-color: $primary-background-color;
     color: $color-white;

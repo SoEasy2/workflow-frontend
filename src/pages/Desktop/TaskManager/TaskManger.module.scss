@@ -1,0 +1,106 @@
+@import '../../../sass/_abstract/_variables.scss';
+.taskmanager {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  background-color: $global-background-color;
+  &__content {
+    width: 100%;
+  }
+}
+
+.header {
+  display: flex;
+  margin: px-to-rem(32px);
+  justify-content: space-between;
+  &__left {
+    display: flex;
+    font-weight: '../../../assets/fonts/inter/Inter-Medium.woff2';
+    font-size: px-to-rem(32px);
+    line-height: px-to-rem(40px);
+    letter-spacing: px-to-rem(-0.24px);
+    color: $color-text-primary;
+    font-family: $global-font-inter;
+  }
+  &__right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: px-to-rem(265px);
+    height: px-to-rem(40px);
+    &__btn_add_circle {
+      font-weight: '../../../assets/fonts/inter/Inter-Medium.woff2';
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: px-to-rem(148px);
+      height: px-to-rem(40px);
+      &__link {
+        margin-left: px-to-rem(8px);
+        text-decoration: none;
+        font-weight: 500;
+        font-size: px-to-rem(16px);
+        line-height: px-to-rem(24px);
+        color: $color-text-primary;
+      }
+    }
+    &__btn_invite {
+      font-weight: '../../../assets/fonts/inter/Inter-Medium.woff2';
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: px-to-rem(77px);
+      height: px-to-rem(32px);
+      &__link {
+        margin-left: px-to-rem(6px);
+        font-size: px-to-rem(14px);
+        line-height: px-to-rem(16px);
+        font-weight: '../../../assets/fonts/inter/Inter-Medium.woff2';
+        color: $color-text-primary;
+        text-decoration: none;
+      }
+    }
+    &__btn_more {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: px-to-rem(32px);
+      height: px-to-rem(32px);
+      cursor: pointer;
+    }
+  }
+}
+.content {
+  padding: px-to-rem(220px) px-to-rem(0) px-to-rem(220px) px-to-rem(0);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  &__img {
+    display: block;
+    margin: 0 auto;
+  }
+  &__text {
+    margin-top: px-to-rem(64px);
+    font-weight: '../../../assets/fonts/inter/Inter-Medium.woff2';
+    &__title {
+      font-family: $global-font-inter;
+      font-size: px-to-rem(20px);
+      line-height: px-to-rem(26px);
+    }
+    &__btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: px-to-rem(181px);
+      height: px-to-rem(40px);
+      &__link {
+        display: block;
+        font-family: $global-font-inter;
+        text-decoration: none;
+        color: $color-text-primary;
+        margin-left: px-to-rem(8px);
+      }
+    }
+  }
+}

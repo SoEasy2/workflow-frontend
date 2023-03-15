@@ -1,6 +1,6 @@
 @import '../../../../../../../sass/_abstract/functions';
 @import '../../../../../../../sass/_abstract/variables';
-.input{
+.input {
   width: 100%;
   height: 100%;
   max-height: px-to-rem(156);
@@ -14,8 +14,8 @@
   font-size: px-to-rem(60);
   line-height: px-to-rem(90);
   text-align: center;
-  transition: all .3s;
+  transition: all 0.3s;
 }
-.error{
+.error {
   border-color: $color-error-input;
 }

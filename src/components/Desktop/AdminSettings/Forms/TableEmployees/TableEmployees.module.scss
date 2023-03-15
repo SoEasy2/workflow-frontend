@@ -1,26 +1,26 @@
-@import "../../../../../sass/_abstract/_variables.scss";
+@import '../../../../../sass/_abstract/_variables.scss';
 .tableEmployees {
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  &__complete{
+  &__complete {
     border-top: px-to-rem(2) solid $color-pale-gray;
   }
-  .content{
+  .content {
     display: flex;
     flex-direction: column;
     min-height: 81%;
     max-height: 81%;
     overflow: auto;
   }
-  &__wrapper{
+  &__wrapper {
     display: flex;
     width: 100%;
     flex-direction: column;
     padding: px-to-rem(25) px-to-rem(0) px-to-rem(15);
   }
-  .head{
+  .head {
     display: flex;
     justify-content: space-between;
     margin-bottom: px-to-rem(16);
@@ -30,11 +30,11 @@
       font-size: px-to-rem(15);
       line-height: px-to-rem(24);
       color: $color-text-primary;
-      &_employee{
+      &_employee {
         font-weight: 600;
         text-transform: uppercase;
       }
-      &_permission{
+      &_permission {
         font-weight: 400;
       }
     }
@@ -49,7 +49,7 @@
   padding: px-to-rem(16) px-to-rem(0);
   font-weight: 500;
   width: 100%;
-  &:hover{
+  &:hover {
     background-color: rgba($primary-background-color, 0.93);
     color: $color-white;
   }

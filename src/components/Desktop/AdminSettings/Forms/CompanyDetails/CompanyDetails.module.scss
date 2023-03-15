@@ -1,5 +1,5 @@
 @import '../../../../../sass/_abstract/_variables.scss';
-.companyDetails{
+.companyDetails {
   display: grid;
   grid-template-columns: repeat(2, 48%);
   grid-gap: px-to-rem(24) px-to-rem(20);
@@ -7,17 +7,17 @@
   div:nth-child(3n + 1):last-child {
     grid-column: 1 / span 2;
   }
-  &__complete{
+  &__complete {
     border-top: px-to-rem(2) solid $color-pale-gray;
   }
-  &__wrapper{
+  &__wrapper {
     display: flex;
     width: 100%;
     flex-direction: column;
     padding: px-to-rem(25) px-to-rem(0) px-to-rem(15);
   }
 }
-.input{
+.input {
   font-size: px-to-rem(15) !important;
   line-height: px-to-rem(24);
   border-radius: px-to-rem(12);
@@ -31,7 +31,7 @@
   line-height: px-to-rem(20);
   padding: px-to-rem(16) px-to-rem(0);
   font-weight: 500;
-  &:hover{
+  &:hover {
     background-color: rgba($primary-background-color, 0.93);
     color: $color-white;
   }

@@ -1,28 +1,28 @@
 @import '../../../../sass/_abstract/_variables.scss';
-.dateTimePicker{
-  &__wrapper{
+.dateTimePicker {
+  &__wrapper {
     display: flex;
     flex-direction: column;
     text-align: left; //in props
     gap: px-to-rem(8);
     position: relative;
     width: 100%;
-    &_disabled{
+    &_disabled {
       opacity: 0.5;
     }
   }
 }
-.label{
+.label {
   font-family: $global-font-inter;
   color: $color-label;
   font-weight: 500;
   line-height: 24px;
   font-size: px-to-rem(15);
 }
-.input{
+.input {
   border: $global-border-default-input;
   outline: none;
-  transition: all .4s;
+  transition: all 0.4s;
   padding: px-to-rem(11) px-to-rem(20) px-to-rem(11) px-to-rem(20);
   font-family: $global-font-inter;
   color: $color-text-not-focused;
@@ -32,7 +32,7 @@
   border-radius: px-to-rem(12);
   background-color: $color-white;
 
-  &__error{
+  &__error {
     border-color: $color-no-valid-border;
   }
   &:hover {

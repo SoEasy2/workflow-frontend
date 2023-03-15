@@ -1,5 +1,5 @@
-@import "../../../../../sass/_abstract/_variables.scss";
-.item{
+@import '../../../../../sass/_abstract/_variables.scss';
+.item {
   color: $color-sidebar-item;
   width: 97%;
   font-family: $global-font-inter;
@@ -8,30 +8,30 @@
   line-height: px-to-rem(24);
   cursor: pointer;
   padding: px-to-rem(8) px-to-rem(16) px-to-rem(8) px-to-rem(24);
-  transition: .3s;
+  transition: 0.3s;
   border-radius: 0 px-to-rem(24) px-to-rem(24) 0;
   position: relative;
-  &__wrapper{
+  &__wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
-  &__info{
+  &__info {
     display: flex;
     gap: px-to-rem(8);
-    div{
+    div {
       display: flex;
     }
   }
-  &__icon{
+  &__icon {
     margin-top: px-to-rem(1);
   }
-  &:hover{
+  &:hover {
     color: $color-white;
     background-color: $background-color-sidebar-item-hover;
   }
 }
-.children{
+.children {
   position: absolute;
-  left: px-to-rem(4)
+  left: px-to-rem(4);
 }
