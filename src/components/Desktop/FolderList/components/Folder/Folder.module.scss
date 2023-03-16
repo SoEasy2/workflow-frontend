@@ -6,18 +6,18 @@
   flex-direction: column;
   font-family: $global-font-inter;
   box-shadow: 0px 2px 12px 0px rgba(34, 60, 80, 0.2);
-  border-radius: 12px 12px 0px 0px;
+  border-radius: px-to-rem(12) px-to-rem(12) px-to-rem(0) px-to-rem(0);
   cursor: pointer;
   &__top {
     display: flex;
     align-items: center;
     padding: px-to-rem(24) px-to-rem(16) px-to-rem(18) px-to-rem(12);
-    border-radius: 12px 12px 0px 0px;
+    border-radius: px-to-rem(12) px-to-rem(12) px-to-rem(0) px-to-rem(0);
     gap: px-to-rem(10);
   }
   &__icon {
     display: flex;
-    margin-right: 10px;
+    margin-right: px-to-rem(10);
   }
   &__title {
     font-weight: 500;
@@ -38,7 +38,7 @@
 
     text-overflow: ellipsis;
     overflow: hidden;
-    width: 90px;
+    max-width: px-to-rem(90);
     white-space: nowrap;
   }
   &__task {
@@ -50,7 +50,7 @@
   }
   &__bottom_block {
     background: #ffffff;
-    border-radius: 0px 0px 12px 12px;
+    border-radius: px-to-rem(0) px-to-rem(0) px-to-rem(12) px-to-rem(12);
     display: flex;
     justify-content: space-between;
     padding: px-to-rem(12) px-to-rem(16) px-to-rem(16) px-to-rem(16);
@@ -59,10 +59,9 @@
   &__counter {
     display: flex;
     align-self: flex-end;
+    gap: px-to-rem(8);
   }
-  &__counter p:first-of-type {
-    margin-right: 8px;
-  }
+
   &__dot {
     width: px-to-rem(4);
     height: px-to-rem(4);

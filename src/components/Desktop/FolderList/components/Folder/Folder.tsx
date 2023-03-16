@@ -14,10 +14,10 @@ interface IFolder {
   color: string;
   title: string;
   creator: string;
-  countOfTasks: number;
+  countOfTasks: string;
   countOfMembers: Members[];
-  newTasks: number;
-  newAlerts: number;
+  newTasks: string;
+  newAlerts: string;
 }
 
 const Component: React.FC<IFolder> = ({
@@ -45,7 +45,7 @@ const Component: React.FC<IFolder> = ({
           <div className={styles.folder__folder}>
             <div className={styles.folder__creator}>{creator}</div>
             <div className={styles.folder__dot}></div>
-            <div className={styles.folder__task}>{countOfTasks} tasks</div>
+            <div className={styles.folder__task}>{countOfTasks}</div>
           </div>
         </div>
       </div>
@@ -54,12 +54,12 @@ const Component: React.FC<IFolder> = ({
         <Member countOfMembers={countOfMembers} />
         <div className={styles.folder__counter}>
           <Label
-            text={`${newTasks} tasks`}
+            text={newTasks}
             color={'#6c9883'}
             bgColor={'#e7f5f1'}
           />
           <Label
-            text={`${newAlerts} tasks`}
+            text={newAlerts}
             color={'#af7e7a'}
             bgColor={'#f5e8e7'}
           />

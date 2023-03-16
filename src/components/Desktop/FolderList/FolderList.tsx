@@ -14,10 +14,10 @@ interface MockTaskCard {
   color: string;
   title: string;
   creator: string;
-  countOfTasks: number;
+  countOfTasks: string;
   countOfMembers: Members[];
-  newTasks: number;
-  newAlerts: number;
+  newTasks: string;
+  newAlerts: string;
 }
 
 const Component: React.FC = () => {
@@ -28,7 +28,7 @@ const Component: React.FC = () => {
       color: '#C9C7EF',
       title: 'New Folder',
       creator: 'Katerina Abravavava',
-      countOfTasks: 5,
+      countOfTasks: '5 tasks',
       countOfMembers: [
         {
           link: '/',
@@ -55,8 +55,8 @@ const Component: React.FC = () => {
           name: 'Belarus',
         },
       ],
-      newTasks: 12,
-      newAlerts: 5,
+      newTasks: '12 tasks',
+      newAlerts: '14 alerts',
     },
     {
       type: 'purchase',
@@ -64,7 +64,7 @@ const Component: React.FC = () => {
       color: '#F1C7C4',
       title: 'New Folder 2',
       creator: 'Vanya Smolasdasd',
-      countOfTasks: 2,
+      countOfTasks: '2 tasks',
       countOfMembers: [
         {
           link: '/',
@@ -83,200 +83,8 @@ const Component: React.FC = () => {
           name: 'Belarus',
         },
       ],
-      newTasks: 2,
-      newAlerts: 4,
-    },
-    {
-      type: 'default',
-      icon: <TestSvg />,
-      color: '#C9C7EF',
-      title: 'New Folder',
-      creator: 'Katerina Abravavava',
-      countOfTasks: 5,
-      countOfMembers: [
-        {
-          link: '/',
-          name: 'Vwnya',
-        },
-        {
-          link: '/',
-          name: 'Roman',
-        },
-        {
-          link: '/',
-          name: 'Donbass',
-        },
-        {
-          link: '/',
-          name: 'Belarus',
-        },
-        {
-          link: '/',
-          name: 'Donbass',
-        },
-        {
-          link: '/',
-          name: 'Belarus',
-        },
-      ],
-      newTasks: 12,
-      newAlerts: 5,
-    },
-    {
-      type: 'purchase',
-      icon: <TestSvg />,
-      color: '#F1C7C4',
-      title: 'New Folder 2',
-      creator: 'Vanya Smolasdasd',
-      countOfTasks: 2,
-      countOfMembers: [
-        {
-          link: '/',
-          name: 'Vanya',
-        },
-        {
-          link: '/',
-          name: 'Roman',
-        },
-        {
-          link: '/',
-          name: 'Donbass',
-        },
-        {
-          link: '/',
-          name: 'Belarus',
-        },
-      ],
-      newTasks: 2,
-      newAlerts: 4,
-    },
-    {
-      type: 'default',
-      icon: <TestSvg />,
-      color: '#C9C7EF',
-      title: 'New Folder',
-      creator: 'Katerina Abravavava',
-      countOfTasks: 5,
-      countOfMembers: [
-        {
-          link: '/',
-          name: 'Vwnya',
-        },
-        {
-          link: '/',
-          name: 'Roman',
-        },
-        {
-          link: '/',
-          name: 'Donbass',
-        },
-        {
-          link: '/',
-          name: 'Belarus',
-        },
-        {
-          link: '/',
-          name: 'Donbass',
-        },
-        {
-          link: '/',
-          name: 'Belarus',
-        },
-      ],
-      newTasks: 12,
-      newAlerts: 5,
-    },
-    {
-      type: 'purchase',
-      icon: <TestSvg />,
-      color: '#F1C7C4',
-      title: 'New Folder 2',
-      creator: 'Vanya Smolasdasd',
-      countOfTasks: 2,
-      countOfMembers: [
-        {
-          link: '/',
-          name: 'Vanya',
-        },
-        {
-          link: '/',
-          name: 'Roman',
-        },
-        {
-          link: '/',
-          name: 'Donbass',
-        },
-        {
-          link: '/',
-          name: 'Belarus',
-        },
-      ],
-      newTasks: 2,
-      newAlerts: 4,
-    },
-    {
-      type: 'default',
-      icon: <TestSvg />,
-      color: '#C9C7EF',
-      title: 'New Folder',
-      creator: 'Katerina Abravavava',
-      countOfTasks: 5,
-      countOfMembers: [
-        {
-          link: '/',
-          name: 'Vwnya',
-        },
-        {
-          link: '/',
-          name: 'Roman',
-        },
-        {
-          link: '/',
-          name: 'Donbass',
-        },
-        {
-          link: '/',
-          name: 'Belarus',
-        },
-        {
-          link: '/',
-          name: 'Donbass',
-        },
-        {
-          link: '/',
-          name: 'Belarus',
-        },
-      ],
-      newTasks: 12,
-      newAlerts: 5,
-    },
-    {
-      type: 'purchase',
-      icon: <TestSvg />,
-      color: '#F1C7C4',
-      title: 'New Folder 2',
-      creator: 'Vanya Smolasdasd',
-      countOfTasks: 2,
-      countOfMembers: [
-        {
-          link: '/',
-          name: 'Vanya',
-        },
-        {
-          link: '/',
-          name: 'Roman',
-        },
-        {
-          link: '/',
-          name: 'Donbass',
-        },
-        {
-          link: '/',
-          name: 'Belarus',
-        },
-      ],
-      newTasks: 2,
-      newAlerts: 4,
+      newTasks: '5 tasks',
+      newAlerts: '7 alerts',
     },
   ];
   return (
