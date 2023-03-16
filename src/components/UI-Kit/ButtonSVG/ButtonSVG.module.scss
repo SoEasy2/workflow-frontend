@@ -1,17 +1,7 @@
 @import '../../../sass/_abstract/functions';
 @import '../../../sass/_abstract/variables';
 
-
-.buttonSVG{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    &__svg{
-      display: flex;
-      margin-right: px-to-rem(8);
-    }
-}
-.button {
+.buttonSVG {
   display: flex;
   align-items: center;
   background-color: transparent;
@@ -22,8 +12,17 @@
   font-size: px-to-rem(16);
   line-height: px-to-rem(24);
   border: none;
-
+  &__content {
+    display: flex;
+    align-items: center;
+    gap: px-to-rem(8)
+  }
+  &__svg {
+    display: flex;
+    margin-right: px-to-rem(8);
+  }
 }
+
 
 .active {
   border-color: $global-border-color;

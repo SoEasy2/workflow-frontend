@@ -3,7 +3,7 @@ import { PlusFill, PlusNoFill, More } from '../../../helpers/icons/taskmanager';
 import styles from './TaskManger.module.scss';
 import { Topbar } from '../../../components/Desktop/Topbar';
 import { Sidebar } from '../../../components/Desktop/Sidebar';
-import image from '../../../../src/assets/images/bars/emptyState.png';
+import image from '../../../../src/assets/images/task-manager/emptyState.jpg';
 import { ButtonSVG } from '../../../components/UI-Kit/ButtonSVG';
 import { ButtonTypes } from '../../../helpers/constants/enum';
 
