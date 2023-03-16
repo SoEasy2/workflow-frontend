@@ -1,0 +1,33 @@
+@import '../../../sass/_abstract/functions';
+@import '../../../sass/_abstract/variables';
+
+
+.buttonSVG{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__svg{
+      display: flex;
+      margin-right: px-to-rem(8);
+    }
+}
+.button {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  cursor: pointer;
+  color: $color-text-primary;
+  font-family: $global-font-inter;
+  font-weight: 500;
+  font-size: px-to-rem(16);
+  line-height: px-to-rem(24);
+  border: none;
+
+}
+
+.active {
+  border-color: $global-border-color;
+}
+.disabled {
+  color: $color-white;
+}

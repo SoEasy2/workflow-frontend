@@ -8,7 +8,6 @@ interface IItem {
   item: ISidebarItem;
 }
 const Component: React.FC<IItem> = ({ item }) => {
-
   const navigate = useNavigate();
 
   return (
@@ -19,7 +18,10 @@ const Component: React.FC<IItem> = ({ item }) => {
         </div>
       )}
       <div className={styles.item__wrapper}>
-        <div className={styles.item__info} onClick={() => item.to && navigate(item.to)}>
+        <div
+          className={styles.item__info}
+          onClick={() => item.to && navigate(item.to)}
+        >
           <div className={styles.item__icon}>{item.icon}</div>
           <div className={styles.item__name}>{item.name}</div>
         </div>
