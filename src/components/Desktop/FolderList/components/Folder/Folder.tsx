@@ -1,4 +1,5 @@
 import React, { ReactElement } from 'react';
+import { EnumLabelColors } from '../../../../../helpers/constants/enum/LabelColor';
 import { Label } from '../Label';
 import { Member } from '../Member';
 import styles from './Folder.module.scss';
@@ -55,13 +56,11 @@ const Component: React.FC<IFolder> = ({
         <div className={styles.folder__counter}>
           <Label
             text={newTasks}
-            color={'#6c9883'}
-            bgColor={'#e7f5f1'}
+            color={EnumLabelColors.GREEN}
           />
           <Label
             text={newAlerts}
-            color={'#af7e7a'}
-            bgColor={'#f5e8e7'}
+            color={EnumLabelColors.RED}
           />
         </div>
       </div>
