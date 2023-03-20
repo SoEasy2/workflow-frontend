@@ -1,0 +1,17 @@
+@import '../../../../../sass/_abstract/variables.scss';
+
+.FolderType {
+  margin-bottom: px-to-rem(183);
+  &__title {
+    font-family: $global-font-inter;
+    text-transform: uppercase;
+    margin-bottom: px-to-rem(30);
+    color: $color-text-primary;
+    font-weight: 600;
+    font-size: px-to-rem(14);
+  }
+  &__card {
+    display: flex;
+    justify-content: space-between;
+  }
+}

@@ -5,6 +5,8 @@ import { animated } from 'react-spring';
 import { ArrowHandleIcon } from '../../../helpers/icons';
 import useOnClickOutside from '../../../hooks/clickOutside/useClickOutside';
 import { BarLayout } from '../../UI-Kit/BarLayout';
+import { Button } from '../Authentication/Button';
+import { FolderType } from './components/FolderType';
 import { IconInput } from './components/IconInput';
 import { Picker } from './components/Picker';
 
@@ -21,7 +23,7 @@ const Component: React.FC<ICreateFolderBar> = ({ setOpen, style }) => {
 
   const [selectedColor, setSelectedColor] = useState<number>(0);
   const [selectedIcon, setSelectedIcon] = useState<number>(0);
-
+  const [selectedFolderType, setSelecteFolderType] = useState<number>(0);
   const handleSelect = (index: number) => {
     setSelectedColor(index);
     console.log(`Выбран цвет: ${index}`);
@@ -29,6 +31,10 @@ const Component: React.FC<ICreateFolderBar> = ({ setOpen, style }) => {
   const handleSelectIcon = (index: number) => {
     setSelectedIcon(index);
     console.log(`Выбран цвет: ${index}`);
+  };
+  const handleSelectType = (index: number) => {
+    setSelecteFolderType(index);
+    console.log(`Выбрана папка: ${index}`);
   };
 
   return createPortal(
@@ -60,6 +66,16 @@ const Component: React.FC<ICreateFolderBar> = ({ setOpen, style }) => {
               handleSelectIcon={handleSelectIcon}
               selectedColor={selectedColor}
               selectedIcon={selectedIcon}
+            />
+            <FolderType
+              handleSelect={handleSelectType}
+              selectedFolderType={selectedFolderType}
+            />
+            {/* <hr className={styles.createFolderBar__content_line} /> */}
+            <Button
+              text='Create folder'
+              onClick={() => console.log('created folder')}
+              disabled={false}
             />
           </div>
         </BarLayout>

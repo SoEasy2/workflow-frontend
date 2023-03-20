@@ -1,0 +1,36 @@
+@import '../../../../../../sass/_abstract/variables.scss';
+
+.folderTypeCard {
+  width: px-to-rem(160);
+  height: px-to-rem(189);
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: px-to-rem(1) solid $color-sidebar-item;
+    border-radius: px-to-rem(20);
+    margin-bottom: px-to-rem(12);
+    svg {
+      width: px-to-rem(100);
+    }
+  }
+  &__title {
+    margin-bottom: px-to-rem(4);
+    font-family: $global-font-inter;
+    color: $color-text-primary;
+    font-weight: 500;
+    font-size: px-to-rem(17);
+    line-height: px-to-rem(24);
+  }
+  &__text {
+    font-family: $global-font-inter;
+    font-weight: 400;
+    font-size: px-to-rem(13);
+    line-height: px-to-rem(18);
+    color: $color-text-not-focused;
+  }
+}
+
+.selected {
+  border: px-to-rem(1) solid $global-border-color;
+}
