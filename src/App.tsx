@@ -1,18 +1,18 @@
-import { Route, Routes, useNavigate } from 'react-router';
-import { routes } from './helpers/constants';
-import { useEffect, useId, useState } from 'react';
-import { MainLayout } from './components/Desktop/Layouts/MainLayout/MainLayout';
-import { useAppDispatch, useAppSelector } from './hooks/redux';
 import { useMutation } from '@apollo/client';
-import { setupUser } from './helpers/setupUser';
+import { useEffect, useId, useState } from 'react';
 import { useCookies } from 'react-cookie';
-import { userSlice } from './redux/user/slices/UserSlice';
-import { REFRESH_USER } from './graphql/auth/refresh/mutations';
+import { Route, Routes, useNavigate } from 'react-router';
+import { MainLayout } from './components/Desktop/Layouts/MainLayout/MainLayout';
 import { Loader } from './components/UI-Kit/Loader/Loader';
+import { REFRESH_USER } from './graphql/auth/refresh/mutations';
+import { routes } from './helpers/constants';
 import { StepEnum } from './helpers/constants/registration/enums/step';
-import { TypeRegistration } from './helpers/constants/registration/enums/typeRegistration';
 import { StepConnect } from './helpers/constants/registration/enums/stepConnect';
+import { TypeRegistration } from './helpers/constants/registration/enums/typeRegistration';
+import { setupUser } from './helpers/setupUser';
 import useEventListener from './hooks/eventListener/useEvenetListener';
+import { useAppDispatch, useAppSelector } from './hooks/redux';
+import { userSlice } from './redux/user/slices/UserSlice';
 
 const App = () => {
   const navigate = useNavigate();
@@ -42,7 +42,7 @@ const App = () => {
   useEventListener('resize', () => {
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
-    document.body.style.zoom = 1 / window.devicePixelRatio;
+    // document.body.style.zoom = 1 / window.devicePixelRatio;
   });
 
   useEffect(() => {

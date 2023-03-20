@@ -1,0 +1,10 @@
+@import '../../../sass/_abstract/variables.scss';
+
+.wrapper {
+  padding: px-to-rem(32);
+  display: flex;
+  gap: px-to-rem(35);
+  width: 100%;
+  max-width: 100%;
+  flex-wrap: wrap;
+}
