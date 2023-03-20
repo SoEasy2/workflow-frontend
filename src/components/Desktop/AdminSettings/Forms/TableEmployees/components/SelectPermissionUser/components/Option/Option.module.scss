@@ -2,7 +2,7 @@
 .option {
   padding: px-to-rem(12) px-to-rem(12) px-to-rem(12) px-to-rem(16);
   background-color: transparent;
-  transition: all .4s;
+  transition: all 0.4s;
   cursor: pointer;
   &:hover {
     background-color: $hover-background-color;

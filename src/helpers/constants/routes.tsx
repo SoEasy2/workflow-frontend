@@ -6,37 +6,43 @@ import { RegistrationMobile } from '../../pages/Mobile/AuthenticationMobile/Regi
 import { LoginPage } from '../../pages/Desktop/Authentication/Login';
 import { ConnectWithCodePage } from '../../pages/Desktop/Authentication/ConnectWithCode';
 import { DashboardPage } from '../../pages/Desktop/Dashboard';
+import { TaskManagerPage } from '../../pages/Desktop/TaskManager';
+import { RouteEnum } from './enum/route';
 
 const desktopRoutes: IRoute[] = [
   {
-    path: '/registration',
+    path: RouteEnum.REGISTRATION,
     component: <RegistrationPage />,
   },
   {
-    path: '/login',
+    path: RouteEnum.TASK_MANAGER,
+    component: <TaskManagerPage />,
+  },
+  {
+    path: RouteEnum.LOGIN,
     component: <LoginPage />,
   },
   {
-    path: '/connect-with-code',
+    path: RouteEnum.CONNECT_WITH_CODE,
     component: <ConnectWithCodePage />,
   },
   {
-    path: '/dashboard',
+    path: RouteEnum.DASHBOARD,
     component: <DashboardPage />,
   },
   {
-    path: '/tools/ui-kit',
+    path: RouteEnum.UI_KIT,
     component: <UiKit />,
   },
   {
-    path: '/*',
+    path: RouteEnum.ERROR,
     component: <TestError />,
   },
 ];
 
 const mobileRoutes: IRoute[] = [
   {
-    path: '/registration',
+    path: RouteEnum.REGISTRATION,
     component: <RegistrationMobile />,
   },
 ];

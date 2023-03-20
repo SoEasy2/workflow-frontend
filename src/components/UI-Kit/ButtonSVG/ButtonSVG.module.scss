@@ -1,0 +1,31 @@
+@import '../../../sass/_abstract/variables';
+
+.buttonSVG {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  cursor: pointer;
+  color: $color-text-primary;
+  font-family: $global-font-inter;
+  font-weight: 500;
+  font-size: px-to-rem(16);
+  line-height: px-to-rem(24);
+  border: none;
+  &__content {
+    display: flex;
+    align-items: center;
+    gap: px-to-rem(8)
+  }
+  &__svg {
+    display: flex;
+    align-items: center;
+  }
+}
+
+
+.active {
+  border-color: $global-border-color;
+}
+.disabled {
+  color: $color-white;
+}

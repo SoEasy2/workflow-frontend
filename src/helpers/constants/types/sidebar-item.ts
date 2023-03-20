@@ -6,4 +6,5 @@ export interface ISidebarItem {
   type: SidebarTypeItem;
   name: string;
   withChildren: boolean;
+  to?: string;
 }

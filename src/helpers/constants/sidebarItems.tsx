@@ -9,6 +9,7 @@ import {
   SidebarTaskManagerIcon,
   SidebarWorkStatusIcon,
 } from '../icons/sidebar';
+import { RouteEnum } from './enum/route';
 
 export const sidebarItems: ISidebarItem[] = [
   {
@@ -22,6 +23,7 @@ export const sidebarItems: ISidebarItem[] = [
     name: 'Task Manager',
     icon: <SidebarTaskManagerIcon />,
     withChildren: true,
+    to: RouteEnum.TASK_MANAGER,
   },
   {
     type: SidebarTypeItem.DEFAULT,
