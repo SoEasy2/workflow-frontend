@@ -1,12 +1,12 @@
-@import "../../../sass/_abstract/_variables.scss";
-.barLayout{
+@import '../../../sass/_abstract/_variables.scss';
+.barLayout {
   position: relative;
   height: 100%;
   display: flex;
   flex-direction: column;
   box-shadow: 0 px-to-rem(24) px-to-rem(38) rgba(47, 53, 57, 0.03),
-              0 px-to-rem(9) px-to-rem(46) rgba(71, 116, 138, 0.02),
-              0 px-to-rem(11) px-to-rem(15) rgba(95, 137, 158, 0.04);
+    0 px-to-rem(9) px-to-rem(46) rgba(71, 116, 138, 0.02),
+    0 px-to-rem(11) px-to-rem(15) rgba(95, 137, 158, 0.04);
   background-color: $color-white;
   width: px-to-rem(580);
 }

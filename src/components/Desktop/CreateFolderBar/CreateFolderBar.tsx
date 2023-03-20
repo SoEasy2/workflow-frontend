@@ -24,6 +24,7 @@ const Component: React.FC<ICreateFolderBar> = ({ setOpen, style }) => {
   const [selectedColor, setSelectedColor] = useState<number>(0);
   const [selectedIcon, setSelectedIcon] = useState<number>(0);
   const [selectedFolderType, setSelecteFolderType] = useState<number>(0);
+  const [folderName, setFolderName] = useState<string | null>(null);
 
   const handleSelect = (index: number) => {
     setSelectedColor(index);
@@ -37,6 +38,12 @@ const Component: React.FC<ICreateFolderBar> = ({ setOpen, style }) => {
     setSelecteFolderType(index);
     console.log(`Выбрана папка: ${index}`);
   };
+
+  const handleChangeInput = (string: string) => {
+    setFolderName(string);
+  };
+
+  console.log(style);
 
   return createPortal(
     <div className={styles.createFolderBar}>
@@ -56,6 +63,7 @@ const Component: React.FC<ICreateFolderBar> = ({ setOpen, style }) => {
             <IconInput
               selectedColor={selectedColor}
               selectedIcon={selectedIcon}
+              handleChangeInput={handleChangeInput}
             />
           </div>
 
@@ -74,7 +82,7 @@ const Component: React.FC<ICreateFolderBar> = ({ setOpen, style }) => {
             <Button
               text='Create folder'
               onClick={() => console.log('created folder')}
-              disabled={false}
+              disabled={folderName ? false : true}
             />
           </div>
         </BarLayout>

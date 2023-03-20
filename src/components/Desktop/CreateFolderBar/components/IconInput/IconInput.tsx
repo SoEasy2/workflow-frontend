@@ -4,10 +4,11 @@ import { folderColors2, folderIcons } from '../../mockData';
 import styles from './IconInput.module.scss';
 
 interface InputIcons {
+  handleChangeInput: (string: string) => void;
   selectedColor: number;
   selectedIcon: number;
 }
-const Component: React.FC<InputIcons> = ({ selectedColor, selectedIcon }) => {
+const Component: React.FC<InputIcons> = ({ selectedColor, selectedIcon, handleChangeInput }) => {
   return (
     <div className={styles.input}>
       <div
@@ -16,7 +17,7 @@ const Component: React.FC<InputIcons> = ({ selectedColor, selectedIcon }) => {
       >
         {folderIcons[selectedIcon]()}
       </div>
-      <CustomInput />
+      <CustomInput handleChangeInput={handleChangeInput} />
     </div>
   );
 };

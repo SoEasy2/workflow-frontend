@@ -1,7 +1,8 @@
 import React, { useId } from 'react';
+import { folderType } from '../../mockData';
 import styles from './FolderType.module.scss';
 import { FolderTypeCard } from './FolderTypeCard';
-import { folderType } from './mockData';
+
 interface FolderType {
   selectedFolderType: number;
   handleSelect: (index: number) => void;
@@ -19,6 +20,7 @@ const Component: React.FC<FolderType> = ({ handleSelect, selectedFolderType }) =
               icon={elem.icon}
               title={elem.title}
               text={elem.text}
+              type={elem.type}
               selected={selectedFolderType === index}
               onSelect={handleSelect}
             />

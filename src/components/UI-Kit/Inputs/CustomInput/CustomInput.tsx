@@ -1,12 +1,17 @@
 import React from 'react';
 import styles from './CustomInput.module.scss';
 
-const Component: React.FC = () => {
+interface ICustomInput {
+  handleChangeInput: (string: string) => void;
+}
+
+const Component: React.FC<ICustomInput> = ({ handleChangeInput }) => {
   return (
     <input
       className={styles.customInput}
       type='text'
       placeholder='Type something...'
+      onChange={(e) => handleChangeInput(e.target.value)}
     />
   );
 };
