@@ -1,30 +1,32 @@
+@import '../../../sass/_abstract/variables.scss';
+
 .flex {
   display: flex;
 }
 
 .Avatar {
-  width: 24px;
-  height: 24px;
+  width: px-to-rem(24);
+  height: px-to-rem(24);
   border-radius: 50%;
-  background-color: #030235;
+  background-color: $primary-background-color;
   display: flex;
   justify-content: center;
-  font-size: 10px;
+  font-size: px-to-rem(10);
   align-items: center;
-  color: #ffffff;
-  border: 0.75px solid #ffffff;
-  margin-left: -2px;
+  color: $color-white;
+  border: px-to-rem(0.75) solid $color-white;
+  margin-left: px-to-rem(-2);
 }
 
 .Counter {
-  width: 24px;
-  height: 24px;
+  width: px-to-rem(24);
+  height: px-to-rem(24);
   border-radius: 50%;
   display: flex;
   justify-content: center;
-  font-size: 10px;
+  font-size: px-to-rem(10);
   align-items: center;
-  background: #fafafb;
-  border: 1px solid #ffffff;
-  margin-left: -2px;
+  background: $global-background-color;
+  border: px-to-rem(1) solid $color-white;
+  margin-left: px-to-rem(-2);
 }

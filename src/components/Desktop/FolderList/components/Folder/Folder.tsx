@@ -1,13 +1,9 @@
 import React, { ReactElement } from 'react';
 import { EnumLabelColors } from '../../../../../helpers/constants/enum/LabelColor';
+import { Members } from '../interface';
 import { Label } from '../Label';
 import { Member } from '../Member';
 import styles from './Folder.module.scss';
-
-interface Members {
-  link: string;
-  name: string;
-}
 
 interface IFolder {
   type: string;
@@ -38,7 +34,7 @@ const Component: React.FC<IFolder> = ({
     <div className={styles.folder}>
       <div
         className={styles.folder__top}
-        style={{ background: color }}
+        style={{ backgroundColor: color }}
       >
         <div className={styles.folder__icon}>{icon}</div>
         <div>

@@ -1,12 +1,10 @@
 import React from 'react';
 import { Avatar } from '../../../../UI-Kit/Avatar';
+import { Members } from '../interface';
 import styles from './Member.module.scss';
 
 interface IMembers {
-  countOfMembers: {
-    link: string;
-    name: string;
-  }[];
+  countOfMembers: Members[];
 }
 
 const Component: React.FC<IMembers> = ({ countOfMembers }) => {

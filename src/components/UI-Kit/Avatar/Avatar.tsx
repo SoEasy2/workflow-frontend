@@ -1,10 +1,8 @@
 import React from 'react';
+import { Members } from '../../../components/Desktop/FolderList/components/interface';
 import styles from './Avatar.module.scss';
 interface IAvatar {
-  countOfMembers: {
-    link: string;
-    name: string;
-  }[];
+  countOfMembers: Members[];
 }
 
 const Component: React.FC<IAvatar> = ({ countOfMembers }) => {

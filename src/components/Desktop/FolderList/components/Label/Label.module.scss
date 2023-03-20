@@ -9,11 +9,11 @@
 }
 
 .green {
-  color: #6c9883;
-  background-color: #e7f5f1;
+  color: $color-label-green;
+  background-color: $color-label-green-background;
 }
 
 .red {
-  color: #af7e7a;
-  background-color: #f5e8e7;
+  color: $color-label-red;
+  background-color: $color-label-red-background;
 }
