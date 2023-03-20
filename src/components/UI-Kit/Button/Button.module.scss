@@ -1,6 +1,6 @@
-@import "../../../sass/_abstract/functions";
-@import "../../../sass/_abstract/variables";
-.button{
+@import '../../../sass/_abstract/functions';
+@import '../../../sass/_abstract/variables';
+.button {
   padding: px-to-rem(8) px-to-rem(16);
   background-color: $color-white;
   outline: none;
@@ -12,16 +12,16 @@
   font-size: px-to-rem(16);
   line-height: px-to-rem(24);
   border: px-to-rem(1) solid transparent;
-  transition: all .3s;
+  transition: all 0.3s;
 }
-.active{
+.active {
   border-color: $global-border-color;
-  &:hover{
+  &:hover {
     background-color: $hover-background-color;
     border-color: transparent;
     color: $color-text-primary;
   }
 }
-.disabled{
+.disabled {
   color: $color-white;
 }

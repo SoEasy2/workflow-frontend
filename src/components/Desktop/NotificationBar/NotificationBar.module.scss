@@ -1,5 +1,5 @@
-@import "../../../sass/_abstract/_variables.scss";
-.notificationBar{
+@import '../../../sass/_abstract/_variables.scss';
+.notificationBar {
   top: 0;
   left: 0;
   right: 0;
@@ -9,33 +9,33 @@
   position: absolute;
   display: flex;
   justify-content: flex-end;
-  &__close{
+  &__close {
     display: flex;
     justify-content: flex-end;
     color: $color-black;
     padding: px-to-rem(30) px-to-rem(45);
-    .close{
+    .close {
       cursor: pointer;
       padding: px-to-rem(5);
       transform: rotate(180deg);
     }
   }
-  &__title{
+  &__title {
     margin-left: px-to-rem(32);
   }
-  .title{
+  .title {
     font-weight: 500;
     color: $color-text-primary;
     font-family: $global-font-inter;
     font-size: px-to-rem(32);
     line-height: px-to-rem(40);
   }
-  &__tabs{
+  &__tabs {
     display: flex;
     gap: px-to-rem(24);
-    margin: px-to-rem(32) 0 0 px-to-rem(32);;
+    margin: px-to-rem(32) 0 0 px-to-rem(32);
   }
-  &__tab{
+  &__tab {
     font-family: $global-font-inter;
     font-weight: 500;
     font-size: px-to-rem(15);
@@ -45,19 +45,19 @@
     outline: none;
     border: none;
     background-color: transparent;
-    transition: .3s;
-    &_active{
+    transition: 0.3s;
+    &_active {
       color: $color-text-primary;
     }
   }
-  .hr{
+  .hr {
     height: px-to-rem(2);
     background-color: rgba(89, 100, 118, 0.16);
     border: none;
     width: 100%;
     margin-top: px-to-rem(15);
   }
-  &__content{
+  &__content {
     height: 100%;
     display: flex;
     justify-content: center;

@@ -1,16 +1,16 @@
-@import "../../../../sass/_abstract/variables";
-.input__wrapper{
+@import '../../../../sass/_abstract/variables';
+.input__wrapper {
   display: flex;
   flex-direction: column;
   text-align: left; //in props
   gap: px-to-rem(8);
   position: relative;
   width: 100%;
-  &_disabled{
+  &_disabled {
     opacity: 0.5;
   }
 }
-.label{
+.label {
   font-family: $global-font-inter;
   color: $color-label;
   font-weight: 500;
@@ -20,7 +20,7 @@
 .input {
   border: $global-border-default-input;
   outline: none;
-  transition: all .4s;
+  transition: all 0.4s;
   padding: px-to-rem(14) px-to-rem(40) px-to-rem(14) px-to-rem(20);
   font-family: $global-font-inter;
   color: $color-text-not-focused;
@@ -30,7 +30,7 @@
   border-radius: px-to-rem(12);
   background-color: $color-white;
 
-  &__error{
+  &__error {
     border-color: $color-no-valid-border;
   }
 
@@ -41,13 +41,13 @@
     border: $global-border-focus-input;
     color: $color-text-primary;
   }
-};
-.helper{
+}
+.helper {
   position: absolute;
   z-index: 1;
   right: px-to-rem(12);
   top: px-to-rem(48);
-  &__remove{
+  &__remove {
     height: px-to-rem(24);
     width: px-to-rem(24);
     display: flex;
@@ -56,14 +56,14 @@
     flex-direction: column;
     cursor: pointer;
     background-color: $helper-background-light-gray-color;
-    border-radius: 100px
+    border-radius: 100px;
   }
-  &__hideIcon{
-    &_top{
+  &__hideIcon {
+    &_top {
       margin-top: px-to-rem(3);
     }
   }
 }
-.inputError{
+.inputError {
   border: $global-border-error-input;
 }

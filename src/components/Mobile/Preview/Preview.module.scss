@@ -1,5 +1,5 @@
-@import "../../../sass/_abstract/_variables.scss";
-.preview{
+@import '../../../sass/_abstract/_variables.scss';
+.preview {
   position: absolute;
   top: 0;
   left: 0;
@@ -11,10 +11,11 @@
   align-items: center;
   justify-content: center;
   z-index: 1000;
-  &__logo{
+  &__logo {
     padding: 21px 11px;
     background-color: $color-white;
-    box-shadow: 0 54px 82px rgba(2, 3, 3, 0.03), 0 22px 98px rgba(2, 3, 3, 0.02), 0 23px 28px rgba(2, 3, 3, 0.04);
+    box-shadow: 0 54px 82px rgba(2, 3, 3, 0.03), 0 22px 98px rgba(2, 3, 3, 0.02),
+      0 23px 28px rgba(2, 3, 3, 0.04);
     border-radius: 24px;
     display: flex;
     justify-content: center;

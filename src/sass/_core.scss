@@ -1,4 +1,4 @@
-@import "./_abstract/_variables.scss";
+@import './_abstract/_variables.scss';
 body {
   position: relative;
   line-height: 1.2;
@@ -13,23 +13,20 @@ body {
   touch-action: manipulation;
   box-sizing: border-box;
 }
-::-webkit-scrollbar-track
-{
-  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
   background-color: $color-pale-gray;
 }
 
-::-webkit-scrollbar
-{
+::-webkit-scrollbar {
   width: px-to-rem(8);
   background-color: $color-pale-gray;
 }
 
-::-webkit-scrollbar-thumb
-{
+::-webkit-scrollbar-thumb {
   border-radius: 10px;
-  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   background-color: rgba($color-text-primary, 0.8);
 }
 
@@ -37,15 +34,15 @@ img {
   user-select: none;
 }
 
-#root{
+#root {
   height: 100% !important;
 }
 
-html{
+html {
   height: 100% !important;
 }
 
-body{
+body {
   max-height: 100% !important;
   height: 100% !important;
   overflow: hidden;
@@ -59,7 +56,7 @@ body{
 .ant-picker {
   border: $global-border-default-input;
   cursor: pointer;
-  transition: all .4s;
+  transition: all 0.4s;
   &:hover:not(.ant-picker-focused) {
     border: $global-border-default-input;
   }
@@ -70,7 +67,7 @@ body{
     font-size: px-to-rem(16);
     line-height: 24px;
   }
-  &-focused{
+  &-focused {
     border: $global-border-focus-input !important;
     color: $color-text-primary !important;
     box-shadow: none !important;

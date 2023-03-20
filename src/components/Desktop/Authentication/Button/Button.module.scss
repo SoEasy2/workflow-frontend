@@ -1,6 +1,6 @@
 @import '../../../../sass/_abstract/functions';
 @import '../../../../sass/_abstract/variables';
-.button{
+.button {
   font-family: $global-font-inter;
   font-weight: 500;
   font-size: px-to-rem(16);
@@ -13,8 +13,8 @@
   border-radius: px-to-rem(10);
   padding: px-to-rem(16) px-to-rem(24);
   cursor: pointer;
-  transition: .2s;
-  &_disabled{
+  transition: 0.2s;
+  &_disabled {
     background-color: rgba($primary-background-color, 0.4);
   }
 }

@@ -1,15 +1,15 @@
 @import '../../../../sass/_abstract/functions';
 @import '../../../../sass/_abstract/variables';
-.step{
+.step {
   display: flex;
   flex-direction: column;
   gap: px-to-rem(30);
-  &__top{
+  &__top {
     display: flex;
     flex-direction: column;
     gap: px-to-rem(12);
   }
-  &__title{
+  &__title {
     font-family: $global-font-inter;
     font-weight: 600;
     font-size: px-to-rem(40);
@@ -19,32 +19,32 @@
     max-width: px-to-rem(380);
   }
 
-  &__info{
+  &__info {
     font-family: $global-font-inter;
     font-weight: 400;
     font-size: px-to-rem(20);
     line-height: px-to-rem(28);
     color: $color-label;
     display: flex;
-    .current{
+    .current {
       font-weight: 600;
       color: $color-text-primary;
     }
-    .sl{
+    .sl {
       margin: 0 px-to-rem(2);
     }
   }
-  &__login{
+  &__login {
     display: flex;
     gap: px-to-rem(4);
-    &__text{
+    &__text {
       font-family: $global-font-inter;
       font-weight: 400;
       font-size: px-to-rem(15);
       line-height: px-to-rem(22);
       color: $color-text-primary;
     }
-    &__button{
+    &__button {
       font-family: $global-font-inter;
       font-weight: 700;
       font-size: px-to-rem(15);
@@ -56,16 +56,16 @@
       background-color: transparent;
     }
   }
-  &__image{
+  &__image {
     max-height: px-to-rem(787);
     max-width: px-to-rem(647);
   }
-  &__registration{
+  &__registration {
     display: flex;
-    gap: px-to-rem(4)
+    gap: px-to-rem(4);
   }
 }
-.image{
+.image {
   object-fit: cover;
   height: 100%;
   width: 100%;

@@ -1,11 +1,11 @@
 @import '../../../../../sass/_abstract/functions';
 @import '../../../../../sass/_abstract/variables';
-.connect{
+.connect {
   display: flex;
   flex-direction: column;
   gap: px-to-rem(80);
   height: 100%;
-  &__wrapper__title{
+  &__wrapper__title {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -13,7 +13,7 @@
     text-align: center;
     gap: px-to-rem(10);
   }
-  &__title{
+  &__title {
     font-family: $global-font-inter;
     font-size: px-to-rem(32);
     line-height: px-to-rem(40);
@@ -21,7 +21,7 @@
     letter-spacing: px-to-rem(-0.24);
     font-weight: 500;
   }
-  &__description{
+  &__description {
     font-family: $global-font-inter;
     font-size: px-to-rem(15);
     line-height: px-to-rem(20);
@@ -29,8 +29,7 @@
     display: flex;
     flex-direction: column;
     gap: px-to-rem(3);
-    &__email{
-
+    &__email {
     }
   }
   &__form {
@@ -39,19 +38,19 @@
     display: flex;
     flex-direction: column;
     gap: px-to-rem(85);
-    &__inputs{
+    &__inputs {
       display: flex;
       justify-content: space-between;
       align-items: center;
       gap: px-to-rem(10);
-      div{
+      div {
         width: px-to-rem(16);
         border: 1px solid $global-border-color;
         height: fit-content;
       }
     }
   }
-  &__receive{
+  &__receive {
     font-family: $global-font-inter;
     font-weight: 400;
     font-size: px-to-rem(15);
@@ -60,8 +59,8 @@
     display: flex;
     flex-direction: column;
     gap: px-to-rem(15);
-    &__timer{
-      span{
+    &__timer {
+      span {
         font-family: $global-font-inter;
         font-weight: 600;
         font-size: px-to-rem(28);
@@ -69,10 +68,10 @@
         color: $color-text-primary;
       }
     }
-    &__text{
+    &__text {
       display: flex;
       gap: px-to-rem(5);
-      button{
+      button {
         font-family: $global-font-inter;
         font-weight: 600;
         font-size: px-to-rem(15);
@@ -83,7 +82,7 @@
         outline: none;
         border: none;
       }
-      span{
+      span {
         font-family: $global-font-inter;
         font-weight: 400;
         font-size: px-to-rem(15);
