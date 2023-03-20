@@ -24,13 +24,14 @@ const Component: React.FC<ICreateFolderBar> = ({ setOpen, style }) => {
   const [selectedColor, setSelectedColor] = useState<number>(0);
   const [selectedIcon, setSelectedIcon] = useState<number>(0);
   const [selectedFolderType, setSelecteFolderType] = useState<number>(0);
+
   const handleSelect = (index: number) => {
     setSelectedColor(index);
     console.log(`Выбран цвет: ${index}`);
   };
   const handleSelectIcon = (index: number) => {
     setSelectedIcon(index);
-    console.log(`Выбран цвет: ${index}`);
+    console.log(`Выбран иконка под номером: ${index}`);
   };
   const handleSelectType = (index: number) => {
     setSelecteFolderType(index);
@@ -58,9 +59,7 @@ const Component: React.FC<ICreateFolderBar> = ({ setOpen, style }) => {
             />
           </div>
 
-          <div
-            className={cx(styles.createFolderBar__content, styles.createFolderBar__content_empty)}
-          >
+          <div className={styles.createFolderBar__content}>
             <Picker
               handleSelect={handleSelect}
               handleSelectIcon={handleSelectIcon}
@@ -71,7 +70,7 @@ const Component: React.FC<ICreateFolderBar> = ({ setOpen, style }) => {
               handleSelect={handleSelectType}
               selectedFolderType={selectedFolderType}
             />
-            {/* <hr className={styles.createFolderBar__content_line} /> */}
+
             <Button
               text='Create folder'
               onClick={() => console.log('created folder')}

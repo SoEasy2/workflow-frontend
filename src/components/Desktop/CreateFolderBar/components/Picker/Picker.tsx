@@ -1,5 +1,5 @@
 import React, { useId } from 'react';
-import { folderColors2, folderIcons } from '../../../../../helpers/constants/enum';
+import { folderColors2, folderIcons } from '../../mockData';
 import { ColorPicker } from './components/ColorPicker';
 import { IconPicker } from './components/IconPicker';
 import styles from './Picker.module.scss';

@@ -1,6 +1,6 @@
 import React from 'react';
-import { folderColors2, folderIcons } from '../../../../../helpers/constants/enum';
 import { CustomInput } from '../../../../UI-Kit/Inputs/CustomInput';
+import { folderColors2, folderIcons } from '../../mockData';
 import styles from './IconInput.module.scss';
 
 interface InputIcons {
