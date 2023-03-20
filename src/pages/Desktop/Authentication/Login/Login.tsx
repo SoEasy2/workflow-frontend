@@ -28,4 +28,4 @@ const Component: React.FC = () => {
 
 const LoginPage = React.memo(Component);
 
-export { LoginPage };
+export default LoginPage;

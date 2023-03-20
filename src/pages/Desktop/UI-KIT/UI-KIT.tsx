@@ -27,4 +27,4 @@ const UiKit = () => {
   );
 };
 
-export { UiKit };
+export default UiKit;

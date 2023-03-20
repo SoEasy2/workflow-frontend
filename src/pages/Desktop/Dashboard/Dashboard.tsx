@@ -16,4 +16,4 @@ const Component: React.FC = () => {
 
 const DashboardPage = React.memo(Component);
 
-export { DashboardPage };
+export default DashboardPage;

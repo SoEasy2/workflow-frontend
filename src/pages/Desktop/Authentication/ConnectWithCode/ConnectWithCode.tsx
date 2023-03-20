@@ -114,4 +114,4 @@ const Component: React.FC = () => {
 
 const ConnectWithCodePage = React.memo(Component);
 
-export { ConnectWithCodePage };
+export default ConnectWithCodePage;
