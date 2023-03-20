@@ -1,6 +1,6 @@
 import cx from 'classnames';
 import React from 'react';
-import styles from './Circle.module.scss';
+import styles from './ColorPicker.module.scss';
 
 interface Circle {
   color: string;
@@ -18,6 +18,6 @@ const Component: React.FC<Circle> = ({ color, selected, onSelect }) => {
   );
 };
 
-const Circle = React.memo(Component);
+const ColorPicker = React.memo(Component);
 
-export { Circle };
+export { ColorPicker };

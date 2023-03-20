@@ -2,12 +2,13 @@ import cx from 'classnames';
 import React, { useId, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { animated } from 'react-spring';
-import { folderColors2 } from '../../../helpers/constants/enum';
-import { ArrowHandleIcon, HelperRemoveIcon } from '../../../helpers/icons';
+import { folderColors2, folderIcons } from '../../../helpers/constants/enum';
+import { ArrowHandleIcon } from '../../../helpers/icons';
 import useOnClickOutside from '../../../hooks/clickOutside/useClickOutside';
 import { BarLayout } from '../../UI-Kit/BarLayout';
 import { CustomInput } from '../../UI-Kit/Inputs/CustomInput';
-import { Circle } from './components/Circle';
+import { ColorPicker } from './components/ColorPicker';
+import { IconPicker } from './components/IconPicker';
 
 import styles from './CreateFolderBar.module.scss';
 
@@ -21,9 +22,14 @@ const Component: React.FC<ICreateFolderBar> = ({ setOpen, style }) => {
   useOnClickOutside(contentRef, () => setOpen(false));
 
   const [selectedColor, setSelectedColor] = useState<string | null>(null);
+  const [selectedIcon, setSelectedIcon] = useState<number>(0);
   const handleSelect = (color: string) => {
     setSelectedColor(color);
     console.log(`Выбран цвет: ${color}`);
+  };
+  const handleSelectIcon = (index: number) => {
+    setSelectedIcon(index);
+    console.log(`Выбран цвет: ${index}`);
   };
 
   return createPortal(
@@ -42,8 +48,11 @@ const Component: React.FC<ICreateFolderBar> = ({ setOpen, style }) => {
               </div>
             </div>
             <div className={styles.createFolderBar__input}>
-              <div className={styles.view}>
-                <HelperRemoveIcon />
+              <div
+                className={styles.view}
+                style={{ backgroundColor: selectedColor }}
+              >
+                {folderIcons[selectedIcon]()}
               </div>
               <CustomInput />
             </div>
@@ -58,11 +67,22 @@ const Component: React.FC<ICreateFolderBar> = ({ setOpen, style }) => {
               </h4>
               <div className={styles.createFolderBar__apperience_Picker}>
                 {folderColors2.map((color) => (
-                  <Circle
+                  <ColorPicker
                     key={useId()}
                     color={color}
                     selected={selectedColor === color}
                     onSelect={handleSelect}
+                  />
+                ))}
+              </div>
+              <div className={styles.createFolderBar__apperience_Picker}>
+                {folderIcons.map((icon, index) => (
+                  <IconPicker
+                    key={useId()}
+                    icon={icon}
+                    idx={index}
+                    selected={selectedIcon === index}
+                    onSelect={handleSelectIcon}
                   />
                 ))}
               </div>

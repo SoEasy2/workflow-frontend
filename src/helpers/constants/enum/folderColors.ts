@@ -1,4 +1,5 @@
-import { HelperHideIcon, HelperValidIcon } from '../../icons';
+import { HelperHideIcon } from '../../icons';
+import { HelperNoValidIcon, HelperRemoveIcon } from './../../icons/helper';
 
 export enum folderColors {
   YELLOW = 1,
@@ -12,4 +13,4 @@ export enum folderColors {
 }
 
 export const folderColors2 = ['#F4CD48', '#9ACFF1', '#FFBB2B'];
-export const folderIcons = [HelperHideIcon, HelperValidIcon];
+export const folderIcons = [HelperHideIcon, HelperNoValidIcon, HelperRemoveIcon];
