@@ -1,4 +1,4 @@
-@import '../../../../../sass/_abstract/_variables.scss';
+@import '../../../../../../../sass/_abstract/variables.scss';
 .Circle {
   display: flex;
   justify-content: center;
@@ -8,13 +8,10 @@
   border-radius: 50%;
   cursor: pointer;
   transition: all 0.2s;
+  background-color: #fafafb;
 }
 
 .selecteds {
   box-shadow: px-to-rem(0) px-to-rem(0) px-to-rem(0) px-to-rem(2) #fff,
     px-to-rem(0) px-to-rem(0) px-to-rem(0) px-to-rem(3) #000;
-}
-
-.icons {
-  background-color: #fafafb;
 }

@@ -1,0 +1,16 @@
+@import '../../../../../sass/_abstract/variables.scss';
+
+.input {
+  display: flex;
+  margin: px-to-rem(0) px-to-rem(42) px-to-rem(32) px-to-rem(32);
+
+  &__view {
+    margin-right: px-to-rem(16);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: px-to-rem(48);
+    height: px-to-rem(48);
+    border-radius: px-to-rem(8);
+  }
+}

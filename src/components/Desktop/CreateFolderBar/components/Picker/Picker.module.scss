@@ -1,0 +1,34 @@
+@import '../../../../../sass/_abstract/variables.scss';
+.Picker {
+  display: flex;
+  &__apperience {
+    width: 100%;
+
+    &_folderSettingsTittle {
+      font-family: $global-font-inter;
+      text-transform: uppercase;
+      margin-bottom: px-to-rem(30);
+      color: #030235;
+      font-weight: 600;
+      font-size: px-to-rem(14);
+    }
+
+    &_ColorPicker {
+      display: flex;
+      gap: px-to-rem(20);
+      width: 100%;
+      max-width: 100%;
+      flex-wrap: wrap;
+      margin-bottom: px-to-rem(40);
+    }
+
+    &_IconPicker {
+      display: flex;
+      gap: px-to-rem(20);
+      width: 100%;
+      max-width: 100%;
+      flex-wrap: wrap;
+      margin-bottom: px-to-rem(40);
+    }
+  }
+}

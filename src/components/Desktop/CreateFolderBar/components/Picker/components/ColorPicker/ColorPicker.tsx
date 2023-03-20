@@ -5,15 +5,16 @@ import styles from './ColorPicker.module.scss';
 interface Circle {
   color: string;
   selected: boolean;
-  onSelect: (color: string) => void;
+  index: number;
+  onSelect: (index: number) => void;
 }
 
-const Component: React.FC<Circle> = ({ color, selected, onSelect }) => {
+const Component: React.FC<Circle> = ({ index, color, selected, onSelect }) => {
   return (
     <div
       className={cx(styles.Circle, selected && styles.selecteds)}
       style={{ backgroundColor: color }}
-      onClick={() => onSelect(color)}
+      onClick={() => onSelect(index)}
     ></div>
   );
 };
