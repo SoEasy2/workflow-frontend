@@ -1,6 +1,6 @@
 import { Route, Routes, useNavigate } from 'react-router';
 import { routes } from './helpers/constants';
-import { useEffect, useId, useState } from 'react';
+import { Suspense, useEffect, useId, useState } from 'react';
 import { MainLayout } from './components/Desktop/Layouts/MainLayout/MainLayout';
 import { useAppDispatch, useAppSelector } from './hooks/redux';
 import { useMutation } from '@apollo/client';
@@ -90,11 +90,16 @@ const App = () => {
     <MainLayout>
       {isFirstLoading && <Loader isBackground={true} />}
       <Routes>
-        {routes.map((route) => (
+        {routes.map(({ path, component }) => (
           <Route
             key={useId()}
-            path={route.path}
-            element={route.component}
+            path={path}
+            element={(
+                <Suspense fallback={<Loader isPortal={true} />}>
+                  {component}
+                </Suspense>
+            )}
+
           />
         ))}
       </Routes>
