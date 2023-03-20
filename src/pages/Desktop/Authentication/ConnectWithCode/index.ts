@@ -1,3 +1,3 @@
 import { lazy } from 'react';
 
-export const ConnectWithCodePage = lazy(() => import('./ConnectWithCode'))
+export const ConnectWithCodePage = lazy(() => import('./ConnectWithCode'));

@@ -21,4 +21,4 @@ const Component: React.FC = () => {
 
 const RegistrationMobile = React.memo(Component);
 
-export default RegistrationMobile ;
+export default RegistrationMobile;
