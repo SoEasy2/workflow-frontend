@@ -11,10 +11,6 @@
 }
 
 .selecteds {
-  box-shadow: px-to-rem(0) px-to-rem(0) px-to-rem(0) px-to-rem(2) #fff,
-    px-to-rem(0) px-to-rem(0) px-to-rem(0) px-to-rem(3) #000;
-}
-
-.icons {
-  background-color: #fafafb;
+  box-shadow: px-to-rem(0) px-to-rem(0) px-to-rem(0) px-to-rem(2) $global-background-color,
+    px-to-rem(0) px-to-rem(0) px-to-rem(0) px-to-rem(3) $global-border-color;
 }

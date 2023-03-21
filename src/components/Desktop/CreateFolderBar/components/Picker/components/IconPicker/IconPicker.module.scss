@@ -8,10 +8,9 @@
   border-radius: 50%;
   cursor: pointer;
   transition: all 0.2s;
-  background-color: #fafafb;
+  background-color: $global-background-color;
 }
 
 .selecteds {
-  box-shadow: px-to-rem(0) px-to-rem(0) px-to-rem(0) px-to-rem(2) #fff,
-    px-to-rem(0) px-to-rem(0) px-to-rem(0) px-to-rem(3) #000;
+  box-shadow: px-to-rem(0) px-to-rem(0) px-to-rem(0) px-to-rem(1) $global-border-color;
 }
