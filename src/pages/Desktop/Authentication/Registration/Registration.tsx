@@ -92,4 +92,4 @@ const Component: React.FC = () => {
 };
 const RegistrationPage = React.memo(Component);
 
-export { RegistrationPage };
+export default RegistrationPage;

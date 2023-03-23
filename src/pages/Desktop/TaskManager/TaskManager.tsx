@@ -65,4 +65,4 @@ const Component: React.FC = () => {
 
 const TaskManagerPage = React.memo(Component);
 
-export { TaskManagerPage };
+export default TaskManagerPage;
